@@ -29,10 +29,10 @@ h1 {
 }
 
 .logos {
-    display: block, inline-flex;
+    display: inline-grid, inline-flex;
     float: right;
     padding-right: 2em;
-    width: 40em;
+    width: 35em;
     height: auto;
 }
 
