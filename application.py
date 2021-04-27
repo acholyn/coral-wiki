@@ -1,8 +1,6 @@
 from flask import Flask, render_template, url_for, redirect, request 
-from flask_bootstrap import Bootstrap
+#from flask_bootstrap import Bootstrap
 from flask_fontawesome import FontAwesome
-import extract
-import target
 from flask_wtf import FlaskForm
 from wtforms import SubmitField
 
