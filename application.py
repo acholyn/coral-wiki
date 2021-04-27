@@ -1,3 +1,11 @@
+from flask import Flask, render_template, url_for, redirect, request 
+from flask_bootstrap import Bootstrap
+from flask_fontawesome import FontAwesome
+import extract
+import target
+from flask_wtf import FlaskForm
+from wtforms import SubmitField
+
 def create_app():
     application = Flask(__name__)
     #FontAwesome(application)
@@ -23,4 +31,5 @@ def add_header(response):
         response.headers['Cache-Control'] = 'no-store'
     return response
 
-application.run(debug=True)
+if __name__ == "__main__":
+    application.run(debug=True)

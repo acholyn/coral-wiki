@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Amanda Ho-Lyn -->
+<html>
+{% block head %}
+
+<head>
+    {% block title %}
+    <!-- Title and icon that show in browser tab -->
+    <title>Coral Wiktionary</title>
+    <link rel="shortcut icon" href="../images/SC_vectorLogo crop.png" type="image/x-icon" /> {% endblock %}
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+
+    <!--Icons-->
+    <script src="https://kit.fontawesome.com/01e3a3b2ef.js" crossorigin="anonymous"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../coralwiki.css">
+
+
+
+</head>
+{% endblock %} {% block content %}
+
+<body>
+    {% endblock %} {% block footer %}
+    <!--Footer-->
+    <footer class="footer ">
+        <p class="footer ">The Coral Culture & Restoration Wiktionary &copy; 2021 </p>
+    </footer>
+    {% endblock %} {% block scripts %}
+    <!--JavaScript-->
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('myInput');
+            filter = input.value.toUpperCase();
+            li = document.getElementsByClassName("item");
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i][0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = " ";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+{% endblock %}
+
+</html>
