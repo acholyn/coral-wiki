@@ -1,0 +1,118 @@
+html,
+body {
+    min-height: 70%;
+    width: 100%;
+    margin: 0;
+}
+
+.header {
+    display: inline-flex;
+    background-color: #9ae7ee;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+}
+
+.row {
+    width: inherit;
+}
+
+.title {
+    display: block, inline-flex;
+    float: left;
+}
+
+h1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    font: 2em 'Cinzel Decorative';
+}
+
+.logos {
+    display: block, inline-flex;
+    float: right;
+    padding-right: 2em;
+    width: 40em;
+    height: auto;
+}
+
+.search {
+    height: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    display: grid, flex;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 20em;
+}
+
+.container {
+    font-family: 'Open Sans';
+    display: grid, flex;
+    width: 100%;
+    margin: auto;
+    border-spacing: 0;
+}
+
+p {
+    font-family: 'Open Sans';
+    text-align: left;
+    border-bottom: 1px solid #dbedf2;
+    padding: 15px;
+}
+
+li {
+    font-family: 'Open Sans';
+    text-align: left;
+    border-bottom: 1px solid #dbedf2;
+    padding: 15px;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #0725b6;
+}
+
+a:hover:not(.header) {
+    color: #3872b4;
+    /* Add a hover effect to all links, except for headers */
+}
+
+a.item {
+    color: #081e8f;
+}
+
+a.item:hover:not(.header) {
+    color: #0923a0;
+    font-size: 105%;
+    /* Add a hover effect to all links, except for headers */
+}
+
+a.ref:link {
+    color: #356e8f;
+}
+
+a.ref:hover {
+    color: #4a758d;
+}
+
+footer {
+    display: flex;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    background-color: #54c1df;
+    padding: 10px;
+}
+
+p.footer {
+    font: .8em 'Cinzel Decorative';
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+}
