@@ -20,6 +20,16 @@ application = create_app()
 def index():
     return render_template('index.html')
 
+# define action for contributor page
+@application.route('/contributors')
+def contributors():
+    return render_template('contributors.html')
+
+# define action for about page
+@application.route('/about')
+def about():
+    return render_template('about.html')
+
 
 # No caching at all for API endpoints.
 @application.after_request

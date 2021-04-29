@@ -7,9 +7,11 @@
     {% block title %}
     <!-- Title and icon that show in browser tab -->
     <title>Coral Wiktionary</title>
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/acholyn/coral-wiki/main/images/SC_vectorLogo%20crop.png" type="image/x-icon" /> {% endblock %}
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/acholyn/coral-wiki/main/images/coral.JPG" type="image/x-icon" /> {% endblock %}
     <!-- Fonts -->
+    <!--Cinzel Decorative-->
     <link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative' rel='stylesheet'>
+    <!--Open Sans-->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
 
     <!--Icons-->
@@ -21,9 +23,31 @@
 
 
 </head>
-{% endblock %} {% block content %}
+{% endblock %} {% block header %}
+<!-- header area -->
+<div class="header">
+    <div class="row">
+        <div class="title">
+            <h1>The Coral <br>Culture & Restoration <br> Wiktionary</h1>
+        </div>
+        <div class="logos">
+            <!--CRC-->
+            <img src="https://raw.githubusercontent.com/acholyn/coral-wiki/main/images/CRC.png" width="100px">
+        </div>
+    </div>
+</div>
+
+{% endblock %} {% block nav %}
+<nav>
+    <div class="nav-item"><a href="{{ url_for ('index') }}">Home</a></div>
+    <div class="nav-item"><a href="{{ url_for ('contributors') }}">Contributors</a></div>
+    <div class="nav-item"><a href="{{ url_for ('about') }}">About Us</a></div>
+</nav>
+<hr> {% endblock %} {% block content %} {% block pagetitle %} {% endblock %}<br>
 
 <body>
+
+
     {% endblock %} {% block footer %}
     <!--Footer-->
     <footer class="footer ">
