@@ -11,7 +11,7 @@
 <div class="container">
     <ul class="terms">
         {% for i in coraldefs.index %}
-        <li><a class="item" name="{{ term[i] }}">{{ term[i] }}</a><i> ({{ role[i] }}) </i> <br> {{ definition[i] }}
+        <li><a class="item" name="{{ term[i]|trim }}">{{ term[i] }}</a><i> ({{ role[i] }}) </i> <br> {{ definition[i] }} {%if referrals[i] != "" %}{% print %} See also <a href="#{{ referrals[i] }}">{{ referrals[i] }} </a>{% endif%}
         </li>
         {% endfor %}
     </ul>
