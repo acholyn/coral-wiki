@@ -1,3 +1,8 @@
+/* Amanda Ho-Lyn */
+
+
+/************ on any page ***********/
+
 html,
 body {
     min-height: 70%;
@@ -99,12 +104,31 @@ h2 {
     border-spacing: 0;
 }
 
+footer {
+    display: flex;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    background-color: #54c1df;
+    padding: 10px;
+}
+
+p.footer {
+    font: .8em 'Cinzel Decorative';
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 p {
     font-family: 'Open Sans';
     text-align: left;
     border-bottom: 1px solid #dbedf2;
     padding: 15px;
 }
+
+
+/*************** DICTIONARY ***************/
 
 li {
     font-family: 'Open Sans';
@@ -116,7 +140,7 @@ li {
 
 a {
     text-decoration: none;
-    color: #152f97;
+    color: #0c42b8;
 }
 
 a:hover:not(.header) {
@@ -142,24 +166,66 @@ a.ref:hover {
     color: #4a758d;
 }
 
-footer {
-    display: flex;
-    position: absolute;
+
+/************* ABOUT ***************/
+
+.intro {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font: 300 1em Open Sans;
     text-align: center;
-    width: 100%;
-    background-color: #54c1df;
-    padding: 10px;
 }
 
-p.footer {
-    font: .8em 'Cinzel Decorative';
-    color: #fff;
+.hoverable {
+    width: 300px;
+    z-index: 99;
+}
+
+
+/*all anchors in this ul*/
+
+.hoverable a {
+    display: block;
+    width: 100%;
+    /*this Haslayout trigger taking the place of zoom and therefore passes the validator, if it matters. Width is already naturally 100% by default anyway so we haven't changed anything except trigger Haslayout for IE*/
+    position: relative;
+    text-decoration: none;
+    z-index: 99;
+}
+
+
+/*all images inside boat ul*/
+
+.hoverable img {
+    position: relative;
+    display: block;
+    /*abso-position is already block context; you only need this line if IE is squirrely without it. Otherwise, take this line out*/
+    width: 350px;
+    padding: 10px;
+    border: none;
+}
+
+.hoverable a:hover,
+.hoverable a:focus {
+    give users some visual feedback on the anchor itself too,
+    like underline or colour change or something;
+}
+
+.hoverable a:hover img,
+.hoverable a:focus img {
+    margin-left: auto;
+    /*set the image where you want it on hover/focus of anchor*/
+}
+
+#SCA {
+    width: 400px;
     margin-left: auto;
     margin-right: auto;
 }
 
 
-/* SEARCH */
+/************ SEARCH *****************/
 
 .clear {
     clear: both;
@@ -170,9 +236,9 @@ p.footer {
 }
 
 .search-icon {
-    padding: 20px;
+    padding: 10px;
     cursor: pointer;
-    background-color: rgba(46, 104, 230, 0.192);
+    background-color: rgba(46, 104, 230, 0);
     float: right;
 }
 
@@ -194,17 +260,17 @@ p.footer {
     padding: 10px;
 }
 
-input[type="text"] {
+.search input[type="text"] {
     width: 100%;
     height: 50px;
     font-size: 30px;
-    background-color: #EEE;
+    background-color: rgba(214, 241, 253, 0.233);
     border: 1px rgba(46, 104, 230, 0.192);
     padding-left: 50px;
     box-sizing: border-box;
 }
 
-input:focus {
+.search input:focus {
     outline: none;
 }
 
@@ -224,49 +290,49 @@ input:focus {
 }
 
 
-/* CONTACT FORM */
+/************** CONTACT FORM **************/
 
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
-input::-webkit-input-placeholder,
+.contact input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
     color: #78c1e9;
     font-size: 0.875em;
 }
 
-input:focus::-webkit-input-placeholder,
+.contact input:focus::-webkit-input-placeholder,
 textarea:focus::-webkit-input-placeholder {
     color: #afc9f0;
 }
 
-input::-moz-placeholder,
+.contact input::-moz-placeholder,
 textarea::-moz-placeholder {
     color: #78c1e9;
     font-size: 0.875em;
 }
 
-input:focus::-moz-placeholder,
+.contact input:focus::-moz-placeholder,
 textarea:focus::-moz-placeholder {
     color: #afc9f0;
 }
 
-input::placeholder,
+.contact input::placeholder,
 textarea::placeholder {
     color: #78c1e9;
     font-size: 0.875em;
 }
 
-input:focus::placeholder,
+.contact input:focus::placeholder,
 textarea::focus:placeholder {
     color: #afc9f0;
 }
 
-input::-ms-placeholder,
+.contact input::-ms-placeholder,
 textarea::-ms-placeholder {
     color: #78c1e9;
     font-size: 0.875em;
 }
 
-input:focus::-ms-placeholder,
+.contact input:focus::-ms-placeholder,
 textarea:focus::-ms-placeholder {
     color: #b7cae7;
 }
@@ -274,46 +340,46 @@ textarea:focus::-ms-placeholder {
 
 /* on hover placeholder */
 
-input:hover::-webkit-input-placeholder,
+.contact input:hover::-webkit-input-placeholder,
 textarea:hover::-webkit-input-placeholder {
     color: #3d4dda;
     font-size: 0.875em;
 }
 
-input:hover:focus::-webkit-input-placeholder,
+.contact input:hover:focus::-webkit-input-placeholder,
 textarea:hover:focus::-webkit-input-placeholder {
     color: #7fb3d6;
 }
 
-input:hover::-moz-placeholder,
+.contact input:hover::-moz-placeholder,
 textarea:hover::-moz-placeholder {
     color: #3d4dda;
     font-size: 0.875em;
 }
 
-input:hover:focus::-moz-placeholder,
+.contact input:hover:focus::-moz-placeholder,
 textarea:hover:focus::-moz-placeholder {
     color: #7fb3d6;
 }
 
-input:hover::placeholder,
+.contact input:hover::placeholder,
 textarea:hover::placeholder {
     color: #3d4dda;
     font-size: 0.875em;
 }
 
-input:hover:focus::placeholder,
+.contact input:hover:focus::placeholder,
 textarea:hover:focus::placeholder {
     color: #7fb3d6;
 }
 
-input:hover::placeholder,
+.contact input:hover::placeholder,
 textarea:hover::placeholder {
     color: #3d4dda;
     font-size: 0.875em;
 }
 
-input:hover:focus::-ms-placeholder,
+.contact input:hover:focus::-ms-placeholder,
 textarea:hover::focus:-ms-placeholder {
     color: #7fb3d6;
 }
@@ -356,9 +422,9 @@ input {
     -ms-transition: all 0.3s ease-in-out;
 }
 
-input:hover {
-    background: #829abe;
-    color: #3d4dda;
+.contact input:hover {
+    background: #a5d1ee60;
+    color: #2e65db;
 }
 
 textarea {
@@ -380,7 +446,7 @@ textarea {
 }
 
 textarea:hover {
-    background: #829abe;
+    background: #a5d1ee60;
     color: #3d4dda;
 }
 
@@ -390,7 +456,7 @@ textarea:hover {
     margin: -5px 0px 0px 0px;
     font-family: 'Lato', sans-serif;
     font-size: 0.875em;
-    color: #829abe;
+    color: #198b86b2;
     outline: none;
     cursor: pointer;
     border: solid 1px #829abe;
