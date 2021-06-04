@@ -21,8 +21,12 @@
     <!-- Stylesheets -->
     <!-- General, including search -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/coralwiki.css') }}">
-    <!-- Contact Form -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/contactform.css') }}">
+
+
+    <!-- for back to top button -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+
 
 
 
@@ -63,9 +67,18 @@
 
 
     {% endblock %} {% block footer %}
+    <!--BACK TO TOP BUTTON-->
+    <div class="m-backtotop" aria-hidden="true">
+        <div class="arrow">
+            <i class="fa fa-arrow-up"></i>
+        </div>
+        <div class="text">
+            Back to top
+        </div>
+    </div>
     <!--Footer-->
-    <footer class="footer ">
-        <p class="footer ">The Coral Culture & Restoration Wiktionary &copy; 2021 </p>
+    <footer class="footer">
+        <p class="footer">The Coral Culture & Restoration Wiktionary &copy; 2021 </p>
     </footer>
     {% endblock %} {% block scripts %}
     <!--JavaScript-->
@@ -73,6 +86,33 @@
         function show() {
             document.getElementById('hoverable').style.visibility = 'visible';
         }
+    </script>
+    <!-- back to top button -->
+    <script>
+        //Make sure the user has scrolled at least 1.5x the height of the browser
+        var toggleHeight = $(window).outerHeight() * 1;
+
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > toggleHeight) {
+                //Adds active class to make button visible
+                $(".m-backtotop").addClass("active");
+
+            } else {
+                //Removes active class to make button visible
+                $(".m-backtotop").removeClass("active");
+
+
+            }
+        });
+
+
+        //Scrolls the user to the top of the page again
+        $(".m-backtotop").click(function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, "slow");
+            return false;
+        });
     </script>
 </body>
 

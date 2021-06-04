@@ -127,6 +127,46 @@ p {
     padding: 15px;
 }
 
+#button {
+    display: inline-block;
+    background-color: #20c3e0bd;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+}
+
+#button:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+
+#button:active {
+    background-color: #555;
+}
+
+#button.show {
+    opacity: 1;
+    visibility: visible;
+}
+
 
 /*************** DICTIONARY ***************/
 
@@ -177,45 +217,9 @@ a.ref:hover {
     text-align: center;
 }
 
-.hoverable {
+#hoverable {
     width: 300px;
     z-index: 99;
-}
-
-
-/*all anchors in this ul*/
-
-.hoverable a {
-    display: block;
-    width: 100%;
-    /*this Haslayout trigger taking the place of zoom and therefore passes the validator, if it matters. Width is already naturally 100% by default anyway so we haven't changed anything except trigger Haslayout for IE*/
-    position: relative;
-    text-decoration: none;
-    z-index: 99;
-}
-
-
-/*all images inside boat ul*/
-
-.hoverable img {
-    position: relative;
-    display: block;
-    /*abso-position is already block context; you only need this line if IE is squirrely without it. Otherwise, take this line out*/
-    width: 350px;
-    padding: 10px;
-    border: none;
-}
-
-.hoverable a:hover,
-.hoverable a:focus {
-    give users some visual feedback on the anchor itself too,
-    like underline or colour change or something;
-}
-
-.hoverable a:hover img,
-.hoverable a:focus img {
-    margin-left: auto;
-    /*set the image where you want it on hover/focus of anchor*/
 }
 
 #SCA {
@@ -287,6 +291,120 @@ a.ref:hover {
     to {
         transform: scaleY(1);
     }
+}
+
+
+/************** BACK TO TOP BUTTON ***********/
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.m-backtotop {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    bottom: -50px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #222;
+    border-radius: 25px;
+    text-align: center;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    overflow: hidden;
+    color: #fff;
+}
+
+.m-backtotop.active {
+    bottom: 15px;
+    opacity: 1;
+}
+
+.m-backtotop>div {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.m-backtotop>div.arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 1;
+}
+
+.m-backtotop>div.text {
+    font-size: 5px;
+    font-size: 0.5rem;
+    line-height: 10px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(50%) translateX(-50%);
+    opacity: 0;
+    margin-top: 1px;
+}
+
+.m-backtotop:hover {
+    transform: scale(1.1);
+    bottom: 20px;
+    cursor: pointer;
+    background: #000;
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.m-backtotop:hover>div.arrow {
+    transform: translateY(-150%) translateX(-50%);
+    opacity: 0;
+}
+
+.m-backtotop:hover>div.text {
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 1;
 }
 
 
