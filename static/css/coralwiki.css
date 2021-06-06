@@ -1,535 +1,513 @@
-    /* Amanda Ho-Lyn */
-    /************ on any page ***********/
-    
-    html,
-    body {
-        min-height: 70%;
-        width: 100%;
-        margin: 0;
-    }
-    
-    .header {
-        display: inline-flex;
-        background-color: #9ae7ee;
-        text-align: center;
-        padding: 15px;
-        width: 100%;
-    }
-    
-    nav {
-        width: 20em;
-        display: inline-flexbox;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    nav>a {
-        color: #3872b4;
-    }
-    
-    nav>a:hover {
-        color: #54c1df;
-    }
-    
-    .nav-item {
-        display: inline-block;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        text-transform: uppercase;
-        font-weight: 300;
-        font-size: .8em;
-        font-family: 'Open sans';
-        justify-content: space-around;
-        padding: 10px;
-    }
-    
-    .row {
-        width: inherit;
-    }
-    
-    .title {
-        display: block, inline-flex;
-        float: left;
-    }
-    
-    .pagetitle {
-        display: inline-flexbox;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        font: 1.1em 'Cinzel Decorative';
-        font-weight: 300;
-        color: #2f4953;
-    }
-    
-    h1 {
-        padding-left: 20px;
-        padding-right: 20px;
-        font: 2em 'Cinzel Decorative';
-    }
-    
-    h2 {
-        font: 0.9em 'Cinzel Decorative';
-        font-weight: 300;
-        color: #2f4953;
-    }
-    
-    .logos {
-        display: inline-grid, inline-flex;
-        float: right;
-        margin-right: 2em;
-        min-width: 5em;
-        height: auto;
-    }
-    
-    .page {
-        display: grid, flex;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        min-height: 20em;
-    }
-    
-    .container {
-        font-family: 'Open Sans';
-        display: grid, flex;
-        width: 100%;
-        margin: auto;
-        border-spacing: 0;
-    }
-    
-    footer {
-        display: flex;
-        position: absolute;
-        text-align: center;
-        width: 100%;
-        background-color: #54c1df;
-        padding: 10px;
-    }
-    
-    p.footer {
-        font: .8em 'Cinzel Decorative';
-        color: #fff;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    p {
-        font-family: 'Open Sans';
-        text-align: left;
-        border-bottom: 1px solid #dbedf2;
-        padding: 15px;
-    }
-    
-    #button {
-        display: inline-block;
-        background-color: #20c3e0bd;
-        width: 50px;
-        height: 50px;
-        text-align: center;
-        border-radius: 4px;
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        transition: background-color .3s, opacity .5s, visibility .5s;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 1000;
-    }
-    
-    #button::after {
-        content: "\f077";
-        font-family: FontAwesome;
-        font-weight: normal;
-        font-style: normal;
-        font-size: 2em;
-        line-height: 50px;
-        color: #fff;
-    }
-    
-    #button:hover {
-        cursor: pointer;
-        background-color: #333;
-    }
-    
-    #button:active {
-        background-color: #555;
-    }
-    
-    #button.show {
-        opacity: 1;
-        visibility: visible;
-    }
-    /*************** DICTIONARY ***************/
-    
-    li {
-        font-family: 'Open Sans';
-        text-align: left;
-        border-bottom: 1px solid #dbedf2;
-        padding: 15px;
-        list-style: none;
-    }
-    
-    a {
-        text-decoration: none;
-        color: #0c42b8;
-    }
-    
-    a:hover:not(.header) {
-        color: #3872b4;
-        /* Add a hover effect to all links, except for headers */
-    }
-    
-    a.item {
-        color: #081e8f;
-    }
-    
-    a.item:hover:not(.header) {
-        color: #0923a0;
-        font-size: 105%;
-        /* Add a hover effect to all links, except for headers */
-    }
-    
-    a.ref:link {
-        color: #356e8f;
-    }
-    
-    a.ref:hover {
-        color: #4a758d;
-    }
-    /************* ABOUT ***************/
-    
-    .intro {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        font: 300 1em Open Sans;
-        text-align: center;
-    }
-    
-    #hoverable {
-        width: 300px;
-        z-index: 99;
-    }
-    
-    #SCA {
-        width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    /************ SEARCH *****************/
-    
-    .clear {
-        clear: both;
-    }
-    
-    #tag-search {
-        display: none;
-    }
-    
-    .search-icon {
-        padding: 10px;
-        cursor: pointer;
-        background-color: rgba(46, 104, 230, 0);
-        float: right;
-    }
-    
-    .search-box {
-        position: relative;
-        background-color: #EEE;
-        padding: 10px;
-        clear: both;
-        transform: scale(0);
-        transform-origin: 100% 0%;
-        display: none;
-        border: 1px rgba(46, 104, 230, 0.192);
-    }
-    
-    .search-box i {
-        position: absolute;
-        font-size: 30px;
-        vertical-align: middle;
-        padding: 10px;
-    }
-    
-    .search input[type="text"] {
-        width: 100%;
-        height: 50px;
-        font-size: 30px;
-        background-color: rgba(214, 241, 253, 0.233);
-        border: 1px rgba(46, 104, 230, 0.192);
-        padding-left: 50px;
-        box-sizing: border-box;
-    }
-    
-    .search input:focus {
-        outline: none;
-    }
-    
-    #tag-search:checked+div.search-box {
-        display: block;
-        animation: trans-in 1s ease;
-        animation-fill-mode: forwards;
-    }
-    
-    @keyframes trans-in {
-        from {
-            transform: scaleY(0);
-        }
-        to {
-            transform: scaleY(1);
-        }
-    }
-    /************** BACK TO TOP BUTTON ***********/
-    /* Back to top */
-    
-    #box {
-        position: relative;
-        width: 93.5%;
-        height: 150px;
-        display: block;
-        background: #f6f6f6;
-        margin: 0 20px 20px 20px;
-    }
-    
-    #box:before {
-        position: absolute;
-        content: '';
-        display: inline-block;
-        left: 0;
-        top: 0;
-        height: 150px;
-        width: 200px;
-        margin: 0;
-        background: #e6e6e6;
-    }
-    
-    #box:after {
-        position: absolute;
-        content: '\f1cb';
-        font-family: FontAwesome;
-        display: inline-block;
-        left: 0;
-        right: 0;
-        top: 0;
-        text-align: center;
-        height: 150px;
-        line-height: 150px;
-        width: 200px;
-        margin: 0;
-        color: #bbb;
-        font-size: 50px;
-    }
-    
-    .back-to-top {
-        visibility: hidden;
-        background-color: #444;
-        width: 50px;
-        height: 50px;
-        text-align: center;
-        line-height: 48px;
-        position: fixed;
-        bottom: 65px;
-        right: 35px;
-        z-index: 90;
-        cursor: pointer;
-        border-radius: 1px;
-        opacity: 0;
-        -webkit-transform: translateZ(0);
-        transition: all .6s
-    }
-    
-    .back-to-top .fa {
-        font-size: 18px;
-        color: #fff;
-        vertical-align: middle;
-    }
-    
-    .back-to-top:hover {
-        background-color: #fc4f3f;
-        opacity: 1
-    }
-    
-    .back-to-top.show {
-        visibility: visible;
-        bottom: 35px;
-        opacity: 1;
-    }
-    /************** CONTACT FORM **************/
-    
-    @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
-    .contact input::-webkit-input-placeholder,
-    textarea::-webkit-input-placeholder {
-        color: #78c1e9;
-        font-size: 0.875em;
-    }
-    
-    .contact input:focus::-webkit-input-placeholder,
-    textarea:focus::-webkit-input-placeholder {
-        color: #afc9f0;
-    }
-    
-    .contact input::-moz-placeholder,
-    textarea::-moz-placeholder {
-        color: #78c1e9;
-        font-size: 0.875em;
-    }
-    
-    .contact input:focus::-moz-placeholder,
-    textarea:focus::-moz-placeholder {
-        color: #afc9f0;
-    }
-    
-    .contact input::placeholder,
-    textarea::placeholder {
-        color: #78c1e9;
-        font-size: 0.875em;
-    }
-    
-    .contact input:focus::placeholder,
-    textarea::focus:placeholder {
-        color: #afc9f0;
-    }
-    
-    .contact input::-ms-placeholder,
-    textarea::-ms-placeholder {
-        color: #78c1e9;
-        font-size: 0.875em;
-    }
-    
-    .contact input:focus::-ms-placeholder,
-    textarea:focus::-ms-placeholder {
-        color: #b7cae7;
-    }
-    /* on hover placeholder */
-    
-    .contact input:hover::-webkit-input-placeholder,
-    textarea:hover::-webkit-input-placeholder {
-        color: #3d4dda;
-        font-size: 0.875em;
-    }
-    
-    .contact input:hover:focus::-webkit-input-placeholder,
-    textarea:hover:focus::-webkit-input-placeholder {
-        color: #7fb3d6;
-    }
-    
-    .contact input:hover::-moz-placeholder,
-    textarea:hover::-moz-placeholder {
-        color: #3d4dda;
-        font-size: 0.875em;
-    }
-    
-    .contact input:hover:focus::-moz-placeholder,
-    textarea:hover:focus::-moz-placeholder {
-        color: #7fb3d6;
-    }
-    
-    .contact input:hover::placeholder,
-    textarea:hover::placeholder {
-        color: #3d4dda;
-        font-size: 0.875em;
-    }
-    
-    .contact input:hover:focus::placeholder,
-    textarea:hover:focus::placeholder {
-        color: #7fb3d6;
-    }
-    
-    .contact input:hover::placeholder,
-    textarea:hover::placeholder {
-        color: #3d4dda;
-        font-size: 0.875em;
-    }
-    
-    .contact input:hover:focus::-ms-placeholder,
-    textarea:hover::focus:-ms-placeholder {
-        color: #7fb3d6;
-    }
-    
-    form {
-        font-family: 'Lato', sans-serif;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    h3 {
-        position: relative;
-        margin: auto;
-        font-size: 1.3em;
-        text-align: center;
-        letter-spacing: 7px;
-        font-family: 'Lato', sans-serif;
-    }
-    
-    #form {
-        position: relative;
-        width: 500px;
-        margin: 25px auto 100px auto;
-    }
-    
-    input {
-        font-family: 'Lato', sans-serif;
-        font-size: 0.875em;
-        width: 470px;
-        height: 50px;
-        padding: 0px 15px 0px 15px;
-        background: transparent;
-        outline: none;
-        color: #92b6df;
-        border: solid 1px #829abe;
-        border-bottom: none;
-        transition: all 0.3s ease-in-out;
-        -webkit-transition: all 0.3s ease-in-out;
-        -moz-transition: all 0.3s ease-in-out;
-        -ms-transition: all 0.3s ease-in-out;
-    }
-    
-    .contact input:hover {
-        background: #a5d1ee60;
-        color: #2e65db;
-    }
-    
-    textarea {
-        width: 470px;
-        max-width: 470px;
-        height: 110px;
-        max-height: 110px;
-        padding: 15px;
-        background: transparent;
-        outline: none;
-        color: #92b6df;
-        font-family: 'Lato', sans-serif;
-        font-size: 0.875em;
-        border: solid 1px #829abe;
-        transition: all 0.3s ease-in-out;
-        -webkit-transition: all 0.3s ease-in-out;
-        -moz-transition: all 0.3s ease-in-out;
-        -ms-transition: all 0.3s ease-in-out;
-    }
-    
-    textarea:hover {
-        background: #a5d1ee60;
-        color: #3d4dda;
-    }
-    
-    #submit {
-        width: 502px;
-        padding: 0;
-        margin: -5px 0px 0px 0px;
-        font-family: 'Lato', sans-serif;
-        font-size: 0.875em;
-        color: #198b86b2;
-        outline: none;
-        cursor: pointer;
-        border: solid 1px #829abe;
-        border-top: none;
-    }
-    
-    #submit:hover {
-        color: #3d4dda;
-    }
+/* Amanda Ho-Lyn */
+
+
+/************ on any page ***********/
+
+html,
+body {
+    min-height: 70%;
+    width: 100%;
+    margin: 0;
+}
+
+.header {
+    display: inline-flex;
+    background-color: #9ae7ee;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+}
+
+nav {
+    width: 20em;
+    display: inline-flexbox;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav>a {
+    color: #3872b4;
+}
+
+nav>a:hover {
+    color: #54c1df;
+}
+
+.nav-item {
+    display: inline-block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: .8em;
+    font-family: 'Open sans';
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.row {
+    width: inherit;
+}
+
+.title {
+    display: block, inline-flex;
+    float: left;
+}
+
+.pagetitle {
+    display: inline-flexbox;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font: 1.1em 'Cinzel Decorative';
+    font-weight: 300;
+    color: #2f4953;
+}
+
+h1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    font: 2em 'Cinzel Decorative';
+}
+
+h2 {
+    font: 0.9em 'Cinzel Decorative';
+    font-weight: 300;
+    color: #2f4953;
+}
+
+.logos {
+    display: inline-grid, inline-flex;
+    float: right;
+    margin-right: 2em;
+    min-width: 5em;
+    height: auto;
+}
+
+.page {
+    display: grid, flex;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 20em;
+}
+
+.container {
+    font-family: 'Open Sans';
+    display: grid, flex;
+    width: 100%;
+    margin: auto;
+    border-spacing: 0;
+}
+
+footer {
+    display: flex;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    background-color: #54c1df;
+    padding: 10px;
+}
+
+p.footer {
+    font: .8em 'Cinzel Decorative';
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    font-family: 'Open Sans';
+    text-align: left;
+    border-bottom: 1px solid #dbedf2;
+    padding: 15px;
+}
+
+#button {
+    display: inline-block;
+    background-color: #20c3e0bd;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+}
+
+#button:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+
+#button:active {
+    background-color: #555;
+}
+
+#button.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/*************** DICTIONARY ***************/
+
+li {
+    font-family: 'Open Sans';
+    text-align: left;
+    border-bottom: 1px solid #dbedf2;
+    padding: 15px;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #0c42b8;
+}
+
+a:hover:not(.header) {
+    color: #3872b4;
+    /* Add a hover effect to all links, except for headers */
+}
+
+a.item {
+    color: #081e8f;
+}
+
+a.item:hover:not(.header) {
+    color: #0923a0;
+    font-size: 105%;
+    /* Add a hover effect to all links, except for headers */
+}
+
+a.ref:link {
+    color: #356e8f;
+}
+
+a.ref:hover {
+    color: #4a758d;
+}
+
+
+/************* ABOUT ***************/
+
+.intro {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font: 300 1em Open Sans;
+    text-align: center;
+}
+
+#hoverable {
+    width: 300px;
+    z-index: 99;
+}
+
+#SCA {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/************ SEARCH *****************/
+
+.clear {
+    clear: both;
+}
+
+#tag-search {
+    display: none;
+}
+
+.search-icon {
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgba(46, 104, 230, 0);
+    float: right;
+}
+
+.search-box {
+    position: relative;
+    background-color: #EEE;
+    padding: 10px;
+    clear: both;
+    transform: scale(0);
+    transform-origin: 100% 0%;
+    display: none;
+    border: 1px rgba(46, 104, 230, 0.192);
+}
+
+.search-box i {
+    position: absolute;
+    font-size: 30px;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.search input[type="text"] {
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    background-color: rgba(214, 241, 253, 0.233);
+    border: 1px rgba(46, 104, 230, 0.192);
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+#tag-search:checked+div.search-box {
+    display: block;
+    animation: trans-in 1s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes trans-in {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+
+
+/************** BACK TO TOP BUTTON ***********/
+
+
+/* Back to top */
+
+.back-to-top {
+    visibility: hidden;
+    background-color: #444;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 48px;
+    position: fixed;
+    bottom: 65px;
+    right: 35px;
+    z-index: 90;
+    cursor: pointer;
+    border-radius: 1px;
+    opacity: 0;
+    -webkit-transform: translateZ(0);
+    transition: all .6s
+}
+
+.back-to-top .fa {
+    font-size: 18px;
+    color: #fff;
+    vertical-align: middle;
+}
+
+.back-to-top:hover {
+    background-color: #fc4f3f;
+    opacity: 1
+}
+
+.back-to-top.show {
+    visibility: visible;
+    bottom: 35px;
+    opacity: 1;
+}
+
+
+/************** CONTACT FORM **************/
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+.contact input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #78c1e9;
+    font-size: 0.875em;
+}
+
+.contact input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+    color: #afc9f0;
+}
+
+.contact input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #78c1e9;
+    font-size: 0.875em;
+}
+
+.contact input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+    color: #afc9f0;
+}
+
+.contact input::placeholder,
+textarea::placeholder {
+    color: #78c1e9;
+    font-size: 0.875em;
+}
+
+.contact input:focus::placeholder,
+textarea::focus:placeholder {
+    color: #afc9f0;
+}
+
+.contact input::-ms-placeholder,
+textarea::-ms-placeholder {
+    color: #78c1e9;
+    font-size: 0.875em;
+}
+
+.contact input:focus::-ms-placeholder,
+textarea:focus::-ms-placeholder {
+    color: #b7cae7;
+}
+
+
+/* on hover placeholder */
+
+.contact input:hover::-webkit-input-placeholder,
+textarea:hover::-webkit-input-placeholder {
+    color: #3d4dda;
+    font-size: 0.875em;
+}
+
+.contact input:hover:focus::-webkit-input-placeholder,
+textarea:hover:focus::-webkit-input-placeholder {
+    color: #7fb3d6;
+}
+
+.contact input:hover::-moz-placeholder,
+textarea:hover::-moz-placeholder {
+    color: #3d4dda;
+    font-size: 0.875em;
+}
+
+.contact input:hover:focus::-moz-placeholder,
+textarea:hover:focus::-moz-placeholder {
+    color: #7fb3d6;
+}
+
+.contact input:hover::placeholder,
+textarea:hover::placeholder {
+    color: #3d4dda;
+    font-size: 0.875em;
+}
+
+.contact input:hover:focus::placeholder,
+textarea:hover:focus::placeholder {
+    color: #7fb3d6;
+}
+
+.contact input:hover::placeholder,
+textarea:hover::placeholder {
+    color: #3d4dda;
+    font-size: 0.875em;
+}
+
+.contact input:hover:focus::-ms-placeholder,
+textarea:hover::focus:-ms-placeholder {
+    color: #7fb3d6;
+}
+
+form {
+    font-family: 'Lato', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3 {
+    position: relative;
+    margin: auto;
+    font-size: 1.3em;
+    text-align: center;
+    letter-spacing: 7px;
+    font-family: 'Lato', sans-serif;
+}
+
+#form {
+    position: relative;
+    width: 500px;
+    margin: 25px auto 100px auto;
+}
+
+input {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    width: 470px;
+    height: 50px;
+    padding: 0px 15px 0px 15px;
+    background: transparent;
+    outline: none;
+    color: #92b6df;
+    border: solid 1px #829abe;
+    border-bottom: none;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+.contact input:hover {
+    background: #a5d1ee60;
+    color: #2e65db;
+}
+
+textarea {
+    width: 470px;
+    max-width: 470px;
+    height: 110px;
+    max-height: 110px;
+    padding: 15px;
+    background: transparent;
+    outline: none;
+    color: #92b6df;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    border: solid 1px #829abe;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+textarea:hover {
+    background: #a5d1ee60;
+    color: #3d4dda;
+}
+
+#submit {
+    width: 502px;
+    padding: 0;
+    margin: -5px 0px 0px 0px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    color: #198b86b2;
+    outline: none;
+    cursor: pointer;
+    border: solid 1px #829abe;
+    border-top: none;
+}
+
+#submit:hover {
+    color: #3d4dda;
+}
