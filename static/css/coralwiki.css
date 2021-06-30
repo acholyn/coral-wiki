@@ -13,12 +13,20 @@ body {
 .header {
     display: inline-flex;
     background-color: #9ae7ee;
+    background-image: url('https://www.blessed-midland.org/wp-content/uploads/2018/07/marko-blazevic-299203-2048x1366.jpg');
+    background-blend-mode: soft-light;
+    background-position: center;
     text-align: center;
     padding: 15px;
     width: 100%;
 }
 
 nav {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navstrip {
     width: 20em;
     display: inline-flexbox;
     justify-content: center;
@@ -59,6 +67,7 @@ nav>a:hover {
 }
 
 .pagetitle {
+    padding: .2em;
     display: inline-flexbox;
     text-align: center;
     margin-left: auto;
@@ -66,6 +75,7 @@ nav>a:hover {
     font: 1.1em 'Cinzel Decorative';
     font-weight: 300;
     color: #2f4953;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 h1 {
@@ -170,6 +180,14 @@ p {
 
 /*************** DICTIONARY ***************/
 
+#DICT {
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    background-color: rgba(255, 255, 255, 0.9);
+    background-blend-mode: hard-light;
+}
+
 li {
     font-family: 'Open Sans';
     text-align: left;
@@ -210,9 +228,11 @@ a.ref:hover {
 /************* ABOUT ***************/
 
 .intro {
-    width: 80%;
     margin-left: auto;
     margin-right: auto;
+    width: 85%;
+    background-color: rgba(255, 255, 255, 0.9);
+    background-blend-mode: hard-light;
     font: 300 1em Open Sans;
     text-align: center;
 }
@@ -343,7 +363,7 @@ a.ref:hover {
     right: 20px;
     width: 50px;
     height: 50px;
-    background: #222;
+    background: rgb(5, 84, 148);
     border-radius: 25px;
     text-align: center;
     border: 2px solid #fff;
@@ -375,7 +395,7 @@ a.ref:hover {
 }
 
 .m-backtotop>div.text {
-    font-size: 5px;
+    font-size: .3em;
     font-size: 0.5rem;
     line-height: 10px;
     text-transform: uppercase;
@@ -393,7 +413,7 @@ a.ref:hover {
     transform: scale(1.1);
     bottom: 20px;
     cursor: pointer;
-    background: #000;
+    background: rgb(7, 81, 179);
     box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -409,6 +429,14 @@ a.ref:hover {
 
 
 /************** CONTACT FORM **************/
+
+#formarea {
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    background-color: #ffffffe7;
+    background-blend-mode: hard-light;
+}
 
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
 .contact input::-webkit-input-placeholder,
@@ -506,6 +534,8 @@ form {
     font-family: 'Lato', sans-serif;
     margin-left: auto;
     margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.911);
+    padding: .5em
 }
 
 h3 {

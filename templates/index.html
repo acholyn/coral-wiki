@@ -9,9 +9,18 @@
     </div>
 -->
 
-
+<style>
+    body {
+        background-image: url('https://images.squarespace-cdn.com/content/v1/59c92f5a03596e9882e024f3/1506535049892-BVBCOWQFJJUNXPEE3Z0H/fullsizeoutput_47b8.jpeg?format=1500w');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 8em;
+    }
+</style>
 <!-- list of definitions -->
-<div class="container">
+<div class="container" id="DICT">
     <ul class="terms">
         {% for i in coraldefs.index %}
         <li><a class="item" name="{{ term[i]|trim }}">{{ term[i] }}</a><i> ({{ role[i] }}) </i> <br> {{ definition[i] }} {%if referrals[i] != "" %}{% print %} See also <a href="#{{ referrals[i] }}">{{ referrals[i] }} </a>{% endif%}

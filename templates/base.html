@@ -5,7 +5,82 @@
 
 <head>
 
-    {% block scripts %}
+    {% block title %}
+    <!-- Title and icon that show in browser tab -->
+    <title>Coral Wiktionary</title>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/acholyn/coral-wiki/main/images/coral.png" type="image/x-icon" /> {% endblock %}
+
+    <!-- Fonts -->
+    <!--Cinzel Decorative-->
+    <link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative' rel='stylesheet'>
+    <!--Open Sans-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+
+    <!--Icons-->
+    <script src="https://kit.fontawesome.com/01e3a3b2ef.js" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <!-- General, including search -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/coralwiki.css') }}">
+
+
+    <!-- for back to top button -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+
+
+
+
+</head>
+{% endblock %} {% block header %}
+<!-- header area -->
+<div class="header">
+    <div class="row">
+        <div class="title">
+            <h1>The Coral <br>Culture & Restoration <br> Wiktionary</h1>
+        </div>
+        <div class="logos">
+            <!--Seascape Logo-->
+            <img src="https://raw.githubusercontent.com/acholyn/coral-wiki/main/images/SC_vectorLogo%20crop.png" width="100px">
+        </div>
+    </div>
+</div>
+
+{% endblock %} {% block nav %}
+<nav>
+    <div class="navstrip">
+
+        <div class="nav-item"><a href="{{ url_for ('index') }}">Home</a></div>
+        <div class="nav-item"><a href="{{ url_for ('contributors') }}">Contributors</a></div>
+        <div class="nav-item"><a href="{{ url_for ('about') }}">About Us</a></div>
+
+        <!--Search-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <div class="wrapper">
+            <div class="wrapper-right">
+                <label class="fa fa-search search-icon" for="tag-search"></label>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+</nav>
+<hr> {% endblock %} {% block content %} {% block pagetitle %} {% endblock %}<br>
+
+<body>
+
+
+    {% endblock %} {% block footer %}
+
+    <!--Footer-->
+    <footer class="footer">
+        <p class="footer">The Coral Culture & Restoration Wiktionary &copy; 2021 </p>
+    </footer>
+    {% endblock %} {% block scripts %}
+
+    <!-- Add jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <!--JavaScript-->
     <script type="text/javascript">
         document.getElementById("hoverable").onmouseover = function() {
@@ -45,74 +120,6 @@
     </script>
 
 
-    {% endblock %} {% block title %}
-    <!-- Title and icon that show in browser tab -->
-    <title>Coral Wiktionary</title>
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/acholyn/coral-wiki/main/images/coral.png" type="image/x-icon" /> {% endblock %}
-
-    <!-- Fonts -->
-    <!--Cinzel Decorative-->
-    <link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative' rel='stylesheet'>
-    <!--Open Sans-->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
-
-    <!--Icons-->
-    <script src="https://kit.fontawesome.com/01e3a3b2ef.js" crossorigin="anonymous"></script>
-
-    <!-- Stylesheets -->
-    <!-- General, including search -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/coralwiki.css') }}">
-
-
-    <!-- for back to top button -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
-
-
-
-
-</head>
-{% endblock %} {% block header %}
-<!-- header area -->
-<div class="header">
-    <div class="row">
-        <div class="title">
-            <h1>The Coral <br>Culture & Restoration <br> Wiktionary</h1>
-        </div>
-        <div class="logos">
-            <!--CRC-->
-            <img src="https://raw.githubusercontent.com/acholyn/coral-wiki/main/images/SC_vectorLogo%20crop.png" width="100px">
-        </div>
-    </div>
-</div>
-
-{% endblock %} {% block nav %}
-<nav>
-    <div class="nav-item"><a href="{{ url_for ('index') }}">Home</a></div>
-    <div class="nav-item"><a href="{{ url_for ('contributors') }}">Contributors</a></div>
-    <div class="nav-item"><a href="{{ url_for ('about') }}">About Us</a></div>
-
-    <!--Search-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <div class="wrapper">
-        <div class="wrapper-right">
-            <label class="fa fa-search search-icon" for="tag-search"></label>
-        </div>
-        <div class="clear"></div>
-    </div>
-    </div>
-</nav>
-<hr> {% endblock %} {% block content %} {% block pagetitle %} {% endblock %}<br>
-
-<body>
-
-
-    {% endblock %} {% block footer %}
-
-    <!--Footer-->
-    <footer class="footer">
-        <p class="footer">The Coral Culture & Restoration Wiktionary &copy; 2021 </p>
-    </footer>
     {% endblock %}
 </body>
 

@@ -1,6 +1,15 @@
 {% extends 'base.html'%} {% block content %} {% block pagetitle %}
 <div class="pagetitle">About Us</div>
-{% endblock %}
+<hr> {% endblock %}
+<style>
+    body {
+        background-image: url('https://images.squarespace-cdn.com/content/v1/59c92f5a03596e9882e024f3/1510063909191-NSM2XPOQSW5DJ22SP832/Yellow-Green+Octopus_xsm.jpg?format=1500w');
+        background-attachment: fixed;
+        background-position: top;
+        background-repeat: no-repeat;
+        min-height: 8em;
+    }
+</style>
 <div class="intro">
     Hello! <br>My name is Amanda, my mother is a former geneticist who came to Jamaica in the 1980s and helped develop the SCUBA industry - ever heard of <a id="hoverable">SUNDIVERS?<img src="{{ url_for('static', filename='images/sundivers.jpeg') }}" style="visibility:hidden" onmouseover = "show()" id="hoverable"></a>(Fundivers
     if you're younger).
