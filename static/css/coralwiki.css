@@ -296,6 +296,8 @@ a.ref:hover {
 
 /************** BACK TO TOP BUTTON ***********/
 
+.sidebar {}
+
 @-webkit-keyframes AnimationName {
     0% {
         background-position: 0% 50%;

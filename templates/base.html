@@ -4,7 +4,48 @@
 {% block head %}
 
 <head>
-    {% block title %}
+
+    {% block scripts %}
+    <!--JavaScript-->
+    <script type="text/javascript">
+        document.getElementById("hoverable").onmouseover = function() {
+            show()
+        };
+
+        function show() {
+            document.getElementById("hoverable").style.visibility = 'visible';
+        }
+    </script>
+    <!-- back to top button -->
+    <script>
+        //Make sure the user has scrolled at least 1.5x the height of the browser
+        var toggleHeight = $(window).outerHeight() * 1;
+
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > toggleHeight) {
+                //Adds active class to make button visible
+                $(".m-backtotop").addClass("active");
+
+            } else {
+                //Removes active class to make button visible
+                $(".m-backtotop").removeClass("active");
+
+
+            }
+        });
+
+
+        //Scrolls the user to the top of the page again
+        $(".m-backtotop").click(function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, "slow");
+            return false;
+        });
+    </script>
+
+
+    {% endblock %} {% block title %}
     <!-- Title and icon that show in browser tab -->
     <title>Coral Wiktionary</title>
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/acholyn/coral-wiki/main/images/coral.png" type="image/x-icon" /> {% endblock %}
@@ -40,7 +81,7 @@
         </div>
         <div class="logos">
             <!--CRC-->
-            <img src="https://raw.githubusercontent.com/acholyn/coral-wiki/main/images/CRC.png" width="100px">
+            <img src="https://raw.githubusercontent.com/acholyn/coral-wiki/main/images/SC_vectorLogo%20crop.png" width="100px">
         </div>
     </div>
 </div>
@@ -72,42 +113,7 @@
     <footer class="footer">
         <p class="footer">The Coral Culture & Restoration Wiktionary &copy; 2021 </p>
     </footer>
-    {% endblock %} {% block scripts %}
-    <!--JavaScript-->
-    <script type="text/javascript">
-        function show() {
-            document.getElementById('hoverable').style.visibility = 'visible';
-        }
-    </script>
-    <!-- back to top button -->
-    <script>
-        //Make sure the user has scrolled at least 1.5x the height of the browser
-        var toggleHeight = $(window).outerHeight() * 1;
-
-        $(window).scroll(function() {
-            if ($(window).scrollTop() > toggleHeight) {
-                //Adds active class to make button visible
-                $(".m-backtotop").addClass("active");
-
-            } else {
-                //Removes active class to make button visible
-                $(".m-backtotop").removeClass("active");
-
-
-            }
-        });
-
-
-        //Scrolls the user to the top of the page again
-        $(".m-backtotop").click(function() {
-            $("html, body").animate({
-                scrollTop: 0
-            }, "slow");
-            return false;
-        });
-    </script>
+    {% endblock %}
 </body>
-
-{% endblock %}
 
 </html>
