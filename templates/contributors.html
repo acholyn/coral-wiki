@@ -1,24 +1,50 @@
 {% extends 'base.html'%} {% block content %} {% block pagetitle %}
 <div class="pagetitle">Our Contributors</div>
-<hr> {% endblock %}
-<h2 style="text-align: center;">We'd like to thank our sponsors and contributors for all of their support.</h2>
-<p style="font-size: .8em; text-align:center">If you're interested in getting involved, please contact us using the form below or send us an
-    <a href="mailto:lab.amanda.ch@gmail.com?subject=Coral Wiktionary">email</a> and we'll get back to you as soon as we can.</p>
+<!-- Tab links -->
+<div class="tab">
+    <button class="tablinks" onclick="openState(event, 'Currentcont')">Current</button>
+    <button class="tablinks" onclick="openState(event, 'Newcont')">New</button>
+</div>
 
-<h3 style="font-weight: 300; color:#708a94; margin-top:20px">Contact Us</h3>
-<div class="formarea" style="
-        background-image: url('https://images.squarespace-cdn.com/content/v1/59c92f5a03596e9882e024f3/1506534600018-72HI7LSQ85PE0SR108AK/fullsizeoutput_3251.jpeg?format=1500w');
+<hr> {% endblock %}
+<style>
+    body {
+        background-image: url('https://images.squarespace-cdn.com/content/v1/59c92f5a03596e9882e024f3/1506535437819-DAEB40IYRXSIUCKBMCSU/FullSizeRender.jpg?format=1500w');
         background-attachment: fixed;
         background-position: center;
-        background-repeat: space">
-    <form id="form" class="topBefore contact">
+        background-repeat: space;
+    }
+</style>
+<div class="page">
+    <!-- Current Contributors -->
+    <div id="Currentcont" class="tabcontent">
+        <div class="container">
+            <h2>Thank you to our contributors</h2>
+            <p>logos here</p>
+        </div>
+    </div>
 
-        <input class="contact" id="name" type="text" placeholder="NAME">
-        <input class="contact" id="email" type="text" placeholder="E-MAIL">
-        <textarea class="contact" id="message" type="text" placeholder="MESSAGE"></textarea>
-        <input class="contact" id="submit" type="submit" value="Submit">
+    <!-- New Contributors -->
+    <div class="tabcontent" id="Newcont">
+        <div class="container" style="padding: 1em 0.5em;">
+            <h2 style="text-align: center;">We'd like to thank our sponsors and contributors for all of their support.</h2>
+            <p style="font-size: .8em; text-align:center">If you're interested in getting involved, please contact us using the form below or send us an
+                <a href="mailto:lab.amanda.ch@gmail.com?subject=Coral Wiktionary">email</a> and we'll get back to you as soon as we can.</p>
+            <!-- Contact Form -->
+            <h3 style="font-weight: 300; color:#708a94; margin-top:20px">Contact Us</h3>
 
-    </form>
+            <form id="form" class="topBefore contact" action="https://formspree.io/f/xqkwlneg" method="post">
+
+                <input class="contact" id="name" type="text" name="name" placeholder="NAME">
+                <input class="contact" name="_replyto" id="email" type="text" placeholder="E-MAIL">
+                <textarea class="contact" name="message" id="message" type="text" placeholder="MESSAGE"></textarea>
+                <input class="contact" id="submit" type="submit" value="Submit">
+
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <p style="font-size: .8em; text-align:center">Click <a href="https://www.susanclare.art/#/underwater/">here</a> if you're interested in the artwork used on this site. All pieces created by Susan Clare&copy;</p>
+    </div>
 </div>
-<p style="font-size: .8em; text-align:center">Click <a href="https://www.susanclare.art/#/underwater/">here</a> if you're interested in the artwork used on this site. All pieces created by Susan Clare&copy;</p>
 {% endblock %}

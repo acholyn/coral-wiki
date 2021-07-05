@@ -5,56 +5,13 @@
 
 html,
 body {
+    display: block;
     min-height: 70%;
     width: 100%;
+    position: relative;
+    left: auto;
+    right: auto;
     margin: 0;
-}
-
-.header {
-    display: inline-flex;
-    background-color: #9ae7ee;
-    background-image: url('https://www.blessed-midland.org/wp-content/uploads/2018/07/marko-blazevic-299203-2048x1366.jpg');
-    background-blend-mode: soft-light;
-    background-position: center;
-    text-align: center;
-    padding: 15px;
-    width: 100%;
-}
-
-nav {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-.navstrip {
-    width: 20em;
-    display: inline-flexbox;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-nav>a {
-    color: #3872b4;
-}
-
-nav>a:hover {
-    color: #54c1df;
-}
-
-.nav-item {
-    display: inline-block;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: .8em;
-    font-family: 'Open sans';
-    justify-content: space-around;
-    padding: 10px;
 }
 
 .row {
@@ -78,16 +35,14 @@ nav>a:hover {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
-h1 {
-    padding-left: 20px;
-    padding-right: 20px;
-    font: 2em 'Cinzel Decorative';
-}
-
-h2 {
-    font: 0.9em 'Cinzel Decorative';
-    font-weight: 300;
-    color: #2f4953;
+.header {
+    display: inline-flex;
+    background-color: #9ae7ee;
+    background-image: url('https://www.blessed-midland.org/wp-content/uploads/2018/07/marko-blazevic-299203-2048x1366.jpg');
+    background-blend-mode: soft-light;
+    background-position: center;
+    text-align: center;
+    width: inherit;
 }
 
 .logos {
@@ -103,32 +58,22 @@ h2 {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    min-height: 20em;
+    min-height: 13em;
 }
 
 .container {
     font-family: 'Open Sans';
     display: grid, flex;
+    padding: 0.25em;
     width: 100%;
     margin: auto;
     border-spacing: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    background-blend-mode: hard-light;
 }
 
-footer {
-    display: flex;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    background-color: #54c1df;
-    padding: 10px;
-}
 
-p.footer {
-    font: .8em 'Cinzel Decorative';
-    color: #fff;
-    margin-left: auto;
-    margin-right: auto;
-}
+/******* text styling *********/
 
 p {
     font-family: 'Open Sans';
@@ -137,44 +82,88 @@ p {
     padding: 15px;
 }
 
-#button {
-    display: inline-block;
-    background-color: #20c3e0bd;
-    width: 50px;
-    height: 50px;
+h1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    font: 2em 'Cinzel Decorative';
+}
+
+h2 {
+    font: 0.9em 'Cinzel Decorative';
+    font-weight: 300;
+    color: #2f4953;
+}
+
+h3 {
+    position: relative;
+    margin: auto;
+    font-size: 1.3em;
     text-align: center;
-    border-radius: 4px;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    transition: background-color .3s, opacity .5s, visibility .5s;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
+    letter-spacing: 7px;
+    font-family: 'Lato', sans-serif;
 }
 
-#button::after {
-    content: "\f077";
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 2em;
-    line-height: 50px;
+a {
+    text-decoration: none;
+    color: #0991a3;
+}
+
+
+/******* NAV *******/
+
+nav {
+    width: inherit;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navstrip {
+    width: 20em;
+    display: inline-flexbox;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav>a {
+    color: #3e8ce6;
+}
+
+nav>a:hover {
+    color: #54c1df;
+}
+
+.nav-item {
+    display: inline-block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: .8em;
+    font-family: 'Open sans';
+    justify-content: space-around;
+    padding: 10px;
+}
+
+
+/******* FOOTER ********/
+
+footer {
+    display: grid;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    background-color: #54c1df;
+    padding: 10px 0;
+}
+
+p.footer {
+    font: .8em 'Cinzel Decorative';
     color: #fff;
-}
-
-#button:hover {
-    cursor: pointer;
-    background-color: #333;
-}
-
-#button:active {
-    background-color: #555;
-}
-
-#button.show {
-    opacity: 1;
-    visibility: visible;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -188,6 +177,12 @@ p {
     background-blend-mode: hard-light;
 }
 
+ul {
+    margin-block-start: 0.5em;
+    margin-block-end: 1.5em;
+    padding: 0.5em 1.5em;
+}
+
 li {
     font-family: 'Open Sans';
     text-align: left;
@@ -196,22 +191,17 @@ li {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-    color: #0c42b8;
-}
-
 a:hover:not(.header) {
-    color: #3872b4;
+    color: #2693db;
     /* Add a hover effect to all links, except for headers */
 }
 
 a.item {
-    color: #081e8f;
+    color: #0761b6;
 }
 
 a.item:hover:not(.header) {
-    color: #0923a0;
+    color: #0a49bd;
     font-size: 105%;
     /* Add a hover effect to all links, except for headers */
 }
@@ -235,6 +225,8 @@ a.ref:hover {
     background-blend-mode: hard-light;
     font: 300 1em Open Sans;
     text-align: center;
+    padding: .2em;
+    line-height: 1.4em;
 }
 
 #hoverable {
@@ -314,303 +306,61 @@ a.ref:hover {
 }
 
 
-/************** BACK TO TOP BUTTON ***********/
+/**************CONTRIBUTORS****************/
 
-.sidebar {
-    @-webkit-keyframes AnimationName {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
-    @-moz-keyframes AnimationName {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
-    @keyframes AnimationName {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
-}
 
-.m-backtotop {
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    position: fixed;
-    bottom: -50px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background: rgb(5, 84, 148);
-    border-radius: 25px;
-    text-align: center;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    opacity: 0;
+/* Style the tab */
+
+.tab {
     overflow: hidden;
-    color: #fff;
-}
-
-.m-backtotop.active {
-    bottom: 15px;
-    opacity: 1;
-}
-
-.m-backtotop>div {
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}
-
-.m-backtotop>div.arrow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    opacity: 1;
-}
-
-.m-backtotop>div.text {
-    font-size: .3em;
-    font-size: 0.5rem;
-    line-height: 10px;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-family: 'Open Sans', sans-serif;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateY(50%) translateX(-50%);
-    opacity: 0;
-    margin-top: 1px;
-}
-
-.m-backtotop:hover {
-    transform: scale(1.1);
-    bottom: 20px;
-    cursor: pointer;
-    background: rgb(7, 81, 179);
-    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
-}
-
-.m-backtotop:hover>div.arrow {
-    transform: translateY(-150%) translateX(-50%);
-    opacity: 0;
-}
-
-.m-backtotop:hover>div.text {
-    transform: translateY(-50%) translateX(-50%);
-    opacity: 1;
-}
-
-
-/************** CONTACT FORM **************/
-
-#formarea {
-    margin-left: auto;
-    margin-right: auto;
-    width: 85%;
-    background-color: #ffffffe7;
-    background-blend-mode: hard-light;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
-.contact input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-    color: #78c1e9;
-    font-size: 0.875em;
-}
-
-.contact input:focus::-webkit-input-placeholder,
-textarea:focus::-webkit-input-placeholder {
-    color: #afc9f0;
-}
-
-.contact input::-moz-placeholder,
-textarea::-moz-placeholder {
-    color: #78c1e9;
-    font-size: 0.875em;
-}
-
-.contact input:focus::-moz-placeholder,
-textarea:focus::-moz-placeholder {
-    color: #afc9f0;
-}
-
-.contact input::placeholder,
-textarea::placeholder {
-    color: #78c1e9;
-    font-size: 0.875em;
-}
-
-.contact input:focus::placeholder,
-textarea::focus:placeholder {
-    color: #afc9f0;
-}
-
-.contact input::-ms-placeholder,
-textarea::-ms-placeholder {
-    color: #78c1e9;
-    font-size: 0.875em;
-}
-
-.contact input:focus::-ms-placeholder,
-textarea:focus::-ms-placeholder {
-    color: #b7cae7;
-}
-
-
-/* on hover placeholder */
-
-.contact input:hover::-webkit-input-placeholder,
-textarea:hover::-webkit-input-placeholder {
-    color: #3d4dda;
-    font-size: 0.875em;
-}
-
-.contact input:hover:focus::-webkit-input-placeholder,
-textarea:hover:focus::-webkit-input-placeholder {
-    color: #7fb3d6;
-}
-
-.contact input:hover::-moz-placeholder,
-textarea:hover::-moz-placeholder {
-    color: #3d4dda;
-    font-size: 0.875em;
-}
-
-.contact input:hover:focus::-moz-placeholder,
-textarea:hover:focus::-moz-placeholder {
-    color: #7fb3d6;
-}
-
-.contact input:hover::placeholder,
-textarea:hover::placeholder {
-    color: #3d4dda;
-    font-size: 0.875em;
-}
-
-.contact input:hover:focus::placeholder,
-textarea:hover:focus::placeholder {
-    color: #7fb3d6;
-}
-
-.contact input:hover::placeholder,
-textarea:hover::placeholder {
-    color: #3d4dda;
-    font-size: 0.875em;
-}
-
-.contact input:hover:focus::-ms-placeholder,
-textarea:hover::focus:-ms-placeholder {
-    color: #7fb3d6;
-}
-
-form {
-    font-family: 'Lato', sans-serif;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgba(255, 255, 255, 0.911);
-    padding: .5em
-}
-
-h3 {
-    position: relative;
-    margin: auto;
-    font-size: 1.3em;
+    background-color: rgba(255, 255, 255, 0.9);
     text-align: center;
-    letter-spacing: 7px;
-    font-family: 'Lato', sans-serif;
 }
 
-#form {
-    position: relative;
-    width: 500px;
-    margin: 25px auto 100px auto;
-}
 
-input {
-    font-family: 'Lato', sans-serif;
-    font-size: 0.875em;
-    width: 470px;
-    height: 50px;
-    padding: 0px 15px 0px 15px;
-    background: transparent;
-    outline: none;
-    color: #92b6df;
-    border: solid 1px #829abe;
-    border-bottom: none;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-}
+/* Style the buttons that are used to open the tab content */
 
-.contact input:hover {
-    background: #a5d1ee60;
-    color: #2e65db;
-}
-
-textarea {
-    width: 470px;
-    max-width: 470px;
-    height: 110px;
-    max-height: 110px;
-    padding: 15px;
-    background: transparent;
-    outline: none;
-    color: #92b6df;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.875em;
-    border: solid 1px #829abe;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-}
-
-textarea:hover {
-    background: #a5d1ee60;
-    color: #3d4dda;
-}
-
-#submit {
-    width: 502px;
-    padding: 0;
-    margin: -5px 0px 0px 0px;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.875em;
-    color: #198b86b2;
+.tab button {
+    background-color: inherit;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
     outline: none;
     cursor: pointer;
-    border: solid 1px #829abe;
-    border-top: none;
+    padding: 14px 16px;
+    transition: 0.3s;
 }
 
-#submit:hover {
-    color: #3d4dda;
+
+/* Change background color of buttons on hover */
+
+.tab button:hover {
+    background-color: rgb(244, 251, 253);
+}
+
+
+/* Create an active/current tablink class */
+
+.tab button.active {
+    background-color: rgba(195, 247, 227, 0.904);
+}
+
+
+/* Style the tab content */
+
+.tabcontent {
+    display: none;
+    padding: 1em 0.5em;
+    background-color: inherit;
+}
+
+
+/********* CONTACT FORM *******/
+
+#Newcont {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    background-color: inherit;
 }

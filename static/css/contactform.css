@@ -1,0 +1,169 @@
+/* Contact Form Styling */
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+.contact input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #78c1e9;
+    font-size: 0.875em;
+}
+
+.contact input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+    color: #afc9f0;
+}
+
+.contact input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #78c1e9;
+    font-size: 0.875em;
+}
+
+.contact input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+    color: #afc9f0;
+}
+
+.contact input::placeholder,
+textarea::placeholder {
+    color: #78c1e9;
+    font-size: 0.875em;
+}
+
+.contact input:focus::placeholder,
+textarea::focus:placeholder {
+    color: #afc9f0;
+}
+
+.contact input::-ms-placeholder,
+textarea::-ms-placeholder {
+    color: #78c1e9;
+    font-size: 0.875em;
+}
+
+.contact input:focus::-ms-placeholder,
+textarea:focus::-ms-placeholder {
+    color: #b7cae7;
+}
+
+
+/* on hover placeholder */
+
+.contact input:hover::-webkit-input-placeholder,
+textarea:hover::-webkit-input-placeholder {
+    color: #3d4dda;
+    font-size: 0.875em;
+}
+
+.contact input:hover:focus::-webkit-input-placeholder,
+textarea:hover:focus::-webkit-input-placeholder {
+    color: #7fb3d6;
+}
+
+.contact input:hover::-moz-placeholder,
+textarea:hover::-moz-placeholder {
+    color: #3d4dda;
+    font-size: 0.875em;
+}
+
+.contact input:hover:focus::-moz-placeholder,
+textarea:hover:focus::-moz-placeholder {
+    color: #7fb3d6;
+}
+
+.contact input:hover::placeholder,
+textarea:hover::placeholder {
+    color: #3d4dda;
+    font-size: 0.875em;
+}
+
+.contact input:hover:focus::placeholder,
+textarea:hover:focus::placeholder {
+    color: #7fb3d6;
+}
+
+.contact input:hover::placeholder,
+textarea:hover::placeholder {
+    color: #3d4dda;
+    font-size: 0.875em;
+}
+
+.contact input:hover:focus::-ms-placeholder,
+textarea:hover::focus:-ms-placeholder {
+    color: #7fb3d6;
+}
+
+form {
+    font-family: 'Lato', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.911);
+    padding: .5em
+}
+
+#form {
+    position: relative;
+    width: 500px;
+    margin: 25px auto 100px auto;
+}
+
+input {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    width: 470px;
+    height: 50px;
+    padding: 0px 15px 0px 15px;
+    background: transparent;
+    outline: none;
+    color: #92b6df;
+    border: solid 1px #829abe;
+    border-bottom: none;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+.contact input:hover {
+    background: #a5d1ee60;
+    color: #2e65db;
+}
+
+textarea {
+    width: 470px;
+    max-width: 470px;
+    height: 110px;
+    max-height: 110px;
+    padding: 15px;
+    background: transparent;
+    outline: none;
+    color: #92b6df;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    border: solid 1px #829abe;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+textarea:hover {
+    background: #a5d1ee60;
+    color: #3d4dda;
+}
+
+#submit {
+    width: 502px;
+    padding: 0;
+    margin: -5px 0px 0px 0px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    color: #198b86b2;
+    outline: none;
+    cursor: pointer;
+    border: solid 1px #829abe;
+    border-top: none;
+}
+
+#submit:hover {
+    color: #3d4dda;
+}
