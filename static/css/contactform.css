@@ -1,6 +1,15 @@
 /* Contact Form Styling */
 
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+.contact {
+    align-content: center;
+    align-items: center;
+    width: 85%;
+    padding: 1em;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 .contact input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
     color: #78c1e9;
@@ -97,21 +106,21 @@ form {
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(255, 255, 255, 0.911);
-    padding: .5em
+    padding: 1.2em
 }
 
 #form {
     position: relative;
-    width: 500px;
+    width: 80%;
     margin: 25px auto 100px auto;
 }
 
 input {
     font-family: 'Lato', sans-serif;
     font-size: 0.875em;
-    width: 470px;
+    /* width: 90%;
     height: 50px;
-    padding: 0px 15px 0px 15px;
+    padding: 0px 15px 0px 15px; */
     background: transparent;
     outline: none;
     color: #92b6df;
@@ -129,11 +138,11 @@ input {
 }
 
 textarea {
-    width: 470px;
-    max-width: 470px;
-    height: 110px;
+    width: inherit;
+    /* max-width: 80%; */
+    /* height: 110px;
     max-height: 110px;
-    padding: 15px;
+    padding: 15px; */
     background: transparent;
     outline: none;
     color: #92b6df;
@@ -152,16 +161,18 @@ textarea:hover {
 }
 
 #submit {
-    width: 502px;
-    padding: 0;
-    margin: -5px 0px 0px 0px;
+    width: 70%;
+    padding: 2em;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: auto;
     font-family: 'Lato', sans-serif;
     font-size: 0.875em;
     color: #198b86b2;
     outline: none;
     cursor: pointer;
     border: solid 1px #829abe;
-    border-top: none;
+    /* border-top: none; */
 }
 
 #submit:hover {
