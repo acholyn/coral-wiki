@@ -235,7 +235,9 @@ a.ref:hover {
 }
 
 #SCA {
-    width: 400px;
+    width: 20em;
+    min-width: 5em;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
 }
