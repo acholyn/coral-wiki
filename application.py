@@ -6,6 +6,8 @@ from flask_wtf import FlaskForm
 from wtforms import SubmitField
 from flask_mysqldb import MySQL 
 import MySQLdb.cursors
+import mysql.connector
+
 
 #######################################################
 # run sudo yum install -y mysql-devel on the instance #
@@ -46,7 +48,9 @@ mysql = MySQL(application)
 def index():
 
     #Creating a connection cursor to interact with the tables
-    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cnx = mysql.connector.connect(user='master', database='CCRW', host='coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com', port='3306', password='CoralWiki2021')
+    cursor = cnx.cursor()
    
     # defsdata=cursor.execute('SELECT Term,Type,Definition,Referrals FROM CCRW.CoralDefinitions' )
     cursor.execute("SELECT * FROM CCRW.CoralDefinitions")
