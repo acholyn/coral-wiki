@@ -57,7 +57,7 @@ def index():
         "user": "master",
         "password": "CoralWiki2021",
         "cursorclass": pymysql.cursors.DictCursor,
-        "database": "CCRW"
+        "database": "CCRW.CoralDefinitions"
     }
     conn = pymysql.connect(**conf)
     cursor = conn.cursor()
