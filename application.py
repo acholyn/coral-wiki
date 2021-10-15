@@ -10,6 +10,8 @@ from flask_mysql_connector import MySQL
 # import MySQLdb.cursors
 import mysql.connector
 import pymysql
+import pymysql.cursors
+
 
 
 #######################################################
@@ -50,7 +52,7 @@ conf = {
     "user": "master",
     "password": "CoralWiki2021",
     "cursorclass": pymysql.cursors.DictCursor,
-    "database": "CCRW.CoralDefinitions"
+    "database": "CCRW"
 }
 
 
@@ -61,7 +63,7 @@ def index():
     # use pymysql cursor
     conn = pymysql.connect(**conf)
     cursor = conn.cursor()
-    defsdata=cursor.execute("SELECT * FROM test")
+    defsdata=cursor.execute("SELECT * FROM CoralDefinitions")
 
 
 
