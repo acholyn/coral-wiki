@@ -5,10 +5,10 @@ from flask_fontawesome import FontAwesome
 from flask_wtf import FlaskForm
 from wtforms import SubmitField
 from flask_mysqldb import MySQL 
-from flask_mysql_connector import MySQL
+# from flask_mysql_connector import MySQL
 # import MySQLdb.connections
 # import MySQLdb.cursors
-import mysql.connector
+# import mysql.connector
 import pymysql
 import pymysql.cursors
 
@@ -56,6 +56,16 @@ conf = {
 }
 
 
+# # for local testing
+# conf = {
+#     "host": 'localhost',
+#     "unix_socket": '/tmp/mysql.sock',
+#     "user": "amanda",
+#     "password": '',
+#     "cursorclass": pymysql.cursors.DictCursor,
+#     "database": "CCRW"
+# }
+
 # define actions for home page
 @application.route('/')
 def index():
@@ -64,7 +74,7 @@ def index():
     conn = pymysql.connect(**conf)
     cursor = conn.cursor()
     defsdata=cursor.execute("SELECT * FROM CoralDefinitions")
-
+    defsdata = cursor.fetchall()
 
 
     # #Creating a connection cursor to interact with the tables

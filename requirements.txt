@@ -1,4 +1,3 @@
-# imports for coral wiki
 click==7.1.2
 Flask==1.1.2
 Flask-FontAwesome==0.1.5
