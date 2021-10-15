@@ -214,6 +214,15 @@ a.ref:hover {
     color: #4a758d;
 }
 
+#term {
+    color: #0a49bd;
+    font-size: 105%;
+}
+
+#type {
+    font-style: italic;
+}
+
 
 /************* ABOUT ***************/
 

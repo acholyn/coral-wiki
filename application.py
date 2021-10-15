@@ -1,75 +1,56 @@
-# imports for online file reading
-import csv
-import shutil
-import tempfile
-import urllib.request
-import re
-
-import pandas
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, render_template, url_for, redirect, request 
+# from flask_sqlalchemy import SQLAlchemy
 #from flask_bootstrap import Bootstrap
 from flask_fontawesome import FontAwesome
 from flask_wtf import FlaskForm
-# imports for search
-from wtforms import Form, SelectField, StringField, SubmitField
+from wtforms import SubmitField
+from flask_mysqldb import MySQL 
+import MySQLdb.cursors
 
-# set the app up
+
 def create_app():
     application = Flask(__name__)
-    #FontAwesome(application)
+    FontAwesome(application)
     application.config['SECRET_KEY'] = 'change this unsecure key' #need for search
     application.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
+
+    # Coral db at coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com or ip-10-20-0-201
+    # db connection configuration, the schema(db) is CCRW
+    application.config['MYSQL_DATABASE_HOST'] = 'coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com'
+    application.config['MYSQL_DATABASE_PORT'] = '3306'
+    application.config['MYSQL_DATABASE_USER'] = 'master'
+    application.config['MYSQL_DATABASE_PASSWORD'] = 'CoralWiki2021'
+    application.config['MYSQL_DATABASE_DB'] = 'CCRW'
+
+
+    # # for local testing: amanda@localhost::/tmp/mysql.sock
+    # application.config['MYSQL_DATABASE_HOST'] = 'localhost'
+    # application.config['MYSQL_UNIX_SOCKET'] = '/tmp/mysql.sock'
+    # application.config['MYSQL_DATABASE_USER'] = 'amanda'
+    # application.config['MYSQL_DATABASE_PASSWORD'] = ''
+    # application.config['MYSQL_DB'] = 'CCRW'
+
     
     return application
 
-
 application = create_app()
+mysql = MySQL(application)
+# mysql.init_app(application)
 
-# define action for home page
+
+
+# define actions for home page
 @application.route('/')
 def index():
 
-# #searchform actions
-#     class searchform(Form):
-#         choices = [('term', 'term'),
-#                 ('type', 'type'),
-#                 ('description', 'description')]
-#         select = SelectField('search:', choices=choices)
-#         search = StringField('')
+    #Creating a connection cursor to interact with the tables
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+   
+    # defsdata=cursor.execute('SELECT Term,Type,Definition,Referrals FROM CCRW.CoralDefinitions' )
+    cursor.execute("SELECT * FROM CCRW.CoralDefinitions")
+    defsdata = cursor.fetchall()
 
-#     # search = searchform(request.form)
-#     # if request.method == 'post':
-#     #         return search_results(search)
-
-#     results = []
-#     search_string = search.data['search']
-
-# definitions
-
-    with urllib.request.urlopen('https://docs.google.com/spreadsheets/d/e/2PACX-1vS8dVMITvA6q77MTBe4SShI9Q85G4A_3Y5C8xx7n-BLinoxOW0y7zI59qoLxgwQ0Aql-I_MBye1UY6G/pub?gid=0&single=true&output=tsv') as response:
-        with tempfile.NamedTemporaryFile(delete=False, mode='w+b') as tmp_file:
-            shutil.copyfileobj(response, tmp_file)
-
-            with open(tmp_file.name) as file:
-                coraldefs=pandas.read_csv(file, sep="\t", keep_default_na=False)
-                term=coraldefs.TERM
-                role=coraldefs.ROLE 
-                definition=coraldefs.DEFINITION 
-                referrals=coraldefs.REFERRALS
-                length=len(coraldefs) # for jinja loop
-
-        # r=[]
-        # for i in coraldefs.index:
-        #     ref=re.sub(r'(See\salso\b)\s(.*)\.$',r'\1 <a href="\2"> \2 </a>', refs[i])
-        #     r.append(ref) 
-        # df=pandas.DataFrame(r,columns=["refs"])
-
-        # referrals=df.refs
-
-
-    return render_template('index.html', coraldefs=coraldefs, term=term, role=role, definition=definition, referrals=referrals)
-
-
+    return render_template('index.html', defsdata=defsdata)
 
 # define action for contributor page
 @application.route('/contributors')
@@ -92,3 +73,5 @@ def add_header(response):
 
 if __name__ == "__main__":
     application.run(debug=True)
+
+    # export FLASK_APP=application.py

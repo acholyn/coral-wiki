@@ -22,10 +22,11 @@
 <!-- list of definitions -->
 <div class="container" id="DICT">
     <ul class="terms">
-        {% for i in coraldefs.index %}
-        <li><a class="item" name="{{ term[i]|trim }}">{{ term[i] }}</a><i> ({{ role[i] }}) </i> <br> {{ definition[i] }} {%if referrals[i] != "" %}{% print %} See also <a href="#{{ referrals[i] }}">{{ referrals[i] }} </a>{% endif%}
-        </li>
-        {% endfor %}
+        <!-- print each item in the database without ID number. If statement included because not all have referrals -->
+        {% for i in defsdata %} {%print%}
+        <br><a id="term" name="{{ i.Term|trim }}">{{i.Term}}</a>
+        <var id="type">{{(i.Type)}}</var> <br> {{i.Definition}} {% if i.Referrals %} See also <a href="#{{i.Referrals}}">{{i.Referrals}} </a> <br><br> {% else %} <br> {% endif %}{% endfor %}<br><br>
+
     </ul>
 
     <div class="sidebar">
