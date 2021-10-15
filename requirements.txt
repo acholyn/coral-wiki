@@ -12,3 +12,7 @@ Flask_FontAwesome==0.1.5
 Flask==1.1.2
 Flask_WTF==0.14.3
 pandas==1.2.4
+Flask-MySQLdb==0.2.0
+mysqlclient==2.0.3
+prometheus-client==0.10.1
+PyMySQL==1.0.2
