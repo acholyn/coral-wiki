@@ -49,7 +49,7 @@ def index():
 
     #Creating a connection cursor to interact with the tables
     # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cnx = mysql.connector.connect(user='master', database='CCRW', host='coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com', port='3306', password='CoralWiki2021')
+    cnx = mysql.connector.connect(user='master', password='CoralWiki2021', host='coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com', port='3306', database='CCRW')
     cursor = cnx.cursor()
    
     # defsdata=cursor.execute('SELECT Term,Type,Definition,Referrals FROM CCRW.CoralDefinitions' )
