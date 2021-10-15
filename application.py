@@ -43,22 +43,22 @@ def create_app():
 application = create_app()
 mysql = MySQL(application)
 
-
+# trying to connect with pymysql - config
+conf = {
+    "host": 'coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com',
+    "port": 3306,
+    "user": "master",
+    "password": "CoralWiki2021",
+    "cursorclass": pymysql.cursors.DictCursor,
+    "database": "CCRW.CoralDefinitions"
+}
 
 
 # define actions for home page
 @application.route('/')
 def index():
 
-    # trying to connect with pymysql
-    conf = {
-        "host": 'coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com',
-        "port": 3306,
-        "user": "master",
-        "password": "CoralWiki2021",
-        "cursorclass": pymysql.cursors.DictCursor,
-        "database": "CCRW.CoralDefinitions"
-    }
+    # use pymysql cursor
     conn = pymysql.connect(**conf)
     cursor = conn.cursor()
     defsdata=cursor.execute("SELECT * FROM test")
