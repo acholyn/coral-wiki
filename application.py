@@ -7,6 +7,9 @@ from wtforms import SubmitField
 from flask_mysqldb import MySQL 
 import MySQLdb.cursors
 
+#######################################################
+# run sudo yum install -y mysql-devel on the instance #
+#######################################################
 
 def create_app():
     application = Flask(__name__)
@@ -16,12 +19,6 @@ def create_app():
 
     # Coral db at coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com or ip-10-20-0-201
     # db connection configuration, the schema(db) is CCRW
-    application.config['MYSQL_DATABASE_HOST'] = 'coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com'
-    application.config['MYSQL_DATABASE_PORT'] = '3306'
-    application.config['MYSQL_DATABASE_USER'] = 'master'
-    application.config['MYSQL_DATABASE_PASSWORD'] = 'CoralWiki2021'
-    application.config['MYSQL_DATABASE_DB'] = 'CCRW'
-
 
     # # for local testing: amanda@localhost::/tmp/mysql.sock
     # application.config['MYSQL_DATABASE_HOST'] = 'localhost'
@@ -29,7 +26,12 @@ def create_app():
     # application.config['MYSQL_DATABASE_USER'] = 'amanda'
     # application.config['MYSQL_DATABASE_PASSWORD'] = ''
     # application.config['MYSQL_DB'] = 'CCRW'
-
+    
+    application.config['MYSQL_DATABASE_HOST'] = 'coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com'
+    application.config['MYSQL_DATABASE_PORT'] = '3306'
+    application.config['MYSQL_DATABASE_USER'] = 'master'
+    application.config['MYSQL_DATABASE_PASSWORD'] = 'CoralWiki2021'
+    application.config['MYSQL_DATABASE_DB'] = 'CCRW'
     
     return application
 
