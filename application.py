@@ -5,9 +5,11 @@ from flask_fontawesome import FontAwesome
 from flask_wtf import FlaskForm
 from wtforms import SubmitField
 from flask_mysqldb import MySQL 
+from flask_mysql_connector import MySQL
 # import MySQLdb.connections
 # import MySQLdb.cursors
 import mysql.connector
+import pymysql
 
 
 #######################################################
@@ -40,26 +42,38 @@ def create_app():
 
 application = create_app()
 mysql = MySQL(application)
-# mysql.init_app(application)
 
+# trying to connect with pymysql
+conf = {
+    "host": 'coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com',
+    "port": 3306,
+    "user": "master",
+    "passwd": "CoralWiki2021",
+    "charset": "utf8mb4",
+    "cursorclass": pymysql.cursors.DictCursor,
+    "database": "CCRW.CoralDefinitions"
+}
+conn = pymysql.connect(**conf)
+cursor = conn.cursor()
+defsdata=cursor.execute("SELECT * FROM test")
 
 
 # define actions for home page
 @application.route('/')
 def index():
 
-    #Creating a connection cursor to interact with the tables
-    # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cnx = mysql.connector.connect(user='master',
-     password='CoralWiki2021', 
-     host='coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com', 
-     port='3306', 
-     database='CCRW')
-    cursor = cnx.cursor()
+    # #Creating a connection cursor to interact with the tables
+    # # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    # cnx = mysql.connector.connect(user='master',
+    #  password='CoralWiki2021', 
+    #  host='coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com', 
+    #  port='3306', 
+    #  database='CCRW')
+    # cursor = cnx.cursor()
    
-    # defsdata=cursor.execute('SELECT Term,Type,Definition,Referrals FROM CCRW.CoralDefinitions' )
-    cursor.execute("SELECT * FROM CCRW.CoralDefinitions")
-    defsdata = cursor.fetchall()
+    # # defsdata=cursor.execute('SELECT Term,Type,Definition,Referrals FROM CCRW.CoralDefinitions' )
+    # cursor.execute("SELECT * FROM CCRW.CoralDefinitions")
+    # defsdata = cursor.fetchall()
 
     return render_template('index.html', defsdata=defsdata)
 
