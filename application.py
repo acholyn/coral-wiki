@@ -5,6 +5,7 @@ from flask_fontawesome import FontAwesome
 from flask_wtf import FlaskForm
 from wtforms import SubmitField
 from flask_mysqldb import MySQL 
+import MySQLdb.connections
 import MySQLdb.cursors
 import mysql.connector
 
@@ -49,7 +50,7 @@ def index():
 
     #Creating a connection cursor to interact with the tables
     # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cnx = mysql.connector.connect(user='master', password='CoralWiki2021', host='coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com', port='3306', database='CCRW')
+    cnx = MySQLdb.Connection.connect(user='master', password='CoralWiki2021', host='coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com', port='3306', database='CCRW')
     cursor = cnx.cursor()
    
     # defsdata=cursor.execute('SELECT Term,Type,Definition,Referrals FROM CCRW.CoralDefinitions' )
