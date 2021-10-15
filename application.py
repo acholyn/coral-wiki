@@ -55,17 +55,16 @@ def index():
         "host": 'coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com',
         "port": 3306,
         "user": "master",
-        "passwd": "CoralWiki2021",
-        "charset": "utf8mb4",
+        "password": "CoralWiki2021",
         "cursorclass": pymysql.cursors.DictCursor,
-        "database": "CCRW.CoralDefinitions"
+        "database": "CCRW"
     }
     conn = pymysql.connect(**conf)
     cursor = conn.cursor()
     defsdata=cursor.execute("SELECT * FROM test")
 
 
-    
+
     # #Creating a connection cursor to interact with the tables
     # # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     # cnx = mysql.connector.connect(user='master',
