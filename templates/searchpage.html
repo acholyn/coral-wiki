@@ -1,0 +1,22 @@
+<!-- page for more advanced searching -->
+{% extends 'base.html'%} {% block content %} {% block pagetitle %}
+<div class="pagetitle">Search</div>
+<div>
+    <h2 style="text-align: center;">Use this page to search the dictionary or for contributors </h2>
+</div>
+<hr> {% endblock %}
+<div class="page">
+
+    <form class="searchbox" method="post" action="/results" style="margin:auto;">
+        <input type="text" placeholder="Search..." name="search">
+        <button type="submit"><i class="fa fa-search"></i>
+        </button>
+    </form>
+
+
+    <ul>{% for item in results %}
+        <li> {{item[0]}} {{(item[1])}} : {{item[2]}}</li>
+        <br>{% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -254,7 +254,8 @@ a.ref:hover {
 
 /************ SEARCH *****************/
 
-.clear {
+
+/* .clear {
     clear: both;
 }
 
@@ -314,7 +315,7 @@ a.ref:hover {
     to {
         transform: scaleY(1);
     }
-}
+} */
 
 
 /**************CONTRIBUTORS****************/
@@ -322,7 +323,7 @@ a.ref:hover {
 
 /* Style the tab */
 
-.tab {
+.tabs {
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0.9);
     text-align: center;
@@ -331,8 +332,8 @@ a.ref:hover {
 
 /* Style the buttons that are used to open the tab content */
 
-.tab button {
-    background-color: inherit;
+.tabs button {
+    background-color: rgba(255, 255, 255, 0.1);
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -344,39 +345,46 @@ a.ref:hover {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+    color: rgba(36, 112, 211, 0.911);
 }
 
 
 /* Change background color of buttons on hover */
 
-.tab button:hover {
-    background-color: rgb(244, 251, 253);
+.tabs button:hover {
+    background-color: rgba(181, 231, 245, 0.8);
 }
 
 
 /* Create an active/current tablink class */
 
-.tab button.active {
+.tabs button.active {
     background-color: rgba(195, 247, 227, 0.904);
 }
 
 
 /* Style the tab content */
 
-.tabcontent {
-    display: none;
+.tab-content {
     padding: 1em 0.5em;
-    background-color: inherit;
+    background-color: rgba(255, 255, 255, 0.9);
     margin-left: auto;
     margin-right: auto;
+    height: 100%;
 }
 
 
 /********* CONTACT FORM *******/
 
 #Newcont {
+    margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
     width: 75%;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+form {
     background-color: inherit;
+    background-blend-mode: soft-light;
 }

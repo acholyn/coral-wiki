@@ -5,6 +5,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" /> {% block title %}
+
     <!-- Title and icon that show in browser tab -->
     <title>Coral Wiktionary</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/coral.png') }}" type="image/x-icon" /> {% endblock %}
@@ -19,7 +20,7 @@
     <script src="https://kit.fontawesome.com/01e3a3b2ef.js " crossorigin="anonymous "></script>
 
     <!-- Stylesheets -->
-    <!-- General, including search -->
+    <!-- General -->
     <link rel="stylesheet " type="text/css " href="{{ url_for( 'static', filename='css/coralwiki.css' ) }} ">
 
     <!-- back to top button -->
@@ -29,6 +30,12 @@
 
     <!-- Contact Form -->
     <link rel="stylesheet" href="{{ url_for( 'static', filename='css/contactform.css' ) }}">
+
+    <!-- SearchPage -->
+    <link rel="stylesheet " type="text/css " href="{{ url_for( 'static', filename='css/searchpage.css' ) }} ">
+
+    <!-- Searchbar -->
+    <link rel="stylesheet " type="text/css " href="{{ url_for( 'static', filename='css/searchbar.css' ) }} ">
 
 
 
@@ -54,14 +61,15 @@
         <div class="nav-item "><a href="{{ url_for ( 'index') }} ">Home</a></div>
         <div class="nav-item "><a href="{{ url_for ( 'contributors') }} ">Contributors</a></div>
         <div class="nav-item "><a href="{{ url_for ( 'about') }} ">About Us</a></div>
+        <div class="nav-item "><a href="{{ url_for ( 'search') }} ">Search</a></div>
 
-        <!--Search-->
-        <link rel="stylesheet " href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css ">
-        <div class="wrapper ">
-            <div class="wrapper-right ">
-                <label class="fa fa-search search-icon " for="tag-search "></label>
+        <!--Searchbar-->
+        <div class="flexbox">
+            <div class="searchbar">
+                <div>
+                    <input type="text" name="search" id="searchbar" onkeyup="myFunction()" placeholder="Search . . ." required>
+                </div>
             </div>
-            <div class="clear "></div>
         </div>
     </div>
 
@@ -83,8 +91,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js "></script>
 
     <!--JavaScript-->
-    <!-- image hover thing -->
-    <script type="text/javascript">
+    <!-- image hover thing NEEDS FIXING-->
+    <!-- <script type="text/javascript">
         document.getElementById("hoverable ").onmouseover = function() {
             show()
         };
@@ -92,13 +100,53 @@
         function show() {
             document.getElementById("hoverable ").style.visibility = 'visible';
         }
+    </script> -->
+
+    <!-- search filter -->
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('searchbar');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("terms");
+            li = ul.getElementsByTagName('li');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
     </script>
+
+    <!--Jquery Cdn -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <!-- add hyperscript -->
+    <script src="https://unpkg.com/hyperscript.org@0.8.2"></script>
+
+    <!-- import htmx -->
+    <script src="https://unpkg.com/htmx.org@1.6.0" integrity="sha384-G4dtlRlMBrk5fEiRXDsLjriPo8Qk5ZeHVVxS8KhX6D7I9XXJlNqbdvRlp9/glk5D" crossorigin="anonymous"></script>
 
     <!-- back to top button -->
     <script type="text/javascript" src="{{ url_for( 'static', filename='js/backtotop.js' ) }}"></script>
 
     <!-- Contributor Page Tabs -->
-    <script type="text/javascript" src="{{ url_for( 'static', filename='js/contributortabs.js' ) }}">
+    <script>
+        function openTab(tabName) {
+            var i;
+            var x = document.getElementsByClassName("tab-content");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
     </script>
     {% endblock %}
 

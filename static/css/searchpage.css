@@ -1,0 +1,87 @@
+/* searchpage */
+
+.searchbox {
+    /*definint width of form element*/
+    width: 80%;
+    /*centering the form element*/
+    margin: auto;
+}
+
+input[type="text"] {
+    padding: 10px 15px 10px 50px;
+    font-size: 36px;
+    color: #1f5350;
+    border: none;
+    background-color: #7accc8;
+}
+
+
+/*now using placeholder property to change color of placholder text and making it consitent accross the browser by use of prefix*/
+
+input[type="text"]::-webkit-input-placeholder {
+    color: #b1e0de;
+}
+
+input[type="text"]:-moz-placeholder {
+    /* Firefox 18- */
+    color: #b1e0de;
+}
+
+input[type="text"]::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #b1e0de;
+}
+
+input[type="text"]:-ms-input-placeholder {
+    /* interner explorer*/
+    color: #b1e0de;
+}
+
+
+/*adding effect when the mouse is hovered over list item*/
+
+.searchbox ul li a:hover {
+    color: #b23b61;
+    background: #ecd1da;
+}
+
+
+/*moving it slightly toware right when hovered*/
+
+.searchbox ul li:hover {
+    /*transform*/
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    -o-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+
+/*now first we will hide the suggestion list*/
+
+.suggestions li {
+    overflow: hidden;
+    height: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/*and make the suggestion reappear when user focus on search field*/
+
+input[type="text"]:focus+.suggestions li {
+    height: 63px;
+}
+
+.byline {
+    text-align: center;
+    font-size: 18px;
+}
+
+.byline a {
+    text-decoration: none;
+    color: #1f5350;
+}
