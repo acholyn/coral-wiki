@@ -1,6 +1,6 @@
 // back to top button
 //Make sure the user has scrolled at least 1.5x the height of the browser
-var toggleHeight = $(window).outerHeight() * 1;
+var toggleHeight = $(window).outerHeight() * 0.75;
 
 $(window).scroll(function() {
     if ($(window).scrollTop() > toggleHeight) {

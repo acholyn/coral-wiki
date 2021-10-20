@@ -3,8 +3,8 @@ function openState(evt, stateName) {
     // Declare all variables
     var i, tabcontent, tablinks;
 
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
+    // Get all elements with class="tab-content" and hide them
+    tabcontent = document.getElementsByClassName("tab-content");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
@@ -18,4 +18,13 @@ function openState(evt, stateName) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(stateName).style.display = "block";
     evt.currentTarget.className += " active";
+}
+
+function openTab(tabName) {
+    var i;
+    var x = document.getElementsByClassName("tab-content");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById(tabName).style.display = "block";
 }

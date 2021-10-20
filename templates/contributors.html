@@ -1,10 +1,13 @@
-{% extends 'base.html'%} {% block content %} {% block pagetitle %}
+<!-- Page for contributor info and signup -->
+{% extends 'base.html'%} {% block searchbar %}{% endblock %} {% block content %} {% block pagetitle %}
 <div class="pagetitle">Our Contributors</div>
+
 <!-- Tab links -->
-<div class="tab">
-    <button class="tablinks" onclick="openState(event, 'Currentcont')">Current</button>
-    <button class="tablinks" onclick="openState(event, 'Newcont')">New</button>
+<div class="tabs">
+    <button class="tablinks" onclick="openTab('Currentcont')">Current</button>
+    <button class="tablinks" onclick="openTab('Newcont')">New</button>
 </div>
+
 
 <hr> {% endblock %}
 <style>
@@ -17,38 +20,41 @@
 </style>
 <div class="page">
     <!-- Current Contributors -->
-    <div id="Currentcont" class="tabcontent">
-        <div class="container" style="text-align: center;">
-            <h2>Thank you to our contributors</h2>
-            <p style="text-align: center;"><a href="https://www.linkedin.com/in/amanda-ho-lyn/"> Amanda Ho-Lyn </a><i> Senior creator</i>
-                <br> <a href="https://www.seascapecarib.com/about-us"> Andrew Ross </a> <i> Author</i><br>
-                <a href="https://www.susanclare.art">Susan Clare</a><i> Artist</i>
-                <br> <a href="https://www.linkedin.com/in/nick-hardie-b3000460/">Nick Hardie</a><i> Development Support</i>
-            </p>
-        </div>
+    <div id="Currentcont" class="tab-content">
+        <!-- <div class="container" style="text-align: center;"> -->
+        <h2 style="text-align: center;">Thank you to our contributors</h2>
+        <p style="text-align: center;"><a href="https://www.linkedin.com/in/amanda-ho-lyn/"> Amanda Ho-Lyn </a><i> Senior creator</i>
+            <br> <a href="https://www.seascapecarib.com/about-us"> Andrew Ross </a> <i> Author</i><br>
+            <a href="https://www.susanclare.art">Susan Clare</a><i> Artist</i>
+            <br> <a href="https://www.linkedin.com/in/nick-hardie-b3000460/">Nick Hardie</a><i> Development Support</i>
+        </p>
     </div>
+
 
     <!-- New Contributors -->
-    <div class="tabcontent" id="Newcont">
-        <div class="container" style="padding: 1em 0.5em;">
-            <h2 style="text-align: center;">We'd like to thank our sponsors and contributors for all of their support.</h2>
-            <p style="font-size: .8em; text-align:center">If you're interested in getting involved, please contact us using the form below or send us an
-                <a href="mailto:lab.amanda.ch@gmail.com?subject=Coral Wiktionary">email</a> and we'll get back to you as soon as we can.</p>
-            <!-- Contact Form -->
-            <h3 style="font-weight: 300; color:#708a94; margin-top:20px">Contact Us</h3>
+    <div class="tab-content" id="Newcont" style="display: none;padding: 1em 0.5em;">
+        <!-- <div class="container" style="padding: 1em 0.5em;"> -->
+        <h2 style="text-align: center;">We'd like to thank our sponsors and contributors for all of their support.</h2>
+        <p style="font-size: .8em; text-align:center">If you're interested in getting involved, please contact us using the form below or send us an
+            <a href="mailto:lab.amanda.ch@gmail.com?subject=Coral Wiktionary">email</a> and we'll get back to you as soon as we can.</p>
 
-            <form id="form" class="topBefore contact" action="https://formspree.io/f/xqkwlneg" method="post">
+        <!-- Contact Form -->
+        <h3 style="font-weight: 300; color:#708a94; margin-top:20px">Contact Us</h3>
 
-                <input class="contact" id="name" type="text" name="name" placeholder="NAME">
-                <input class="contact" name="_replyto" id="email" type="text" placeholder="E-MAIL">
-                <textarea class="contact" name="message" id="message" type="text" placeholder="MESSAGE"></textarea>
-                <input class="contact" id="submit" type="submit" value="Submit">
+        <form id="form" class="topBefore contact" action="https://formspree.io/f/xqkwlneg" method="post">
 
-            </form>
-        </div>
+            <input class="contact" id="name" type="text" name="name" placeholder="NAME">
+            <input class="contact" name="_replyto" id="email" type="text" placeholder="E-MAIL">
+            <textarea class="contact" name="message" id="message" type="text" placeholder="MESSAGE"></textarea>
+            <input class="contact" id="submit" type="submit" value="Submit">
+
+        </form>
     </div>
-    <div class="container">
-        <p style="font-size: .8em; text-align:center"> If you're interested in the artwork used on this site, all pieces were created by <a href="https://www.susanclare.art/#/underwater/">Susan Clare&copy;</a></p>
-    </div>
+    <hr>
+</div>
+
+<div class="container">
+    <p style="font-size: .8em; text-align:center"> If you're interested in the artwork used on this site, all pieces were created by <a href="https://www.susanclare.art/#/underwater/">Susan Clare&copy;</a></p>
+</div>
 </div>
 {% endblock %}

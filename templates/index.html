@@ -1,5 +1,6 @@
-{% extends 'base.html' %} {% block content %}
+<!-- Home page displaying the dictionary -->
 
+{% extends 'base.html' %} {% block content %}
 
 <!-- page with list of definitions -->
 <!--Search
@@ -21,11 +22,12 @@
 </style>
 <!-- list of definitions -->
 <div class="container" id="DICT">
-    <ul class="terms">
+    <ul class="terms" id="terms">
         <!-- print each item in the database without ID number. If statement included because not all have referrals -->
         {% for i in defsdata %} {%print%}
-        <br><a id="term" name="{{ i.Term|trim }}">{{i.Term}}</a>
-        <var id="type">{{(i.Type)}}</var> <br> {{i.Definition}} {% if i.Referrals %} See also <a href="#{{i.Referrals}}">{{i.Referrals}} </a> <br><br> {% else %} <br> {% endif %}{% endfor %}<br><br>
+        <br>
+        <li><a class="term" id="{{ i.Term|trim }}">{{i.Term}}</a>
+            <var class="type">({{i.Type}})</var> <br> {{i.Definition}} {% if i.Referrals %} See also <a href="#{{i.Referrals}}">{{i.Referrals}} </a> <br> {% else %} <br> {% endif %}{% endfor %}</li><br><br>
 
     </ul>
 
