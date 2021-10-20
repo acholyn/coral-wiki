@@ -68,24 +68,28 @@ conf = {
 class QueryForm(FlaskForm):
     submit = SubmitField()
 
+# use pymysql cursor to interact with MySQL database
+def createCursor():
+    conn = pymysql.connect(**conf)
+    cursor = conn.cursor()
+    return cursor
 
 
 # define actions for home page
 @application.route('/', methods=['GET', 'POST'])
 def index():
 
-    # use pymysql cursor to interact with MySQL database
-    conn = pymysql.connect(**conf)
-    cursor = conn.cursor()
+    cursor=createCursor()
     defsdata=cursor.execute("SELECT * FROM CoralDefinitions")
     defsdata = cursor.fetchall() # makes selection iterable
+    cursor.close()
 
     return render_template('index.html', defsdata=defsdata, )
 
 
 # actions for search page
-@application.route('/search', methods=['GET', 'POST'])
-def search():
+# @application.route('/search', methods=['GET', 'POST'])
+# def search():
     # set up cursor to search db
     conn = pymysql.connect(**conf)
     cursor = conn.cursor()
@@ -103,53 +107,93 @@ def search():
         #     conn.commit()
         #     data = cursor.fetchall()
         return render_template('searchpage.html', data=data)
+    return render_template('searchpage.html')
 
+# def searchdb(qry):
+    cursor = createCursor
+    params = qry
 
-# @application.route('/results')
-# def search_results(search,**args):
+    if request.method == "POST":
+            try: # try find the search in terms
+                termq=params.title()
+                cursor.execute(f"SELECT Term,Type,Definition FROM CoralDefinitions WHERE Term LIKE {termq}")
+                if len(cursor.fetchall()) == 0: # if no results
+                    try: # try find the search in definition
+                        defq=params
+                        cursor.execute(f"SELECT Term,Type,Definition FROM CoralDefinitions WHERE Definition LIKE {defq}")
+                        if len(cursor.fetchall()) == 0:
+                            try: # try find search in type
+                                typeq=params.lower()
+                                cursor.execute(f"SELECT Term,Type,Definition FROM CoralDefinitions WHERE Type LIKE {typeq}")
+                            except:
+                                    print(f"No matches for {params} found")
+                            else: 
+                                results=cursor.fetchall()
 
-#     # use pymysql cursor to interact with MySQL database
-#     conn = pymysql.connect(**conf)
-#     cursor = conn.cursor()
-#     searchqry=cursor.execute("SELECT * FROM CoralDefinitions WHERE %s LIKE %s " % (search))
-#     results = list(searchqry.fetchall())
+                    except:
+                        print(f"No matches for {params} found")
+
+                    else:
+                        results=cursor.fetchall()
+
+            except:
+                print(f"No matches for {params} found")
+            else:
+                results=cursor.fetchall()
+                for i in results:
+                    print(i)
+                    # term = i[0]
+                    # type = i[1]
+                    # defin = i[2]
+                    
+                    return results    
+
+@application.route('/search', methods=['GET', 'POST'])
+def search():
+    cursor=createCursor()
     
-#     for r in results:
-#         print(f"{r.Term} ({r.Type}): {r.Definition}")
-#     # search_string = search.data['search']
-#     # if search.data['search'] == '':
 
-#     #     qry = db_session.query(Album)
-#     #     results = qry.all()
-#     # # if not results:
-#     # #     flash('No results found!')
-#     # #     return redirect('/')
-#     # else:
-#         # display results
-#     return render_template('results.html', results=results)
 
-def get_details():
-    conn = pymysql.connect(**conf)
-    cursor = conn.cursor()
-    cursor.execute('''SELECT * FROM CoralDefinitions''') 
-    # WHERE Term LIKE %s OR Type LIKE %s OR Definition LIKE %s ''', (qry, qry, qry))
-    details = cursor.fetchall()
-    return details
+    if request.method == "POST":
+        params = request.form['search']
+        param2 = request.values['search']
+        print(params,param2)
 
-@application.route('/results', methods=['POST'])
-def search_results(search,**args):
-# set up cursor to search db
-    conn = pymysql.connect(**conf)
-    cursor = conn.cursor()
+    # try find the search in terms
+        qry=f"%{params}%"
+        print(qry)
+        cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s OR Definition LIKE %s OR Type LIKE %s",(qry,qry,qry))
+        results=cursor.fetchall()
+        for i in results:
+                print(i)
+                # term = i['Term']
+                # type = i['Type']
+                # defin = i['Definition']
 
-    if request.method == 'POST':
-        qry = request.form['search']
+        else: # if no results
+            nomatch=print(f"No matches for {params} found")
+            return render_template('searchpage.html', results=results,nomatch=nomatch)
+     
         
-        details = cursor.get_details()
-        print(details)
-        for detail in details:
-            results = detail
-    return render_template('results.html', results=results)
+    return render_template('searchpage.html')
+
+   
+
+# @application.route('/results', methods=['POST'])
+# def search_results():
+# # set up cursor to search db
+#     # conn = pymysql.connect(**conf)
+#     # cursor = conn.cursor()
+
+#     # if request.method == 'POST':
+#     #     qry = request.form['search']
+        
+#     #     details = cursor.get_details()
+#     #     print(details)
+#     #     for detail in details:
+#     #         results = detail
+
+#     return render_template('results.html')
 
 
 # define action for contributor page

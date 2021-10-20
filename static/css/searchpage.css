@@ -3,77 +3,107 @@
 .searchbox {
     /*definint width of form element*/
     width: 80%;
+    display: flex;
     /*centering the form element*/
-    margin: auto;
+    margin-left: auto;
+    align-content: center;
+    justify-content: space-around;
 }
 
-input[type="text"] {
+input[type="search"] {
     padding: 10px 15px 10px 50px;
-    font-size: 36px;
+    font-size: 2em;
     color: #1f5350;
     border: none;
     background-color: #7accc8;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 /*now using placeholder property to change color of placholder text and making it consitent accross the browser by use of prefix*/
 
-input[type="text"]::-webkit-input-placeholder {
+input[type="search"]::-webkit-input-placeholder {
     color: #b1e0de;
 }
 
-input[type="text"]:-moz-placeholder {
+input[type="search"]:-moz-placeholder {
     /* Firefox 18- */
     color: #b1e0de;
 }
 
-input[type="text"]::-moz-placeholder {
+input[type="search"]::-moz-placeholder {
     /* Firefox 19+ */
     color: #b1e0de;
 }
 
-input[type="text"]:-ms-input-placeholder {
+input[type="search"]:-ms-input-placeholder {
     /* interner explorer*/
     color: #b1e0de;
+}
+
+#searchpagesubmit {
+    background-color: #fff;
+    border: none;
+    /* position: absolute; */
+    margin-right: 1%;
+    /* font-size: 3em;
+    color: #1f5350 */
+}
+
+search-results ul {
+    margin-block-start: 0.5em;
+    margin-block-end: 1.5em;
+    padding: 0.5em 0.5em;
+}
+
+search-results li {
+    font-family: 'Open Sans';
+    text-align: left;
+    border-bottom: 1px solid #dbedf2;
+    padding: 15px;
+    list-style: none;
 }
 
 
 /*adding effect when the mouse is hovered over list item*/
 
-.searchbox ul li a:hover {
+
+/* .searchbox ul li a:hover {
     color: #b23b61;
     background: #ecd1da;
-}
+} */
 
 
 /*moving it slightly toware right when hovered*/
 
-.searchbox ul li:hover {
-    /*transform*/
+
+/* .searchbox ul li:hover {
     -webkit-transform: translateX(20px);
     -moz-transform: translateX(20px);
     -ms-transform: translateX(20px);
     -o-transform: translateX(20px);
     transform: translateX(20px);
-}
+} */
 
 
 /*now first we will hide the suggestion list*/
 
-.suggestions li {
+
+/* .suggestions li {
     overflow: hidden;
     height: 0;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-}
+} */
 
 
 /*and make the suggestion reappear when user focus on search field*/
 
-input[type="text"]:focus+.suggestions li {
-    height: 63px;
+input[type="search"]:focus+.suggestions li {
+    height: 1.5em;
 }
 
 .byline {

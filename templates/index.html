@@ -26,8 +26,8 @@
         <!-- print each item in the database without ID number. If statement included because not all have referrals -->
         {% for i in defsdata %} {%print%}
         <br>
-        <li><a id="term" name="{{ i.Term|trim }}">{{i.Term}}</a>
-            <var id="type">{{(i.Type)}}</var> <br> {{i.Definition}} {% if i.Referrals %} See also <a href="#{{i.Referrals}}">{{i.Referrals}} </a> <br> {% else %} <br> {% endif %}{% endfor %}</li><br><br>
+        <li><a class="term" id="{{ i.Term|trim }}">{{i.Term}}</a>
+            <var class="type">({{i.Type}})</var> <br> {{i.Definition}} {% if i.Referrals %} See also <a href="#{{i.Referrals}}">{{i.Referrals}} </a> <br> {% else %} <br> {% endif %}{% endfor %}</li><br><br>
 
     </ul>
 

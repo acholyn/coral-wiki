@@ -1,3 +1,5 @@
+/* Styling for searchbar on index page */
+
 .flexbox {
     /* background: linear-gradient(155deg, #55c7ed, #2bb3e0, #3bc1ed); */
     background-color: rgba(255, 255, 255, 0.0);
@@ -29,6 +31,12 @@
     filter: drop-shadow(0 1px #06b3ec);
 }
 
+.fas.fa-search {
+    color: #09a9dfce;
+    padding-left: 1px;
+    margin-top: 5%
+}
+
 
 /* .searchbar>div:after {
     content: "";
@@ -36,7 +44,7 @@
     width: 3px;
     height: 18px;
     position: absolute;
-    top: 0.8em;
+    top: 0.7em;
     right: 2px;
     transform: rotate(135deg);
 } */

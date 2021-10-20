@@ -63,14 +63,16 @@
         <div class="nav-item "><a href="{{ url_for ( 'about') }} ">About Us</a></div>
         <div class="nav-item "><a href="{{ url_for ( 'search') }} ">Search</a></div>
 
+        {% block searchbar %}
         <!--Searchbar-->
         <div class="flexbox">
             <div class="searchbar">
                 <div>
-                    <input type="text" name="search" id="searchbar" onkeyup="myFunction()" placeholder="Search . . ." required>
+                    <input type="text" name="search" id="searchbar" onkeyup="myFunction()" placeholder="Search . . ." required><i class="fas fa-search"></i>
                 </div>
             </div>
         </div>
+        {% endblock %}
     </div>
 
 </nav>
