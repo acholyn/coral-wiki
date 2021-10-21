@@ -1,18 +1,11 @@
 <!-- Home page displaying the dictionary -->
 
-{% extends 'base.html' %} {% block content %}
-
-<!-- page with list of definitions -->
-<!--Search
-<div class="page">
-    <div class="search">
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search...">
-    </div>
--->
-
+{% extends 'base.html' %} {% block content %}{% block pagetitle %}
+<div class="pagetitle">The Dictionary</div>
+<hr> {% endblock %}
 <style>
     body {
-        background-image: url('https://images.squarespace-cdn.com/content/v1/59c92f5a03596e9882e024f3/1506535049892-BVBCOWQFJJUNXPEE3Z0H/fullsizeoutput_47b8.jpeg?format=1500w');
+        background-image: url('https://assets.artworkarchive.com/image/upload/t_jpg_profile_2000/v1/user_17316/IMG_9091_ipsniu');
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -20,29 +13,33 @@
         min-height: 8em;
     }
 </style>
-<!-- list of definitions -->
-<div class="container" id="DICT">
-    <ul class="terms" id="terms">
-        <!-- print each item in the database without ID number. If statement included because not all have referrals -->
-        {% for i in defsdata %} {%print%}
-        <br>
-        <li><a class="term" id="{{ i.Term|trim }}">{{i.Term}}</a>
-            <var class="type">({{i.Type}})</var> <br> {{i.Definition}} {% if i.Referrals %} See also <a href="#{{i.Referrals}}">{{i.Referrals}} </a> <br> {% else %} <br> {% endif %}{% endfor %}</li><br><br>
+<!-- page with list of definitions -->
+<div class="page">
 
-    </ul>
 
-    <div class="sidebar">
-        <!--BACK TO TOP BUTTON-->
-        <div class="m-backtotop" aria-hidden="true">
-            <div class="arrow">
-                <i class="fa fa-arrow-up"></i>
-            </div>
-            <div class="text">
-                Back to top
+    <!-- list of definitions -->
+    <div class="container" id="DICT">
+        <ul class="terms" id="terms">
+            <!-- print each item in the database without ID number. If statement included because not all have referrals -->
+            {% for i in defsdata %} {%print%}
+            <br>
+            <li><a class="term" id="{{ i.Term|trim }}">{{i.Term}}</a>
+                <var class="type">({{i.Type}})</var> <br> {{i.Definition}} {% if i.Referrals %} See also <a href="#{{i.Referrals}}">{{i.Referrals}} </a> <br> {% else %} <br> {% endif %}{% endfor %}</li><br><br>
+
+        </ul>
+
+        <div class="sidebar">
+            <!--BACK TO TOP BUTTON-->
+            <div class="m-backtotop" aria-hidden="true">
+                <div class="arrow">
+                    <i class="fa fa-arrow-up"></i>
+                </div>
+                <div class="text">
+                    Back to top
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 </div>
 {% endblock %}

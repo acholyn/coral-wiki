@@ -87,93 +87,51 @@ def index():
     return render_template('index.html', defsdata=defsdata, )
 
 
-# actions for search page
-# @application.route('/search', methods=['GET', 'POST'])
-# def search():
-    # set up cursor to search db
-    conn = pymysql.connect(**conf)
-    cursor = conn.cursor()
-
-    if request.method == "POST":
-        search = request.form['search']
-
-        # search by all fields except referrals
-        cursor.execute('''SELECT Term, Type, Definition, Referrals FROM CoralDefinitions WHERE Term LIKE %s OR Type LIKE %s OR Definition LIKE %s ''', (search, search, search))
-        conn.commit()
-        data = cursor.fetchall()
-        # all in the search box will return all the tuples
-        # if len(data) == 0 and search == 'all': 
-        #     cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions")
-        #     conn.commit()
-        #     data = cursor.fetchall()
-        return render_template('searchpage.html', data=data)
-    return render_template('searchpage.html')
-
-# def searchdb(qry):
-    cursor = createCursor
-    params = qry
-
-    if request.method == "POST":
-            try: # try find the search in terms
-                termq=params.title()
-                cursor.execute(f"SELECT Term,Type,Definition FROM CoralDefinitions WHERE Term LIKE {termq}")
-                if len(cursor.fetchall()) == 0: # if no results
-                    try: # try find the search in definition
-                        defq=params
-                        cursor.execute(f"SELECT Term,Type,Definition FROM CoralDefinitions WHERE Definition LIKE {defq}")
-                        if len(cursor.fetchall()) == 0:
-                            try: # try find search in type
-                                typeq=params.lower()
-                                cursor.execute(f"SELECT Term,Type,Definition FROM CoralDefinitions WHERE Type LIKE {typeq}")
-                            except:
-                                    print(f"No matches for {params} found")
-                            else: 
-                                results=cursor.fetchall()
-
-                    except:
-                        print(f"No matches for {params} found")
-
-                    else:
-                        results=cursor.fetchall()
-
-            except:
-                print(f"No matches for {params} found")
-            else:
-                results=cursor.fetchall()
-                for i in results:
-                    print(i)
-                    # term = i[0]
-                    # type = i[1]
-                    # defin = i[2]
-                    
-                    return results    
+# actions for search page   
 
 @application.route('/search', methods=['GET', 'POST'])
 def search():
     cursor=createCursor()
-    
 
-
+    # params = request.form['search']
+    # tqry = request.form['onlyterms']
+    # dqry= request.form['onlydefs']
+    params = request.form.get('search')
+    tqry = request.form.get('onlyterms')
+    dqry= request.form.get('onlydefs')
+    nomatch = f"No results for {params} found"
     if request.method == "POST":
-        params = request.form['search']
-        param2 = request.values['search']
-        print(params,param2)
+        print(params,tqry,dqry)
+        
+        # if only searching terms
+        if tqry != None:
+            qry=f"%{params}%"
+            print(qry)
+            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s",(qry))
+            results=cursor.fetchall()
+            print(len(results))
+        # if only searching definitions
+        elif dqry != None:
+            qry=f"%{params}%"
+            print(qry)
+            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Definition LIKE %s ",(qry))
+            results=cursor.fetchall()
+            print(len(results))
+        else:
+            # search all
+            qry=f"%{params}%"
+            print(qry)
+            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s OR Definition LIKE %s OR Type LIKE %s",(qry,qry,qry))
+            results=cursor.fetchall()
+            print(len(results))
 
-    # try find the search in terms
-        qry=f"%{params}%"
-        print(qry)
-        cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s OR Definition LIKE %s OR Type LIKE %s",(qry,qry,qry))
-        results=cursor.fetchall()
-        for i in results:
-                print(i)
+        # for i in results:
+        #         print(i)
                 # term = i['Term']
                 # type = i['Type']
                 # defin = i['Definition']
-
-        else: # if no results
-            nomatch=print(f"No matches for {params} found")
-            return render_template('searchpage.html', results=results,nomatch=nomatch)
-     
+            
+        return render_template('searchpage.html', results=results, nomatch=nomatch)
         
     return render_template('searchpage.html')
 

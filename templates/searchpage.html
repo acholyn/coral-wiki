@@ -1,26 +1,49 @@
 <!-- page for more advanced searching -->
 {% extends 'base.html'%} {% block searchbar %}{% endblock %} {% block content %} {% block pagetitle %}
 <div class="pagetitle">Search</div>
-<div>
-    <h2 style="text-align: center;">Use this page to search the dictionary or for contributors </h2>
+<div class="row">
+    <h3>Use this page to search the dictionary or for contributors <br> By default the search queries the term, type (eg.noun) and definition for each entry.</h3>
 </div>
 <hr> {% endblock %}
+<style>
+    .container {
+        background-image: url('https://assets.artworkarchive.com/image/upload/t_jpg_profile_2000/v1/user_17316/IMG_7288_ipver4');
+        background-attachment: fixed;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 10em;
+        background-blend-mode: normal;
+    }
+</style>
+
 <div class="page">
 
     <form class="searchbox" method="post" action="" style="margin:auto;" name="search">
         <input type="search" placeholder="Search..." name="search" value="{{ request.form.search }}">
-        <button type="submit" id="searchpagesubmit"><i class="fa fa-search" style="font-size: 3em; color:#1f5350; "></i>
+        <button type="submit" id="searchpagesubmit"><i class="fa fa-search" style="font-size: 3em; color:#1f5350;" value="search"></i>
         </button>
+        <div class="searchoptions">
+            <label id="options">
+            <input type="checkbox" id="options" value="onlyterms" name="onlyterms">Terms Only</label>
+            <label id="options">
+            <input type="checkbox" id="options" value="onlydefs" name="onlydefs">Definitions Only</label>
+        </div>
     </form>
     <hr>
-    <div class="container search-results">
-        {% for i in results %}
-        <ul>
-            <li><a class="term" href="/#{{ i.Term|trim }}">{{i.Term}}</a>
-                <var class="type">({{i.Type}})</var> <br> {{i.Definition}} </li><br>
+    <div class="container">
+        <div class="search-results">
+            {% if results %} {% for i in results %}
+            <ul>
+                <li><a class="term" href="/#{{ i.Term|trim }}">{{i.Term}}</a>
+                    <var class="type">({{i.Type}})</var> <br> {{i.Definition}} </li><br>
 
-        </ul> {% endfor %} {% if not results %} {{ nomatch }} {% endif %}
+            </ul> {% endfor %} {% endif %}
+            <!-- {% if not results %} {{ nomatch }} {% endif %} -->
+        </div>
     </div>
+
+
     <div class="sidebar">
         <!--BACK TO TOP BUTTON-->
         <div class="m-backtotop" aria-hidden="true">
