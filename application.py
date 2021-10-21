@@ -175,6 +175,12 @@ def search():
             cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Definition LIKE %s ",(qry))
             results=cursor.fetchall()
             print(len(results))
+        elif tqry != None and dqry != None:
+            qry=f"%{params}%"
+            print(qry)
+            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s AND WHERE Definition LIKE %s ",(qry,qry))
+            results=cursor.fetchall()
+            print(len(results))
         else:
             # search all
             qry=f"%{params}%"
