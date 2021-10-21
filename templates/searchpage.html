@@ -38,8 +38,8 @@
                 <li><a class="term" href="/#{{ i.Term|trim }}">{{i.Term}}</a>
                     <var class="type">({{i.Type}})</var> <br> {{i.Definition}} </li><br>
 
-            </ul> {% endfor %} {% endif %}
-            <!-- {% if not results %} {{ nomatch }} {% endif %} -->
+            </ul> {% endfor %} {% endif %} {% if not results %}
+            <ul>{{ nomatch }} </ul>{% endif %}
         </div>
     </div>
 
