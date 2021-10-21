@@ -151,29 +151,45 @@ def index():
 @application.route('/search', methods=['GET', 'POST'])
 def search():
     cursor=createCursor()
-    
-
-
+    # params = request.form['search']
+    # tqry = request.form['onlyterms']
+    # dqry= request.form['onlydefs']
+    params = request.form.get('search')
+    tqry = request.form.get('onlyterms')
+    dqry= request.form.get('onlydefs')
+    nomatch = f"No results for {params} found"
     if request.method == "POST":
-        params = request.form['search']
-        param2 = request.values['search']
-        print(params,param2)
+        print(params,tqry,dqry)
+        
+        # if only searching terms
+        if tqry != None:
+            qry=f"%{params}%"
+            print(qry)
+            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s",(qry))
+            results=cursor.fetchall()
+            print(len(results))
+        # if only searching definitions
+        elif dqry != None:
+            qry=f"%{params}%"
+            print(qry)
+            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Definition LIKE %s ",(qry))
+            results=cursor.fetchall()
+            print(len(results))
+        else:
+            # search all
+            qry=f"%{params}%"
+            print(qry)
+            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s OR Definition LIKE %s OR Type LIKE %s",(qry,qry,qry))
+            results=cursor.fetchall()
+            print(len(results))
 
-    # try find the search in terms
-        qry=f"%{params}%"
-        print(qry)
-        cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s OR Definition LIKE %s OR Type LIKE %s",(qry,qry,qry))
-        results=cursor.fetchall()
-        for i in results:
-                print(i)
+        # for i in results:
+        #         print(i)
                 # term = i['Term']
                 # type = i['Type']
                 # defin = i['Definition']
-
-        else: # if no results
-            nomatch=print(f"No matches for {params} found")
-            return render_template('searchpage.html', results=results,nomatch=nomatch)
-     
+            
+        return render_template('searchpage.html', results=results, nomatch=nomatch)
         
     return render_template('searchpage.html')
 

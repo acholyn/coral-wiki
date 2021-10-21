@@ -6,7 +6,7 @@
 html,
 body {
     display: block;
-    min-height: 70%;
+    min-height: 90%;
     width: 100%;
     position: relative;
     left: auto;
@@ -95,6 +95,21 @@ h2 {
 }
 
 h3 {
+    font-weight: 300;
+    color: #536e79;
+    margin-top: 20px;
+    position: relative;
+    margin: auto;
+    font-size: 1em;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+h4 {
+    /* used for Contact Us */
+    font-weight: 300;
+    color: #708a94;
+    margin-top: 20px;
     position: relative;
     margin: auto;
     font-size: 1.3em;
@@ -117,7 +132,7 @@ nav {
 }
 
 .navstrip {
-    width: 20em;
+    width: 30em;
     display: inline-flexbox;
     justify-content: center;
     align-items: center;
@@ -141,7 +156,7 @@ nav>a:hover {
     margin-right: auto;
     text-transform: uppercase;
     font-weight: 300;
-    font-size: .8em;
+    font-size: 1em;
     font-family: 'Open sans';
     justify-content: space-around;
     padding: 10px;
