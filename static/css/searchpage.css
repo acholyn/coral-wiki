@@ -10,6 +10,7 @@
     align-content: center;
     justify-content: space-around;
     background-color: rgba(255, 255, 255, 0.9);
+
 }
 
 input[type="search"] {
@@ -50,6 +51,7 @@ input[type="search"]:-ms-input-placeholder {
     float: right;
     position: relative;
 } */
+
 
 #searchpagesubmit {
     background-color: #fff;
@@ -97,6 +99,7 @@ input[type="search"]:-ms-input-placeholder {
     padding: 5px;
     list-style: none;
     border-bottom: none;
+
 }
 
 
