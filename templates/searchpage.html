@@ -12,10 +12,7 @@
     
     .container {
         background-image: url('https://assets.artworkarchive.com/image/upload/t_jpg_profile_2000/v1/user_17316/IMG_7288_ipver4');
-        background-position: bottom;
-        background-repeat: no-repeat;
         min-height: 10em;
-        background-blend-mode: normal;
     }
 </style>
 
@@ -37,29 +34,16 @@
     <!-- area for results/lack thereof -->
     <div class="container">
         {% if results %}
-        <div class="search-results">
+
+        <ul class="search-results">
             {% for i in results %}
-            <ul>
-                <!-- trim each term for correct a href -->
-                <li><a class="term" href="/#{{ i.Term|trim }}">{{i.Term}}</a>
-                    <var class="type">({{i.Type}})</var> <br> {{i.Definition}} </li><br>
+            <!-- trim each term for correct a href -->
+            <li><a class="term" href="/#{{ i.Term|trim }}">{{i.Term}}</a>
+                <var class="type">({{i.Type}})</var> <br> {{i.Definition}} </li><br> {% endfor %}
+        </ul> {% endif %} {% if not results %}
+        <h3 class="no-results"> {{ nomatch }} </h3>{% endif %}
 
-            </ul> {% endfor %} {% endif %} {% if not results %}
-            <ul>{{ nomatch }} </ul>{% endif %}
-        </div>
     </div>
 
-    <!-- Include back to top button -->
-    <div class="sidebar">
-        <!--BACK TO TOP BUTTON-->
-        <div class="m-backtotop" aria-hidden="true">
-            <div class="arrow">
-                <i class="fa fa-arrow-up"></i>
-            </div>
-            <div class="text">
-                Back to top
-            </div>
-        </div>
-    </div>
 </div>
 {% endblock %}

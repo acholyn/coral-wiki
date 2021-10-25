@@ -4,6 +4,7 @@
 {% block head %}
 
 <head>
+    <meta charset="utf-8">
     <!-- adjust to screen (needs expanding) -->
     <meta name="viewport" content="width=device-width, initial-scale=1" /> {% block title %}
 
@@ -92,7 +93,18 @@
 <body>
 
 
-    {% endblock content %} {% block footer %}
+    {% endblock content %} {% block BTTB %}
+    <div class="sidebar">
+        <!--BACK TO TOP BUTTON-->
+        <div class="m-backtotop" aria-hidden="true">
+            <div class="arrow">
+                <i class="fa fa-arrow-up"></i>
+            </div>
+            <div class="text">
+                Back to top
+            </div>
+        </div>
+    </div>{% endblock BTTB %} {% block footer %}
 
     <!--Footer-->
     <footer class="footer ">
@@ -105,7 +117,7 @@
 
         </div>
     </footer>
-    {% endblock %}
+    {% endblock footer %}
     <!-- scripts and script imports -->
     {% block scripts %}
 
