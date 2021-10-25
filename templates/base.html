@@ -4,11 +4,12 @@
 {% block head %}
 
 <head>
+    <!-- adjust to screen (needs expanding) -->
     <meta name="viewport" content="width=device-width, initial-scale=1" /> {% block title %}
 
     <!-- Title and icon that show in browser tab -->
     <title>Coral Wiktionary</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/coral.png') }}" type="image/x-icon" /> {% endblock %}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/coral.png') }}" type="image/x-icon" /> {% endblock title %}
 
     <!-- Fonts -->
     <!--Cinzel Decorative-->
@@ -19,6 +20,7 @@
     <!--Icons-->
     <script src="https://kit.fontawesome.com/01e3a3b2ef.js " crossorigin="anonymous "></script>
 
+
     <!-- Stylesheets -->
     <!-- General -->
     <link rel="stylesheet " type="text/css " href="{{ url_for( 'static', filename='css/coralwiki.css' ) }} ">
@@ -28,7 +30,8 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i " rel="stylesheet ">
     <link rel="stylesheet" href="{{ url_for( 'static', filename='css/backtotopbutton.css' ) }}">
 
-    <!-- Contact Form -->
+    <!-- Contributor Page & Contact Form -->
+    <link rel="stylesheet" href="{{ url_for( 'static', filename='css/contributorpage.css' ) }}">
     <link rel="stylesheet" href="{{ url_for( 'static', filename='css/contactform.css' ) }}">
 
     <!-- SearchPage -->
@@ -40,8 +43,8 @@
 
 
 </head>
-{% endblock %} {% block header %}
-<!-- header area -->
+{% endblock head %} {% block header %}
+<!-- header area - contains site title and sponsor logos -->
 <div class="header ">
     <div class="row ">
         <div class="title ">
@@ -54,43 +57,64 @@
     </div>
 </div>
 
-{% endblock %} {% block nav %}
-<nav>
-    <div class="navstrip ">
+{% endblock header %} {% block pageheader %}
+<div class='pageheader'>
+    <!-- to contain nav and page title -->
+    {% block nav %}
+    <nav>
+        <div class="navstrip ">
 
-        <div class="nav-item "><a href="{{ url_for ( 'index') }} ">Home</a></div>
-        <div class="nav-item "><a href="{{ url_for ( 'contributors') }} ">Contributors</a></div>
-        <div class="nav-item "><a href="{{ url_for ( 'about') }} ">About Us</a></div>
-        <div class="nav-item "><a href="{{ url_for ( 'search') }} ">Search</a></div>
+            <div class="nav-item "><a href="{{ url_for ( 'index') }} ">Home</a></div>
+            <div class="nav-item "><a href="{{ url_for ( 'contributors') }} ">Contributors</a></div>
+            <div class="nav-item "><a href="{{ url_for ( 'about') }} ">About Us</a></div>
+            <div class="nav-item "><a href="{{ url_for ( 'search') }} ">Search</a></div>
 
-        {% block searchbar %}
-        <!--Searchbar-->
-        <div class="flexbox">
-            <div class="searchbar">
-                <div>
-                    <input type="text" name="search" id="searchbar" onkeyup="myFunction()" placeholder="Search . . ." required><i class="fas fa-search"></i>
+            {% block searchbar %}
+            <!--Searchbar-->
+            <div class="searchflex">
+                <div class="searchbar">
+                    <div>
+                        <input type="text" name="search" id="searchbar" onkeyup="myFunction()" placeholder="Search . . ." required><i class="fas fa-search"></i>
+                    </div>
                 </div>
             </div>
+            {% endblock searchbar %}
         </div>
-        {% endblock %}
-    </div>
 
-</nav>
-<hr> {% endblock %} {% block content %} {% block pagetitle %} {% endblock %}<br>
+    </nav>
+    <hr> {% endblock nav %} {% block pagetitle %} {% endblock pagetitle %} {% endblock pageheader%}
+</div>
+<!-- area for page contents -->
+{% block content %}
+
+<br>
 
 <body>
 
 
-    {% endblock %} {% block footer %}
+    {% endblock content %} {% block footer %}
 
     <!--Footer-->
     <footer class="footer ">
-        <p class="footer ">The Coral Culture & Restoration Wiktionary &copy; 2021 </p>
+        <h2 class="footer ">The Coral Culture & Restoration Wiktionary &copy; 2021 </h2>
+        <div class="bottomnav">
+            <div class="b-nav-item "><a href="{{ url_for ( 'index') }} ">Home</a></div>
+            <div class="b-nav-item "><a href="{{ url_for ( 'contributors') }} ">Contributors</a></div>
+            <div class="b-nav-item "><a href="{{ url_for ( 'about') }} ">About Us</a></div>
+            <div class="b-nav-item "><a href="{{ url_for ( 'search') }} ">Search</a></div>
+
+        </div>
     </footer>
-    {% endblock %} {% block scripts %}
+    {% endblock %}
+    <!-- scripts and script imports -->
+    {% block scripts %}
 
     <!-- Add jQuery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js "></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js "></script> -->
+
+    <!--Jquery Cdn -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
 
     <!--JavaScript-->
     <!-- image hover thing NEEDS FIXING-->
@@ -127,14 +151,12 @@
         }
     </script>
 
-    <!--Jquery Cdn -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
     <!-- add hyperscript -->
-    <script src="https://unpkg.com/hyperscript.org@0.8.2"></script>
+    <!-- <script src="https://unpkg.com/hyperscript.org@0.8.2"></script> -->
 
     <!-- import htmx -->
-    <script src="https://unpkg.com/htmx.org@1.6.0" integrity="sha384-G4dtlRlMBrk5fEiRXDsLjriPo8Qk5ZeHVVxS8KhX6D7I9XXJlNqbdvRlp9/glk5D" crossorigin="anonymous"></script>
+    <!-- <script src="https://unpkg.com/htmx.org@1.6.0" integrity="sha384-G4dtlRlMBrk5fEiRXDsLjriPo8Qk5ZeHVVxS8KhX6D7I9XXJlNqbdvRlp9/glk5D" crossorigin="anonymous"></script> -->
 
     <!-- back to top button -->
     <script type="text/javascript" src="{{ url_for( 'static', filename='js/backtotop.js' ) }}"></script>
@@ -150,7 +172,7 @@
             document.getElementById(tabName).style.display = "block";
         }
     </script>
-    {% endblock %}
+    {% endblock scripts %}
 
 </body>
 

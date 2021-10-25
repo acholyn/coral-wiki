@@ -1,4 +1,4 @@
-/* searchpage */
+/* searchpage styling */
 
 .searchbox {
     width: 50%;
@@ -10,7 +10,6 @@
     align-content: center;
     justify-content: space-around;
     background-color: rgba(255, 255, 255, 0.9);
-
 }
 
 input[type="search"] {
@@ -21,6 +20,7 @@ input[type="search"] {
     background-color: #7accc8;
     margin-left: auto;
     margin-right: auto;
+    width: 90%;
 }
 
 
@@ -51,7 +51,6 @@ input[type="search"]:-ms-input-placeholder {
     float: right;
     position: relative;
 } */
-
 
 #searchpagesubmit {
     background-color: #fff;
@@ -99,56 +98,4 @@ input[type="search"]:-ms-input-placeholder {
     padding: 5px;
     list-style: none;
     border-bottom: none;
-
-}
-
-
-/*adding effect when the mouse is hovered over list item*/
-
-
-/* .searchbox ul li a:hover {
-    color: #b23b61;
-    background: #ecd1da;
-} */
-
-
-/*moving it slightly toware right when hovered*/
-
-
-/* .searchbox ul li:hover {
-    -webkit-transform: translateX(20px);
-    -moz-transform: translateX(20px);
-    -ms-transform: translateX(20px);
-    -o-transform: translateX(20px);
-    transform: translateX(20px);
-} */
-
-
-/*now first we will hide the suggestion list*/
-
-
-/* .suggestions li {
-    overflow: hidden;
-    height: 0;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-} */
-
-
-/*and make the suggestion reappear when user focus on search field*/
-
-input[type="search"]:focus+.suggestions li {
-    height: 1.5em;
-}
-
-.byline {
-    text-align: center;
-    font-size: 18px;
-}
-
-.byline a {
-    text-decoration: none;
-    color: #1f5350;
 }

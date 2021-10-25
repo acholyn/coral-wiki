@@ -1,6 +1,6 @@
 /* Styling for searchbar on index page */
 
-.flexbox {
+.searchflex {
     /* background: linear-gradient(155deg, #55c7ed, #2bb3e0, #3bc1ed); */
     background-color: rgba(255, 255, 255, 0.0);
     width: 100%;
@@ -14,7 +14,8 @@
     margin: 1.2em;
 }
 
-.searchbar>h3 {
+
+/* .searchbar>h3 {
     font-weight: normal;
 }
 
@@ -23,32 +24,13 @@
     color: rgb(64, 183, 204);
     margin-bottom: 15px;
     text-shadow: 0 1px #06b3ec;
-}
+} */
 
 .searchbar>div {
     display: inline-block;
     position: relative;
     filter: drop-shadow(0 1px #06b3ec);
 }
-
-.fas.fa-search {
-    color: #177ea0ce;
-    font-weight: 700;
-    padding-left: 1px;
-    margin-top: 5%
-}
-
-
-/* .searchbar>div:after {
-    content: "";
-    background: #06b3ec;
-    width: 3px;
-    height: 18px;
-    position: absolute;
-    top: 0.7em;
-    right: 2px;
-    transform: rotate(135deg);
-} */
 
 .searchbar>div>input {
     color: #075d7a;
@@ -76,4 +58,14 @@
 .searchbar>div>input:focus,
 .searchbar>div>input:not(:placeholder-shown) {
     width: 15em;
+}
+
+
+/* icon next to searchbar */
+
+.fas.fa-search {
+    color: #177ea0ce;
+    font-weight: 700;
+    padding-left: 1px;
+    margin-top: 5%
 }

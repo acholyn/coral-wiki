@@ -1,28 +1,31 @@
 <!-- page for more advanced searching -->
-{% extends 'base.html'%} {% block searchbar %}{% endblock %} {% block content %} {% block pagetitle %}
+{% extends 'base.html'%} {% block searchbar %}{% endblock %} {% block pagetitle %}
+<!-- Page Title -->
 <div class="pagetitle">Search</div>
+<!-- Page Description -->
 <div class="row">
     <h3>Use this page to search the dictionary or for contributors <br> By default the search queries the term, type (eg.noun) and definition for each entry.</h3>
 </div>
-<hr> {% endblock %}
+<hr> {% endblock %}{% block content %}
 <style>
+    /* customising background image */
+    
     .container {
         background-image: url('https://assets.artworkarchive.com/image/upload/t_jpg_profile_2000/v1/user_17316/IMG_7288_ipver4');
-        background-attachment: fixed;
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: cover;
         min-height: 10em;
         background-blend-mode: normal;
     }
 </style>
 
 <div class="page">
-
+    <!-- search form -->
     <form class="searchbox" method="post" action="" style="margin:auto;" name="search">
         <input type="search" placeholder="Search..." name="search" value="{{ request.form.search }}">
         <button type="submit" id="searchpagesubmit"><i class="fa fa-search" style="font-size: 3em; color:#1f5350;" value="search"></i>
         </button>
+        <!-- options for search that isn't all areas -->
         <div class="searchoptions">
             <label id="options">
             <input type="checkbox" id="options" value="onlyterms" name="onlyterms">Terms Only</label>
@@ -31,10 +34,13 @@
         </div>
     </form>
     <hr>
+    <!-- area for results/lack thereof -->
     <div class="container">
+        {% if results %}
         <div class="search-results">
-            {% if results %} {% for i in results %}
+            {% for i in results %}
             <ul>
+                <!-- trim each term for correct a href -->
                 <li><a class="term" href="/#{{ i.Term|trim }}">{{i.Term}}</a>
                     <var class="type">({{i.Type}})</var> <br> {{i.Definition}} </li><br>
 
@@ -43,7 +49,7 @@
         </div>
     </div>
 
-
+    <!-- Include back to top button -->
     <div class="sidebar">
         <!--BACK TO TOP BUTTON-->
         <div class="m-backtotop" aria-hidden="true">
