@@ -115,7 +115,7 @@ form {
     margin: 25px auto 100px auto;
 }
 
-input {
+input.contact {
     font-family: 'Lato', sans-serif;
     font-size: 0.875em;
     /* width: 90%;
@@ -132,12 +132,12 @@ input {
     -ms-transition: all 0.3s ease-in-out;
 }
 
-.contact input:hover {
+input.contact:hover {
     background: #a5d1ee60;
     color: #2e65db;
 }
 
-textarea {
+textarea.contact {
     width: inherit;
     /* max-width: 80%; */
     /* height: 110px;
@@ -155,12 +155,12 @@ textarea {
     -ms-transition: all 0.3s ease-in-out;
 }
 
-textarea:hover {
+textarea.contact:hover {
     background: #a5d1ee60;
     color: #3d4dda;
 }
 
-#submit {
+.contact#submit {
     width: 70%;
     padding: 2em;
     text-align: center;
@@ -175,6 +175,6 @@ textarea:hover {
     /* border-top: none; */
 }
 
-#submit:hover {
-    color: #3d4dda;
+.contact#submit:hover {
+    color: #3d86da;
 }

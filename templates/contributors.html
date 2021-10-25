@@ -1,5 +1,5 @@
 <!-- Page for contributor info and signup -->
-{% extends 'base.html'%} {% block searchbar %}{% endblock %} {% block content %} {% block pagetitle %}
+{% extends 'base.html'%} {% block searchbar %}{% endblock %} {% block pagetitle %}
 <div class="pagetitle">Our Contributors</div>
 
 <!-- Tab links -->
@@ -9,19 +9,19 @@
 </div>
 
 
-<hr> {% endblock %}
+<hr> {% endblock %}{% block content %}
 <style>
+    /* customising background image */
+    
     body {
-        background-image: url('https://images.squarespace-cdn.com/content/v1/59c92f5a03596e9882e024f3/1506535437819-DAEB40IYRXSIUCKBMCSU/FullSizeRender.jpg?format=1500w');
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: space;
+        background-image: url('https://assets.artworkarchive.com/image/upload/t_jpg_profile_2000/v1/user_17316/Susan_Clare_Earth_s_Wild_Beauty_Sponges_SoftCorals_dyspzj');
+        background-position: top;
     }
 </style>
 <div class="page">
     <!-- Current Contributors -->
     <div id="Currentcont" class="tab-content">
-        <!-- <div class="container" style="text-align: center;"> -->
+
         <h2 style="text-align: center;">Thank you to our contributors</h2>
         <p style="text-align: center;"><a href="https://www.linkedin.com/in/amanda-ho-lyn/"> Amanda Ho-Lyn </a><i> Senior creator</i>
             <br> <a href="https://www.seascapecarib.com/about-us"> Andrew Ross </a> <i> Author</i><br>
@@ -33,27 +33,27 @@
 
     <!-- New Contributors -->
     <div class="tab-content" id="Newcont" style="display: none;padding: 1em 0.5em;">
-        <!-- <div class="container" style="padding: 1em 0.5em;"> -->
+
         <h2 style="text-align: center;">We'd like to thank our sponsors and contributors for all of their support.</h2>
         <p style="font-size: .8em; text-align:center">If you're interested in getting involved, please contact us using the form below or send us an
             <a href="mailto:lab.amanda.ch@gmail.com?subject=Coral Wiktionary">email</a> and we'll get back to you as soon as we can.</p>
 
         <!-- Contact Form -->
         <h4>Contact Us</h4>
-
-
-        <form id="form" class="topBefore contact" action="https://formspree.io/f/xqkwlneg" method="post">
-
+        <!-- submission api with formspree -->
+        <form id="form" class="topBefore contact" action="https://formspree.io/f/xqkwlneg" method="POST">
+            <!-- form content -->
             <input class="contact" id="name" type="text" name="name" placeholder="NAME">
             <input class="contact" name="_replyto" id="email" type="text" placeholder="E-MAIL">
             <textarea class="contact" name="message" id="message" type="text" placeholder="MESSAGE"></textarea>
+            <input type="hidden" name="_subject" id="email-subject" value="NewCont Form Submission">
             <input class="contact" id="submit" type="submit" value="Submit">
 
         </form>
     </div>
     <hr>
 </div>
-
+<!-- art credit -->
 <div class="container">
     <p style="font-size: .8em; text-align:center"> If you're interested in the artwork used on this site, all pieces were created by <a href="https://www.susanclare.art/#/underwater/">Susan Clare&copy;</a></p>
 </div>

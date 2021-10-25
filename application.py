@@ -21,18 +21,11 @@ import pymysql.cursors
 def create_app():
     application = Flask(__name__)
     FontAwesome(application)
-    application.config['SECRET_KEY'] = 'change this unsecure key' #need for search
+    application.config['SECRET_KEY'] = 'Corallivore33' #need for search
     application.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 
     # Coral db at coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com or ip-10-20-0-201
     # db connection configuration, the schema(db) is CCRW
-
-    # # for local testing: amanda@localhost::/tmp/mysql.sock
-    # application.config['MYSQL_DATABASE_HOST'] = 'localhost'
-    # application.config['MYSQL_UNIX_SOCKET'] = '/tmp/mysql.sock'
-    # application.config['MYSQL_DATABASE_USER'] = 'amanda'
-    # application.config['MYSQL_DATABASE_PASSWORD'] = ''
-    # application.config['MYSQL_DB'] = 'CCRW'
     
     application.config['MYSQL_DATABASE_HOST'] = 'coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com'
     application.config['MYSQL_DATABASE_PORT'] = '3306'
@@ -65,8 +58,8 @@ conf = {
 #     "database": "CCRW"
 # }
 
-class QueryForm(FlaskForm):
-    submit = SubmitField()
+# class QueryForm(FlaskForm):
+#     submit = SubmitField()
 
 # use pymysql cursor to interact with MySQL database
 def createCursor():
@@ -74,6 +67,7 @@ def createCursor():
     cursor = conn.cursor()
     return cursor
 
+######## VIEWS ###########
 
 # define actions for home page
 @application.route('/', methods=['GET', 'POST'])
@@ -88,7 +82,6 @@ def index():
 
 
 # actions for search page   
-
 @application.route('/search', methods=['GET', 'POST'])
 def search():
     cursor=createCursor()
@@ -105,7 +98,8 @@ def search():
         
         # if only searching terms
         if tqry != None:
-            qry=f"%{params}%"
+            qry = params.title()
+            qry=f"{params}%"
             print(qry)
             cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s",(qry))
             results=cursor.fetchall()
@@ -140,24 +134,6 @@ def search():
         return render_template('searchpage.html', results=results, nomatch=nomatch)
         
     return render_template('searchpage.html')
-
-   
-
-# @application.route('/results', methods=['POST'])
-# def search_results():
-# # set up cursor to search db
-#     # conn = pymysql.connect(**conf)
-#     # cursor = conn.cursor()
-
-#     # if request.method == 'POST':
-#     #     qry = request.form['search']
-        
-#     #     details = cursor.get_details()
-#     #     print(details)
-#     #     for detail in details:
-#     #         results = detail
-
-#     return render_template('results.html')
 
 
 # define action for contributor page

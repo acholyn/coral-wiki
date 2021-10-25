@@ -1,16 +1,14 @@
 <!-- Home page displaying the dictionary -->
 
-{% extends 'base.html' %} {% block content %}{% block pagetitle %}
+{% extends 'base.html' %} {% block pagetitle %}
 <div class="pagetitle">The Dictionary</div>
-<hr> {% endblock %}
+<hr> {% endblock %}{% block content %}
 <style>
+    /* customising background image */
+    
     body {
         background-image: url('https://assets.artworkarchive.com/image/upload/t_jpg_profile_2000/v1/user_17316/IMG_9091_ipsniu');
-        background-attachment: fixed;
         background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 8em;
     }
 </style>
 <!-- page with list of definitions -->
@@ -19,12 +17,12 @@
 
     <!-- list of definitions -->
     <div class="container" id="DICT">
-        <ul class="terms" id="terms">
+        <ul id="terms">
             <!-- print each item in the database without ID number. If statement included because not all have referrals -->
             {% for i in defsdata %} {%print%}
             <br>
             <li><a class="term" id="{{ i.Term|trim }}">{{i.Term}}</a>
-                <var class="type">({{i.Type}})</var> <br> {{i.Definition}} {% if i.Referrals %} See also <a href="#{{i.Referrals}}">{{i.Referrals}} </a> <br> {% else %} <br> {% endif %}{% endfor %}</li><br><br>
+                <var class="type">({{i.Type}})</var> <br> {{i.Definition}} {% if i.Referrals %} See also <a href="#{{i.Referrals}}">{{i.Referrals}} </a> <br> {% else %} <br> {% endif %}{% endfor %}</li>
 
         </ul>
 

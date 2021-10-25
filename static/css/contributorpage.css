@@ -1,0 +1,73 @@
+/* Contributor Page styling */
+
+
+/* Style the tab areas */
+
+.tabs {
+    overflow: hidden;
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    text-align: center;
+}
+
+
+/* Style the buttons that are used to open the tab content */
+
+.tabs button {
+    background-color: rgba(255, 255, 255, 0.05);
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    color: rgba(36, 112, 211, 0.911);
+}
+
+
+/* Change background color of buttons on hover */
+
+.tabs button:hover {
+    background-color: rgba(181, 231, 245, 0.8);
+}
+
+
+/* Create an active/current tablink class */
+
+.tabs button.active {
+    background-color: rgba(195, 247, 227, 0.904);
+}
+
+
+/* Style the tab content */
+
+.tab-content {
+    padding: 1em 0.5em;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+
+/********* CONTACT FORM *******/
+
+
+/* for specifics on the form see contactform.css */
+
+#Newcont {
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+form {
+    background-color: inherit;
+    background-blend-mode: soft-light;
+}
