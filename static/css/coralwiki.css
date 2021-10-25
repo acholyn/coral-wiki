@@ -16,6 +16,9 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     min-height: 7em;
 }
 
@@ -76,7 +79,6 @@ body {
     margin: auto;
     border-spacing: 0;
     background-color: rgba(255, 255, 255, 0.9);
-    background-blend-mode: hard-light;
 }
 
 hr {
@@ -296,6 +298,7 @@ ul#terms {
 .intro {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: .4em;
     width: 85%;
     background-color: rgba(255, 255, 255, 0.9);
     background-blend-mode: hard-light;
