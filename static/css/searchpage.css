@@ -45,20 +45,10 @@ input[type="search"]:-ms-input-placeholder {
     color: #b1e0de;
 }
 
-
-/* input::after {
-    display: block;
-    float: right;
-    position: relative;
-} */
-
 #searchpagesubmit {
     background-color: #fff;
     border: none;
-    /* position: absolute; */
     margin-right: 1%;
-    /* font-size: 3em;
-    color: #1f5350 */
 }
 
 .searchoptions {
@@ -77,9 +67,6 @@ input[type="search"]:-ms-input-placeholder {
     font-size: .9em;
     font-weight: 300;
     color: #536e79;
-    text-align: center;
-    font-family: 'Lato', sans-serif;
-    background-image: radial-gradient(#f6fdfd, #ffffff);
 }
 
 ul.search-results {
@@ -92,8 +79,6 @@ ul.search-results {
 }
 
 .search-results li {
-    font-family: 'Open Sans';
-    text-align: left;
     padding: .8em;
     list-style: none;
     border-bottom: none;
@@ -101,13 +86,5 @@ ul.search-results {
 }
 
 .no-results {
-    width: 85%;
-    height: 2em;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
-    padding: 0.5em;
     color: rgb(243, 239, 226);
 }
