@@ -90,7 +90,7 @@
 
 <br>
 
-<body>
+<body id="body">
 
 
     {% endblock content %} {% block BTTB %}
@@ -127,6 +127,8 @@
     <!--Jquery Cdn -->
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
+    <!-- add vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <!--JavaScript-->
     <!-- image hover thing NEEDS FIXING-->
@@ -141,37 +143,12 @@
     </script> -->
 
     <!-- search filter -->
-    <script>
-        function myFunction() {
-            // Declare variables
-            var input, filter, ul, li, a, i, txtValue;
-            input = document.getElementById('searchbar');
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("terms");
-            li = ul.getElementsByTagName('li');
+    <script type="text/javascript" src="{{ url_for( 'static', filename='js/sfilter.js' ) }}"></script>
 
-            // Loop through all list items, and hide those who don't match the search query
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-        }
-    </script>
-
-
-    <!-- add hyperscript -->
-    <!-- <script src="https://unpkg.com/hyperscript.org@0.8.2"></script> -->
-
-    <!-- import htmx -->
-    <!-- <script src="https://unpkg.com/htmx.org@1.6.0" integrity="sha384-G4dtlRlMBrk5fEiRXDsLjriPo8Qk5ZeHVVxS8KhX6D7I9XXJlNqbdvRlp9/glk5D" crossorigin="anonymous"></script> -->
 
     <!-- back to top button -->
     <script type="text/javascript" src="{{ url_for( 'static', filename='js/backtotop.js' ) }}"></script>
+
 
     <!-- Contributor Page Tabs -->
     <script>

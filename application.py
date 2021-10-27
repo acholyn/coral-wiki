@@ -1,7 +1,5 @@
 # Module imports
-
 from flask import Flask, render_template, url_for, redirect, request 
-#from flask_bootstrap import Bootstrap
 from flask_fontawesome import FontAwesome
 from flask_wtf import FlaskForm
 from wtforms import SubmitField, StringField
@@ -9,9 +7,8 @@ from flask_mysqldb import MySQL
 import pymysql
 import pymysql.cursors
 
-# Imports from other files
-# from forms import sitesearch
-
+# connect with pymysql from config file
+from sqlconf import conf
 
 #######################################################
 # run sudo yum install -y mysql-devel on the instance #
@@ -22,46 +19,20 @@ def create_app():
     application = Flask(__name__)
     FontAwesome(application)
     application.config['SECRET_KEY'] = 'Corallivore33' #need for search
+
     application.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 
-    # Coral db at coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com or ip-10-20-0-201
-    # db connection configuration, the schema(db) is CCRW
-    
-    application.config['MYSQL_DATABASE_HOST'] = 'coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com'
-    application.config['MYSQL_DATABASE_PORT'] = '3306'
-    application.config['MYSQL_DATABASE_USER'] = 'master'
-    application.config['MYSQL_DATABASE_PASSWORD'] = 'CoralWiki2021'
-    application.config['MYSQL_DATABASE_DB'] = 'CCRW'
     
     return application
 
 application = create_app()
 mysql = MySQL(application)
 
-# connect with pymysql - config
-conf = {
-    "host": 'coral-wiki.cgt5nl4ooura.us-east-2.rds.amazonaws.com',
-    "port": 3306,
-    "user": "master",
-    "password": "CoralWiki2021",
-    "cursorclass": pymysql.cursors.DictCursor,
-    "database": "CCRW"
-}
-
-# # for local testing
-# conf = {
-#     "host": 'localhost',
-#     "unix_socket": '/tmp/mysql.sock',
-#     "user": "amanda",
-#     "password": '',
-#     "cursorclass": pymysql.cursors.DictCursor,
-#     "database": "CCRW"
-# }
 
 # class QueryForm(FlaskForm):
 #     submit = SubmitField()
 
-# use pymysql cursor to interact with MySQL database
+# create pymysql cursor to interact with MySQL database
 def createCursor():
     conn = pymysql.connect(**conf)
     cursor = conn.cursor()
