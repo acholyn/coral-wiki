@@ -351,3 +351,5 @@ MigrationBackup/
 
 
 env/*
+.vscode/extensions.json
+static/.DS_Store
