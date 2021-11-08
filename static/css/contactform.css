@@ -8,7 +8,70 @@
     padding: 1em;
     margin-left: 5%;
     margin-right: 5%;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    background: transparent;
+    outline: none;
+    color: #92b6df;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
 }
+
+input.contact:hover,
+textarea.contact:hover {
+    background: #a5d1ee60;
+    color: #2e65db;
+}
+
+
+/* actual form styling */
+
+form {
+    font-family: 'Lato', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.2em
+}
+
+#contactform {
+    position: relative;
+    width: 80%;
+    margin: 25px auto 100px auto;
+}
+
+input.contact {
+    border: solid 1px #829abe;
+    border-bottom: none;
+}
+
+textarea.contact {
+    border: solid 1px #829abe;
+}
+
+.contact#submit {
+    width: 70%;
+    padding: 2em;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    color: #198b86b2;
+    outline: none;
+    cursor: pointer;
+    border: solid 1px #829abe;
+    /* border-top: none; */
+}
+
+.contact#submit:hover {
+    color: #3d86da;
+}
+
+
+/* placeholder styling for various browsers */
 
 .contact input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -55,7 +118,7 @@ textarea:focus::-ms-placeholder {
 }
 
 
-/* on hover placeholder */
+/* on hover placeholder for various browsers */
 
 .contact input:hover::-webkit-input-placeholder,
 textarea:hover::-webkit-input-placeholder {
@@ -99,82 +162,4 @@ textarea:hover::placeholder {
 .contact input:hover:focus::-ms-placeholder,
 textarea:hover::focus:-ms-placeholder {
     color: #7fb3d6;
-}
-
-form {
-    font-family: 'Lato', sans-serif;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 1.2em
-}
-
-#form {
-    position: relative;
-    width: 80%;
-    margin: 25px auto 100px auto;
-}
-
-input.contact {
-    font-family: 'Lato', sans-serif;
-    font-size: 0.875em;
-    /* width: 90%;
-    height: 50px;
-    padding: 0px 15px 0px 15px; */
-    background: transparent;
-    outline: none;
-    color: #92b6df;
-    border: solid 1px #829abe;
-    border-bottom: none;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-}
-
-input.contact:hover {
-    background: #a5d1ee60;
-    color: #2e65db;
-}
-
-textarea.contact {
-    width: inherit;
-    /* max-width: 80%; */
-    /* height: 110px;
-    max-height: 110px;
-    padding: 15px; */
-    background: transparent;
-    outline: none;
-    color: #92b6df;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.875em;
-    border: solid 1px #829abe;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-}
-
-textarea.contact:hover {
-    background: #a5d1ee60;
-    color: #3d4dda;
-}
-
-.contact#submit {
-    width: 70%;
-    padding: 2em;
-    text-align: center;
-    margin-left: 15%;
-    margin-right: auto;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.875em;
-    color: #198b86b2;
-    outline: none;
-    cursor: pointer;
-    border: solid 1px #829abe;
-    /* border-top: none; */
-}
-
-.contact#submit:hover {
-    color: #3d86da;
 }
