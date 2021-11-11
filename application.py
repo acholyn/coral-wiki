@@ -14,7 +14,7 @@ from sqlconf import conf
 # run sudo yum install -y mysql-devel on the instance #
 #######################################################
 
-
+# create application function
 def create_app():
     application = Flask(__name__)
     FontAwesome(application)
@@ -22,15 +22,12 @@ def create_app():
 
     application.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 
-    
     return application
 
+# instantiate app and MySQL
 application = create_app()
 mysql = MySQL(application)
 
-
-# class QueryForm(FlaskForm):
-#     submit = SubmitField()
 
 # create pymysql cursor to interact with MySQL database
 def createCursor():
@@ -61,7 +58,11 @@ def search():
     # create variables for each search option
     params = request.form.get('search')
     tqry = request.form.get('onlyterms')
-    dqry= request.form.get('onlydefs')
+    dqry= request.form.get('onlydefs')   
+    # column selection from db 
+    colselect = "Term, Type, Definition"
+
+    # response if no matches found
     nomatch = f"No results for {params} found"
 
     # perform search according to options
@@ -71,25 +72,25 @@ def search():
         if tqry != None:
             qry = params.title()
             qry=f"{params}%"
-            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s",(qry))
+            cursor.execute("SELECT %s FROM CoralDefinitions WHERE Term LIKE %s",(colselect,qry))
             results=cursor.fetchall()
 
         # if only searching definitions
         elif dqry != None:
             qry=f"%{params}%"
-            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Definition LIKE %s ",(qry))
+            cursor.execute("SELECT %s FROM CoralDefinitions WHERE Definition LIKE %s ",(colselect,qry))
             results=cursor.fetchall()
 
         # if both definitions and terms
         elif tqry != None and dqry != None:
             qry=f"%{params}%"
-            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s AND WHERE Definition LIKE %s ",(qry,qry))
+            cursor.execute("SELECT %s FROM CoralDefinitions WHERE Term LIKE %s AND WHERE Definition LIKE %s ",(colselect,qry,qry))
             results=cursor.fetchall()
 
          # search all
         else:
             qry=f"%{params}%"
-            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s OR Definition LIKE %s OR Type LIKE %s",(qry,qry,qry))
+            cursor.execute("SELECT %s FROM CoralDefinitions WHERE Term LIKE %s OR Definition LIKE %s OR Type LIKE %s",(colselect,qry,qry,qry))
             results=cursor.fetchall()
 
             
@@ -101,12 +102,23 @@ def search():
 # define action for contributor page
 @application.route('/contributors')
 def contributors():
-    return render_template('contributors.html')
+
+    cursor=createCursor()
+    contributors=cursor.execute("SELECT * FROM Contributors")
+    contributors = cursor.fetchall() # makes selection iterable
+    cursor.close()
+
+    return render_template('contributors.html', contributors=contributors)
 
 # define action for about page
 @application.route('/about')
 def about():
     return render_template('aboutme.html')
+
+# define action for contcact page
+@application.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 
 # # No caching at all for API endpoints.
