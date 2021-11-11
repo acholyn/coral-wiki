@@ -1,0 +1,43 @@
+<!-- Page for general contact and maybe about in future -->
+{% extends 'base.html'%} {% block searchbar %}{% endblock %} {% block pagetitle %}
+<div class="pagetitle">Contact Us</div>
+
+<hr> {% endblock %}{% block content %}
+<style>
+    /* customising background image */
+    
+    body {
+        background-image: url('https://assets.artworkarchive.com/image/upload/t_jpg_profile_2000/v1/user_17316/IMG_5087_tzfdgc');
+        background-position: top;
+    }
+</style>
+<div class="page">
+    
+
+    <!-- Contact Us -->
+    <div class="intro">
+        <h4 style="text-align: center;">Contact Us</h4>
+        <p style="font-size: .8em; text-align:center">If you're interested in getting involved, please contact us using the form below or send us an
+            <a href="mailto:lab.amanda.ch@gmail.com?subject=Coral Wiktionary">email</a> and we'll get back to you as soon as we can.</p>
+
+        <!-- Contact Form -->
+        
+        <!-- submission api with formspree -->
+        <form id="contactform" class="topBefore contact" action="https://formspree.io/f/xqkwlneg" method="POST">
+            <!-- form content -->
+            <input class="contact" id="name" type="text" name="name" placeholder="NAME">
+            <input class="contact" name="_replyto" id="email" type="text" placeholder="E-MAIL">
+            <textarea class="contact" name="message" id="message" type="text" placeholder="MESSAGE"></textarea>
+            <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+            <input class="contact" id="submit" type="submit" value="Submit" style="margin-left: auto;">
+
+        </form>
+    </div>
+    <hr>
+</div>
+<!-- art credit -->
+<div class="container pageheader">
+    <p style="font-size: .8em; text-align:center"> If you're interested in the artwork used on this site, all pieces were created by <a href="https://www.susanclare.art/#/underwater/">Susan Clare&copy;</a></p>
+</div>
+</div>
+{% endblock %}
