@@ -59,12 +59,14 @@ def search():
     params = request.form.get('search')
     tqry = request.form.get('onlyterms')
     dqry= request.form.get('onlydefs')   
-    # column selection from db 
-    colselect = "Term, Type, Definition"
+    
 
     # response if no matches found
     nomatch = f"No results for {params} found"
 
+    # column selection from db written longhand as variable assignment 
+    # causes empty results
+    
     # perform search according to options
     if request.method == "POST":
         
@@ -72,26 +74,33 @@ def search():
         if tqry != None:
             qry = params.title()
             qry=f"{params}%"
-            cursor.execute("SELECT %s FROM CoralDefinitions WHERE Term LIKE %s",(colselect,qry))
+            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s",(qry))
             results=cursor.fetchall()
+            print(qry,results)
 
         # if only searching definitions
         elif dqry != None:
             qry=f"%{params}%"
-            cursor.execute("SELECT %s FROM CoralDefinitions WHERE Definition LIKE %s ",(colselect,qry))
+            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Definition LIKE %s ",(qry))
             results=cursor.fetchall()
+            print(qry,results)
+
 
         # if both definitions and terms
         elif tqry != None and dqry != None:
             qry=f"%{params}%"
-            cursor.execute("SELECT %s FROM CoralDefinitions WHERE Term LIKE %s AND WHERE Definition LIKE %s ",(colselect,qry,qry))
+            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s AND WHERE Definition LIKE %s ",(qry,qry))
             results=cursor.fetchall()
+            print(qry,results)
+
 
          # search all
         else:
             qry=f"%{params}%"
-            cursor.execute("SELECT %s FROM CoralDefinitions WHERE Term LIKE %s OR Definition LIKE %s OR Type LIKE %s",(colselect,qry,qry,qry))
+            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s OR Definition LIKE %s OR Type LIKE %s",(qry,qry,qry))
             results=cursor.fetchall()
+            print(qry,results)
+
 
             
         return render_template('searchpage.html', results=results, nomatch=nomatch)
