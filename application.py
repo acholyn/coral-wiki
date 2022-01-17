@@ -7,8 +7,10 @@ from flask_mysqldb import MySQL
 import pymysql
 import pymysql.cursors
 
-# connect with pymysql from config file
-from sqlconf import conf
+# file imports
+from sqlconf import conf # connect with pymysql from config file
+from dictsearch import searchdict
+
 
 #######################################################
 # run sudo yum install -y mysql-devel on the instance #
@@ -20,7 +22,7 @@ def create_app():
     FontAwesome(application)
     application.config['SECRET_KEY'] = 'Corallivore33' #need for search
 
-    application.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
+    # application.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1 
 
     return application
 
@@ -36,7 +38,6 @@ def createCursor():
     return cursor
 
 ######## VIEWS ###########
-
 # define actions for home page
 @application.route('/', methods=['GET', 'POST'])
 def index():
@@ -52,15 +53,12 @@ def index():
 # actions for search page   
 @application.route('/search', methods=['GET', 'POST'])
 def search():
-    # call cursor function to interact with db
-    cursor=createCursor()
 
     # create variables for each search option
     params = request.form.get('search')
     tqry = request.form.get('onlyterms')
     dqry= request.form.get('onlydefs')   
     
-
     # response if no matches found
     nomatch = f"No results for {params} found"
 
@@ -69,45 +67,12 @@ def search():
     
     # perform search according to options
     if request.method == "POST":
-        
-        # if only searching terms
-        if tqry != None:
-            qry = params.title()
-            qry=f"{params}%"
-            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s",(qry))
-            results=cursor.fetchall()
-            print(qry,results)
 
-        # if only searching definitions
-        elif dqry != None:
-            qry=f"%{params}%"
-            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Definition LIKE %s ",(qry))
-            results=cursor.fetchall()
-            print(qry,results)
-
-
-        # if both definitions and terms
-        elif tqry != None and dqry != None:
-            qry=f"%{params}%"
-            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s AND WHERE Definition LIKE %s ",(qry,qry))
-            results=cursor.fetchall()
-            print(qry,results)
-
-
-         # search all
-        else:
-            qry=f"%{params}%"
-            cursor.execute("SELECT Term, Type, Definition FROM CoralDefinitions WHERE Term LIKE %s OR Definition LIKE %s OR Type LIKE %s",(qry,qry,qry))
-            results=cursor.fetchall()
-            print(qry,results)
-
-
+        results = searchdict(params,tqry,dqry)
+    else:pass
             
-        return render_template('searchpage.html', results=results, nomatch=nomatch)
+    return render_template('searchpage.html', nomatch=nomatch, results=results)
         
-    return render_template('searchpage.html')
-
-
 # define action for contributor page
 @application.route('/contributors')
 def contributors():
