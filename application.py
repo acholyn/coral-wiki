@@ -4,12 +4,10 @@ from flask_fontawesome import FontAwesome
 from flask_wtf import FlaskForm
 from wtforms import SubmitField, StringField
 from flask_mysqldb import MySQL 
-import pymysql
-import pymysql.cursors
 
 # file imports
-from sqlconf import conf # connect with pymysql from config file
 from dictsearch import searchdict
+from createCursor import createCursor
 
 
 #######################################################
@@ -31,11 +29,7 @@ application = create_app()
 mysql = MySQL(application)
 
 
-# create pymysql cursor to interact with MySQL database
-def createCursor():
-    conn = pymysql.connect(**conf)
-    cursor = conn.cursor()
-    return cursor
+
 
 ######## VIEWS ###########
 # define actions for home page

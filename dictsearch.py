@@ -1,4 +1,4 @@
-from application import createCursor
+from createCursor import createCursor
 from flask import request 
 
 
