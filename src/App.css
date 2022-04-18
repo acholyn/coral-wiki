@@ -1,0 +1,63 @@
+/******************* Colours **************************/
+
+:root {
+  --seablue: #9ae7ee;
+  --sea: #79d4f8;
+  --blueshadow: #2f4953;
+}
+
+/********************* General ******************************/
+.Page {
+  min-height: 20rem;
+  margin-bottom: 2em;
+}
+
+.pagetitle {
+  padding: 0.2em;
+  padding-top: 0.7em;
+  font: 1.1em "Cinzel Decorative";
+  font-weight: 300;
+  color: #2f4953;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: 0.5px rgba(74, 141, 230, 0.9);
+}
+
+/* don't know where this is from */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
