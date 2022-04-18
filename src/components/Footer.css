@@ -1,0 +1,17 @@
+.footer {
+  background-color: var(--blueshadow);
+  padding: 0.2em 0;
+  min-height: 2em;
+  position: fixed;
+  bottom: 0;
+}
+.fhead {
+  font: 0.8em "Cinzel Decorative";
+  color: white;
+}
+
+.fnav,
+.fnav a {
+  font: 0.4em "Open sans";
+  color: white;
+}

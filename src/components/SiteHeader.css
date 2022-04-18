@@ -1,0 +1,16 @@
+.siteHeader {
+  padding: 0.2em;
+  display: inline-flexbox;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font: 1.1em "Cinzel Decorative";
+  font-weight: 300;
+  color: var(--blueshadow);
+
+  background-color: var(--seablue);
+  background-image: url("https://www.blessed-midland.org/wp-content/uploads/2018/07/marko-blazevic-299203-2048x1366.jpg");
+  background-blend-mode: soft-light;
+  background-position: center;
+  width: inherit;
+}
