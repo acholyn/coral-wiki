@@ -5,7 +5,10 @@ export default function SearchPage() {
   return (
     <Container className="Page">
       <PageTitle title="Search" />
-      <Container>search stuff</Container>
+      <Container>
+        {/* todo: find searchbox on bootstrap */}
+        {/* todo: figure out backend of searching */}
+      </Container>
     </Container>
   );
 }

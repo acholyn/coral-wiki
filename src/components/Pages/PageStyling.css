@@ -1,0 +1,11 @@
+.contributors {
+  font: 100% "Open Sans";
+  text-align: center;
+}
+.contributors a {
+  text-decoration: none;
+  color: var(--oceanblue);
+}
+.contributors i {
+  color: var(--stone);
+}

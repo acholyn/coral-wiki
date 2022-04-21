@@ -4,15 +4,19 @@
   --seablue: #9ae7ee;
   --sea: #79d4f8;
   --blueshadow: #2f4953;
+  --stone: #4d565a;
+  --oceanblue: #4a8de6;
 }
 
 /********************* General ******************************/
+
 .Page {
-  min-height: 20rem;
-  margin-bottom: 2em;
+  min-height: 100vh;
+  margin-bottom: 20vh;
 }
 
 .pagetitle {
+  text-align: center;
   padding: 0.2em;
   padding-top: 0.7em;
   font: 1.1em "Cinzel Decorative";
@@ -23,7 +27,7 @@
 }
 
 /* don't know where this is from */
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -60,4 +64,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

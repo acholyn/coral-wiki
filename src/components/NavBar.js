@@ -1,5 +1,6 @@
 import { Nav, Navbar, Row, Col } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import "./NavBar.css";
 
 export let navcontents = [
   { label: "Home", extension: "/" },
@@ -10,14 +11,15 @@ export let navcontents = [
 ];
 export default function NavBar() {
   return (
-    <Row
-      fluid="true"
-      className="me-auto justify-content-center border-bottom border-secondary">
-      <Navbar bg="light" variant="light">
+    <Row fluid="true" className="me-auto border-bottom border-secondary">
+      <Navbar
+        bg="light"
+        variant="light"
+        className="justify-content-center navBar">
         {" "}
         <Col xs={2} />
-        <Col className="ms-auto">
-          <Nav className="justify-content-center">
+        <Col className="">
+          <Nav className="navBar">
             {navcontents.map((page) => (
               <LinkContainer to={page.extension}>
                 <Nav.Link>{page.label}</Nav.Link>

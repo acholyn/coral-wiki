@@ -1,6 +1,8 @@
 import { Container, Tabs, Tab, Alert } from "react-bootstrap";
 import { NewContributorForm } from "../Utilities/NewContributorForm";
 import PageTitle from "../PageTitle";
+import { contributorsList } from "../../contents/contributorsList";
+import "./PageStyling.css";
 
 export default function Contributors() {
   return (
@@ -8,7 +10,16 @@ export default function Contributors() {
       <PageTitle title="Contributors" />
       <Tabs defaultActiveKey="current" className="mb-3 justify-content-center">
         <Tab eventKey="current" title="Current">
-          current contributors{" "}
+          <Container>
+            {contributorsList.map((contributor) => (
+              <p className="contributors">
+                <b>
+                  <a href={contributor.link}>{contributor.fullname}</a>
+                </b>{" "}
+                - <i>{contributor.role}</i>
+              </p>
+            ))}{" "}
+          </Container>
         </Tab>
         <Tab eventKey="new" title="New (Join Us!)">
           <Alert variant="info">

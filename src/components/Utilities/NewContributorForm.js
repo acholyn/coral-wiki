@@ -3,6 +3,7 @@ import "../../App.css";
 
 export function NewContributorForm() {
   return (
+    // todo: change placeholder text size to flexible
     <Container>
       <Card>
         <Container className="justify-content-center" style={{ width: "80vw" }}>
