@@ -20,8 +20,8 @@ export default function NavBar() {
         <Col xs={2} />
         <Col className="">
           <Nav className="navBar">
-            {navcontents.map((page) => (
-              <LinkContainer to={page.extension}>
+            {navcontents.map((page, i) => (
+              <LinkContainer to={page.extension} key={i}>
                 <Nav.Link>{page.label}</Nav.Link>
               </LinkContainer>
             ))}
