@@ -10,6 +10,7 @@ export default function Footer() {
         {" "}
         The Coral Culture & Restoration Wiktionary &copy; 2022
       </Row>
+      <hr></hr>
       <Row>
         <Nav className="justify-content-center fnav">
           {navcontents.map((page) => (
