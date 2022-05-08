@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/coral-wiki.org/static/css/main.a812c880.css",
+    "main.js": "/coral-wiki.org/static/js/main.1dc10dd4.js",
+    "static/js/787.86516aa5.chunk.js": "/coral-wiki.org/static/js/787.86516aa5.chunk.js",
+    "index.html": "/coral-wiki.org/index.html",
+    "main.a812c880.css.map": "/coral-wiki.org/static/css/main.a812c880.css.map",
+    "main.1dc10dd4.js.map": "/coral-wiki.org/static/js/main.1dc10dd4.js.map",
+    "787.86516aa5.chunk.js.map": "/coral-wiki.org/static/js/787.86516aa5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a812c880.css",
+    "static/js/main.1dc10dd4.js"
+  ]
+}
