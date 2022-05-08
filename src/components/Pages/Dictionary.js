@@ -2,19 +2,26 @@
 
 import { Container } from "react-bootstrap";
 import PageTitle from "../PageTitle";
-import { dictionaryContents } from "../../contents/dictionaryContents";
+import definitions from "../../contents/definitions.json";
 
 export default function Dictionary() {
+  // const defs = definitions.map()
+
   return (
     <Container className="Page">
       <PageTitle title="Dictionary" />
-      <Container>
-        {dictionaryContents.map((word) => (
-          <p>
-            <b>{word.term}</b> (<i>{word.type}</i>) <br></br>
-            {word.definition}
+      <Container className="dictionary">
+        {definitions.map((word, i) => (
+          <p key={i}>
+            <b>{word.TERM}</b> (<i>{word.ROLE}</i>) <br></br>
+            {word.DEFINITION}
             {/* make conditionals for referrals (see also) */}
-            {/* {&& word.referral.length > 2 ()} */}
+            {word.REFERRALS.length >= 2 && (
+              <span>
+                {" "}
+                See also <a href={word.REFERRALS}>{word.REFERRALS}</a>
+              </span>
+            )}
           </p>
         ))}
       </Container>

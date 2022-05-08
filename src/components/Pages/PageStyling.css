@@ -9,3 +9,17 @@
 .contributors i {
   color: var(--stone);
 }
+
+.dictionary {
+  font-family: "Open Sans", sans-serif;
+}
+
+.dictionary b {
+  color: var(--oceanblue);
+}
+
+.dictionary a {
+  text-decoration: none;
+  font-style: italic;
+  color: var(--oceanblue);
+}
