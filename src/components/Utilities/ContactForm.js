@@ -32,7 +32,7 @@ export function ContactForm() {
               <Col lg>
                 <Form.Control as="textarea" rows={3} />{" "}
               </Col>
-              <Form.Text className="text-muted">
+              <Form.Text className="text-muted" style={{ marginLeft: "5vw" }}>
                 If you want to submit a definition, check out the{" "}
                 <a href="/contributors">contributor page</a>.
               </Form.Text>
@@ -44,7 +44,8 @@ export function ContactForm() {
               style={{
                 background: "var(--seablue)",
                 border: "none",
-                color: "var(--blueshadow",
+                color: "var(--blueshadow)",
+                marginLeft: "20vw",
               }}>
               Submit
             </Button>
