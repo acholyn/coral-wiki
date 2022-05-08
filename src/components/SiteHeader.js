@@ -14,7 +14,7 @@ export default function SiteHeader() {
         <Col className="logos" md>
           <img
             src={`${process.env.PUBLIC_URL}/images/SC_vectorLogo_crop.png`}
-            width="100"
+            width="10%"
             alt={"Seascape Caribbean"}
           />
         </Col>

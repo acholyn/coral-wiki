@@ -1,0 +1,10 @@
+.navBar {
+  width: 100%;
+  font-size: 90%;
+  padding: 0.5em !important;
+  text-align: center;
+  justify-content: center;
+
+  /* todo: make collapsable on mobile */
+  /* flex-direction: column !important; */
+}
