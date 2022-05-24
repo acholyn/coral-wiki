@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/coral-wiki/static/css/main.a812c880.css",
-    "main.js": "/coral-wiki/static/js/main.22dbaf7f.js",
-    "static/js/787.86516aa5.chunk.js": "/coral-wiki/static/js/787.86516aa5.chunk.js",
-    "index.html": "/coral-wiki/index.html",
-    "main.a812c880.css.map": "/coral-wiki/static/css/main.a812c880.css.map",
-    "main.22dbaf7f.js.map": "/coral-wiki/static/js/main.22dbaf7f.js.map",
-    "787.86516aa5.chunk.js.map": "/coral-wiki/static/js/787.86516aa5.chunk.js.map"
+    "main.css": "/static/css/main.a812c880.css",
+    "main.js": "/static/js/main.f4f69e5a.js",
+    "static/js/787.86516aa5.chunk.js": "/static/js/787.86516aa5.chunk.js",
+    "index.html": "/index.html",
+    "main.a812c880.css.map": "/static/css/main.a812c880.css.map",
+    "main.f4f69e5a.js.map": "/static/js/main.f4f69e5a.js.map",
+    "787.86516aa5.chunk.js.map": "/static/js/787.86516aa5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a812c880.css",
-    "static/js/main.22dbaf7f.js"
+    "static/js/main.f4f69e5a.js"
   ]
 }
