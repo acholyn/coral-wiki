@@ -1,6 +1,7 @@
-{"homepage": "coral-wiki.org",
+{
+  "homepage": "https://acholyn.github.io/coral-wiki/",
   "name": "coral-app",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -21,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-"deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -53,7 +54,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "coral-wiki"
+    "url": "https://github.com/acholyn/coral-wiki"
   },
   "keywords": [
     "coral",
