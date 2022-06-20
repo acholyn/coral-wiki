@@ -7,7 +7,7 @@ export let navcontents = [
   { label: "Contributors", extension: "contributors" },
   { label: "About Us", extension: "about" },
   { label: "Contact Us", extension: "contact" },
-  { label: "Search", extension: "search" },
+  // { label: "Search", extension: "search" },
 ];
 export default function NavBar() {
   return (
