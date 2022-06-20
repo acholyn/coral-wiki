@@ -8,3 +8,13 @@
   /* todo: make collapsable on mobile */
   /* flex-direction: column !important; */
 }
+
+.navlink {
+  padding: 10px;
+}
+.navlink:hover {
+  transform: scale(101%);
+  background-image: radial-gradient(var(--seablue), white);
+  transition: 0.5s;
+  font-weight: 500;
+}
