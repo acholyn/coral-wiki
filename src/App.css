@@ -28,4 +28,10 @@
 
 * {
   word-wrap: normal;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 105%;
+  font-family: "Open Sans", sans-serif;
 }
