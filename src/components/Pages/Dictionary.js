@@ -8,6 +8,10 @@ export default function Dictionary() {
   const handleAnchorClick = (event) => {
     let hash = event.target.hash;
     let anchorElem = document.querySelector(hash);
+    if (anchorElem == null) {
+      let linkParentElem = event.target;
+      linkParentElem.style.color = "red";
+    }
     event.preventDefault();
     anchorElem.scrollIntoView({ behavior: "smooth", block: "start" });
   };
