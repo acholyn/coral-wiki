@@ -14,12 +14,23 @@
   font-family: "Open Sans", sans-serif;
 }
 
-.dictionary b {
+.term {
   color: var(--oceanblue);
 }
 
-.dictionary a {
+.ref-link {
   text-decoration: none;
   font-style: italic;
   color: var(--oceanblue);
+}
+
+.result-item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: nowrap;
+}
+
+.summary {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
