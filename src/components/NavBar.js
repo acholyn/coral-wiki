@@ -22,7 +22,7 @@ export default function NavBar() {
           <Nav className="navBar">
             {navcontents.map((page, i) => (
               <LinkContainer to={page.extension} key={i}>
-                <Nav.Link>{page.label}</Nav.Link>
+                <Nav.Link className="navlink">{page.label}</Nav.Link>
               </LinkContainer>
             ))}
           </Nav>

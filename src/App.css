@@ -28,4 +28,27 @@
 
 * {
   word-wrap: normal;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 105%;
+  font-family: "Open Sans", sans-serif;
+}
+
+#submit-button {
+  background: var(--seablue);
+  border: none;
+  color: var(--blueshadow);
+  transition: 0.8s ease-in-out;
+  margin-left: 40%;
+}
+
+#submit-button:hover {
+  background-color: var(--sea);
+  transform: scale(110%);
+}
+
+#new-contributor-form [placeholder] {
+  font-size: 90%;
 }
