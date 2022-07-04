@@ -34,3 +34,24 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.search-options-container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-options {
+  color: var(--blueshadow);
+  font-size: 80%;
+  padding: 0.5rem 1rem;
+}
+
+.search-options > input[type="checkbox"] {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.search-options > input[type="checkbox"]:checked {
+  background-color: var(--oceanblue);
+  transition: 0.5s;
+}
