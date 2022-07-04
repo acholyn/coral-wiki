@@ -1,11 +1,12 @@
 import { Container, Form, FormControl } from "react-bootstrap";
 import PageTitle from "../PageTitle";
 import { useState } from "react";
-import definitions from "../../contents/definitions.json";
+// import definitions from "../../contents/definitions.json";
+import { findResults } from "../Utilities/findResults";
 
 export default function SearchPage() {
   const [results, setResults] = useState();
-  const defsArray = Array.from(definitions);
+  // const defsArray = Array.from(definitions);
 
   const handleSearchInput = (event) => {
     let searchText = event.target.value;
@@ -13,43 +14,11 @@ export default function SearchPage() {
     if (searchText.includes("@checkbox"))
       searchText = document.getElementById("searchBar").value;
 
-    const checkBoxes = Array.from(
-      document.querySelectorAll("input[type='checkbox']")
-    );
+    let foundResults = findResults(searchText);
 
-    let termsCheckbox = checkBoxes[0];
-    let definitionsCheckbox = checkBoxes[1];
-    let typeCheckbox = checkBoxes[2];
+    if (searchText === "" || foundResults.length < 1) return setResults(null);
 
-    // ideally this would be in a separate file but
-    // it isn't computed properly when separated
-    // eslint-disable-next-line array-callback-return
-    const findResults = defsArray.filter((obj) => {
-      const termResults = obj["TERM"]
-        .toLowerCase()
-        .includes(searchText.toLowerCase());
-
-      const defResults = obj["DEFINITION"]
-        .toLowerCase()
-        .includes(searchText.toLowerCase());
-
-      const roleResults = obj["ROLE"]
-        .toLowerCase()
-        .includes(searchText.toLowerCase());
-
-      if (termsCheckbox.checked) return termResults;
-      if (definitionsCheckbox.checked) return defResults;
-      if (typeCheckbox.checked) return roleResults;
-      if (
-        !termsCheckbox.checked &&
-        !definitionsCheckbox.checked &&
-        !typeCheckbox.checked
-      )
-        return termResults;
-    });
-    if (searchText === "" || findResults.length < 1) return setResults(null);
-
-    setResults(findResults);
+    setResults(foundResults);
   };
 
   const options = [
