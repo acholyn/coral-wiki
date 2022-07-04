@@ -67,7 +67,7 @@ export default function SearchPage() {
         {results &&
           results.map((result, i) => (
             <p key={i} className="result-item">
-              <span className="term">{result.TERM}</span> (<i>{result.ROLE}</i>){" "}
+              <span className="term">{result.TERM}</span> (<i>{result.TYPE}</i>){" "}
               <small className="summary">{result.DEFINITION}</small>{" "}
             </p>
           ))}
