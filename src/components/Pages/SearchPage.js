@@ -9,12 +9,9 @@ export default function SearchPage() {
 
   const handleSearchInput = (event) => {
     let searchText = event.target.value;
-    console.log(searchText);
 
     if (searchText.includes("@checkbox"))
       searchText = document.getElementById("searchBar").value;
-
-    if (searchText === "") return setResults(null);
 
     const checkBoxes = Array.from(
       document.querySelectorAll("input[type='checkbox']")
@@ -50,6 +47,7 @@ export default function SearchPage() {
       )
         return termResults;
     });
+    if (searchText === "" || findResults.length < 1) return setResults(null);
 
     setResults(findResults);
   };
