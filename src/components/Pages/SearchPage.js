@@ -21,8 +21,12 @@ export default function SearchPage() {
     setResults(foundResults);
   };
 
-  const options = [
-    { name: "Search terms (default)", value: "@checkbox1" },
+  const searchOptions = [
+    {
+      name: "Search terms (default)",
+      value: "@checkbox1",
+      defaultChecked: true,
+    },
     { name: "Search definitions", value: "@checkbox2" },
     { name: "Search by type", value: "@checkbox3" },
   ];
@@ -44,13 +48,15 @@ export default function SearchPage() {
 
         <Form>
           <div className="search-options-container">
-            {options.map((option, i) => (
+            {searchOptions.map((option, i) => (
               <label className="search-options" key={i}>
                 {option.name}
                 <input
-                  type="checkbox"
+                  name="searchFilter"
+                  type="radio"
                   value={option.value}
                   onClick={handleSearchInput}
+                  defaultChecked={option.defaultChecked}
                 />
               </label>
             ))}
