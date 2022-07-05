@@ -11,8 +11,8 @@ export default function Contributors() {
       <Tabs defaultActiveKey="current" className="mb-3 justify-content-center">
         <Tab eventKey="current" title="Current">
           <Container>
-            {contributorsList.map((contributor) => (
-              <p className="contributors">
+            {contributorsList.map((contributor, i) => (
+              <p className="contributors" key={i}>
                 <b>
                   <a href={contributor.link}>{contributor.fullname}</a>
                 </b>{" "}
