@@ -21,7 +21,7 @@ export function findResults(searchText) {
       .toLowerCase()
       .includes(searchText.toLowerCase());
 
-    const typeResults = obj["type"]
+    const typeResults = obj["TYPE"]
       .toLowerCase()
       .includes(searchText.toLowerCase());
 
