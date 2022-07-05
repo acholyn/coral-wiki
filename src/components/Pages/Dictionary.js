@@ -33,7 +33,7 @@ export default function Dictionary() {
         {definitions.map((word, i) => (
           <p key={i} id={word.TERM.trim()}>
             <b className="term">{word.TERM}</b> (
-            <i className="role">{word.ROLE}</i>) <br></br>
+            <i className="type">{word.TYPE}</i>) <br></br>
             {word.DEFINITION}
             {/* conditionally show referrals */}
             {word.REFERRALS.length >= 2 && (
