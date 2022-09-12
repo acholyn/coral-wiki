@@ -1,6 +1,6 @@
 import Definitions from "./compileDefinitions";
 
-const definitions = Array.from(Definitions);
+const definitions = [...Definitions()];
 
 export function findResults(searchText) {
   // eslint-disable-next-line array-callback-return
