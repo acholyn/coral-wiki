@@ -1,0 +1,116 @@
+[
+  {
+    "TERM": "Dive ",
+    "TYPE": "verb",
+    "DEFINITION": "",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Diver ",
+    "TYPE": "noun",
+    "DEFINITION": "One who dives.",
+    "REFERRALS": ["Dive"]
+  },
+  {
+    "TERM": "Epigenetic ",
+    "TYPE": "adjective",
+    "DEFINITION": "Relating to epigenetics, the collection of factors by which gene functionality is regulated.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Floating ",
+    "TYPE": "adjective",
+    "DEFINITION": "Resting at the (water) surface, not sinking. Used to describe a nursery in a buoyant mid-water state.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Fouling ",
+    "TYPE": "adjective",
+    "DEFINITION": "(Of items) entangled into corals or nursery structure. Often macroalgae or plastics including bags and eroded rope.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Fouling ",
+    "TYPE": "noun",
+    "DEFINITION": "Flora and fauna.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Fragment ",
+    "TYPE": "noun",
+    "DEFINITION": "A portion of coral including living material.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Frame ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "FUCA ",
+    "TYPE": "proper noun",
+    "DEFINITION": "Floating Underwater Coral Array coral nursery, a rectangular frame held vertically in the water column with anchor(s) and buoy(s), usually with corals set to horizontal cross-lines. Coined by S. Griffin circa 2015.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Gardening ",
+    "TYPE": "verb",
+    "DEFINITION": "The horticulturally-themed process of harvesting small amounts of parent (coral) stock and culturing it through propagative generations under nursery conditions, to then plant it back to a marine substrate. B. Rinkevich circa 1996.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Gene ",
+    "TYPE": "noun",
+    "DEFINITION": "A sequence of nucleotides encoding a protein.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Genet ",
+    "TYPE": "noun",
+    "DEFINITION": "The colonies, fragments, or pieces of coral that all come from a single genetically-identical source.",
+    "REFERRALS": ["Clone"]
+  },
+  {
+    "TERM": "Genetic ",
+    "TYPE": "adjective",
+    "DEFINITION": "Of or relating to genes.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Groyne ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Guy Wire ",
+    "TYPE": "noun",
+    "DEFINITION": "Lines set to stabilize a table or frame nursery, often set for storms or stormy seasons.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Encrusting Form",
+    "TYPE": "noun",
+    "DEFINITION": "Colony form that is relatively flat and covers/encrusts a substrate where it occurs (Example: Montipora)",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Ecological Phase Shift",
+    "TYPE": "noun",
+    "DEFINITION": "Discernable changes caused by disturbance to an ecosystem whereby it shifts from one stable state to another, often resulting in changes to trophic dynamics, keystone species, biodiversity and biomass. This can occur with even small-scale disturbances to certain coral species on a reef, and is most pronounced with endemic and/or specialist species.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Emergency Restoration",
+    "TYPE": "noun",
+    "DEFINITION": "A special form of restoration that is undertaken during, or immediately after, an impact event where the primary purpose is to curtail additional impact from occurring. Example: stabilizing and securing large overturned massive corals that could roll around with wave action and cause new damage to adjacent coral areas.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Ex-Situ Coral Nurseries",
+    "TYPE": "noun",
+    "DEFINITION": "Land-based facilities where coral fragments or progeny are grown under human-controlled conditions.",
+    "REFERRALS": ["In-Situ Coral Nurseries"]
+  }
+]
