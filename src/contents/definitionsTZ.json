@@ -1,0 +1,50 @@
+[
+  {
+    "TERM": "Table Nursery ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Tree Nursery ",
+    "TYPE": "noun",
+    "DEFINITION": "A single-anchor mid-water buoyant nursery structure with horizontal arms to which propagules are attached for growth. The Coral Restoration Foundation ™",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Turbulence ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Vessel ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "VTL Nursery ",
+    "TYPE": "proper noun",
+    "DEFINITION": "Vertically Tensioned Line nursery. A simplified coral nursery wherein coral branches are threaded into a single mid-water line, the coral’s own tissue inhibiting fouling",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Windage ",
+    "TYPE": "noun",
+    "DEFINITION": "The amount of wave or current (water) energy that a structure catches, un-streamlined.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Translocated Nursery",
+    "TYPE": "noun",
+    "DEFINITION": "A coral colony or portion thereof moved from one location to another for mitigation or restoration purposes.",
+    "REFERRALS": ["Colony"]
+  },
+  {
+    "TERM": "User Overlap",
+    "TYPE": "noun",
+    "DEFINITION": "A situation where multiple marine user groups (tourists, fishers, military, researchers, recreational boaters, commercial boaters, shipping, etc,) all use the same body of water during the same time period; i.e. the multiple use of the same body of water not the habitat or coral resource.",
+    "REFERRALS": []
+  }
+]

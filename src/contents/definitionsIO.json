@@ -1,0 +1,152 @@
+[
+  {
+    "TERM": "Infauna ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Isolate ",
+    "TYPE": "noun",
+    "DEFINITION": "A discrete individual. Several isolates of the green lineage were planted to the reef.",
+    "REFERRALS": ["Ramet"]
+  },
+  {
+    "TERM": "Iteration ",
+    "TYPE": "noun",
+    "DEFINITION": "A propagative cohort under nursery culture. eg: this lineage has been in culture through four propagative iterations.",
+    "REFERRALS": ["Generation"]
+  },
+  {
+    "TERM": "Laid Line ",
+    "TYPE": "noun",
+    "DEFINITION": "A line made of three twisted-together lines.",
+    "REFERRALS": ["Rope"]
+  },
+  {
+    "TERM": "Lattice Turbulence ",
+    "TYPE": "noun",
+    "DEFINITION": "Turbulence produced in passing waves specifically related to lattice structures such as branching (coral) thickets and reefs including related to sandy beach accretion and coastal protection. eg: fore-reef elkhorn coral thickets of the Caribbean prior to 1980. Coined by A. Velegrakis circa 2011.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Life Bag ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Lift ",
+    "TYPE": "adjective",
+    "DEFINITION": "",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Line ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Line Nursery ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ["BDL Nursery"]
+  },
+  {
+    "TERM": "Lineage ",
+    "TYPE": "noun",
+    "DEFINITION": "An expected genet without or prior to formal testing confirmation.",
+    "REFERRALS": ["Genet"]
+  },
+  {
+    "TERM": "Massive ",
+    "TYPE": "adjective",
+    "DEFINITION": "Resting at the (water) surface, not sinking. Used to describe a nursery in a buoyant mid-water state.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Microfragment ",
+    "TYPE": "noun",
+    "DEFINITION": "A loose, broken or intentionally cut section of a live colony, fragment, or nubbin < 2 cm in diameter (i.e. longest length).",
+    "REFERRALS": ["Nubbin"]
+  },
+  {
+    "TERM": "MIT ",
+    "TYPE": "noun",
+    "DEFINITION": "Mineral Accretion Technology, an artificial reef system wherein an electrical current is passed through a steel structure for rusting to be halted/CaCO3 accreted.",
+    "REFERRALS": ["Biorock"]
+  },
+  {
+    "TERM": "Morphology ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Mounding ",
+    "TYPE": "adjective",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Nubbin ",
+    "TYPE": "noun",
+    "DEFINITION": "A loose, broken, or intentionally cut tip of a live colony (usually a branch or finger tip) < 5 cm in diameter (i.e. longest length).",
+    "REFERRALS": "Microfragment"
+  },
+  {
+    "TERM": "Nursery ",
+    "TYPE": "noun",
+    "DEFINITION": "1. A location holding one to several coral nursery structures under or intending to culture coral for out planting. May be in-situ or ex-situ. eg: the CRF has 200 Tree style nursery devices at their Lew Key coral nursery, holding some 2000 corals. 2. A device for the safe holding and growth of small coral isolates, usually involved in propagation for further purpose.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Nylon ",
+    "TYPE": "noun",
+    "DEFINITION": "A plastic material often used for monofilament (fishing) lines, laid lines and ropes. Hydroscopic.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Outplant Sites",
+    "TYPE": "noun",
+    "DEFINITION": "The specific locations where nursery-grown or translocated corals are placed in the field; often this is the site of restoration or mitigation. For Hawaii, outplant sites are most often measured in square meters not acres.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Out-Plant ",
+    "TYPE": "verb",
+    "DEFINITION": "Planting cultured corals to a marine substrate.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Massive Forms",
+    "TYPE": "noun",
+    "DEFINITION": "Often mound-like colony forms that can become rather large over time (Example: Porites). Usually perforate corals.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Imperforate Corals",
+    "TYPE": "adjective",
+    "DEFINITION": "One of two types of stony corals, these are those where the live tissue exists primarily on the outside of the skeleton and are characterized by fast-growing branching species (Example: Pocillopora, Acropora)",
+    "REFERRALS": ["Perforate Corals"]
+  },
+  {
+    "TERM": "In-Situ Coral Nurseries",
+    "TYPE": "noun",
+    "DEFINITION": "Artificial (usually line, tree-like, or platform) structures in the marine environment where coral fragments are grown under natural environment conditions.",
+    "REFERRALS": ["Ex-Situ Coral Nurseries"]
+  },
+  {
+    "TERM": "Micropredators",
+    "TYPE": "noun",
+    "DEFINITION": "Certain corals can harbor small invertebrate predators (micropredators; usually molluscs, flatworms or arthropods), examples include predatory nudibranchs on Porites, predatory flatworms on Montipora, and predatory gastropods on Pocillopora and Fungia. Micropredators are often difficult to detect without experience except upon close inspection. Presence of cryptic egg cases and discrete tissue loss are often the first signs of an infestation.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Natural Resource Trustee (NRT) Agency",
+    "TYPE": "proper noun",
+    "DEFINITION": "Under the concept that natural resources are not owned individually but are held in trust for the public, certain agencies are established in law as the recognized trustees for such resources.",
+    "REFERRALS": []
+  }
+]

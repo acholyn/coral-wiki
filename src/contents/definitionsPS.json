@@ -1,0 +1,182 @@
+[
+  {
+    "TERM": "PET/PEET ",
+    "TYPE": "noun",
+    "DEFINITION": "A plastic material often used for clear soda (drink) and chemical containers/bottles. Durable and UV resistant.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Photogrammetry ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Polypropylene ",
+    "TYPE": "noun",
+    "DEFINITION": "A plastic material often used for lines (ropes), though also for buoys and containers (HDPE) and braided lines (UHDPE). Floats in seawater and is waterproof, but subject to UV degradation (confirm?)",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Predate ",
+    "TYPE": "verb",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Predator ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Propagule ",
+    "TYPE": "noun",
+    "DEFINITION": "A vegetative structure that has been cleaved or detached from a coral and give rise to a new plant. e.g. a fragment, nubbin, microfragment, or larvae. From botany.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Protobranch ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Ramet ",
+    "TYPE": "noun",
+    "DEFINITION": "A discrete individual of (genetic) lineage or genet. eg: a project may have several ramets of a genet under culture",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Reef ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Reefal ",
+    "TYPE": "adjective",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Reefscape ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Reskin ",
+    "TYPE": "verb",
+    "DEFINITION": "Growing or planting ramets in close proximity such that they grow back together into a single or suite of larger isolates, including multiple genets as chimera related to bleaching tolerance (Rinkevich).  Coined by XYZ circa 20XX",
+    "REFERRALS": "Supercoral Coined by XYZ circa 20XX"
+  },
+  {
+    "TERM": "Revetmet ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Rope ",
+    "TYPE": "noun",
+    "DEFINITION": "A largely generic term for a line, usually referring to a laid line.",
+    "REFERRALS": "Laid Line"
+  },
+  {
+    "TERM": "Rosette ",
+    "TYPE": "noun",
+    "DEFINITION": "A discrete, densely-planted patch of planted corals, usually of more than five (5) isolates in an area of less-than 0.1m 2 of substrate. Usually related to use of Portland cement as adhesive.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Rugosity ",
+    "TYPE": "adjective",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "SCUBA ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Ship ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Shipwreck ",
+    "TYPE": "noun",
+    "DEFINITION": "Underwater remnants of a boat/water vessel in any state.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Shipwreck ",
+    "TYPE": "verb",
+    "DEFINITION": "To cause damage to a boat/water vessel such that it sinks underwater.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Statuary ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "String Nursery ",
+    "TYPE": "noun",
+    "DEFINITION": "Archaic.",
+    "REFERRALS": "BDL Nursery"
+  },
+  {
+    "TERM": "Substrate ",
+    "TYPE": "noun",
+    "DEFINITION": "Resting at the (water) surface, not sinking. Used to describe a nursery in a buoyant mid-water state.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Super-Coral ",
+    "TYPE": "verb",
+    "DEFINITION": "Growing or planting ramets in close proximity such that they grow back together into a single or suite of larger isolates, including multiple genets as chimera related to bleaching tolerance (Rinkevich). Coined by A. Bowden-Kerby circa 2000.",
+    "REFERRALS": "Reskin"
+  },
+  {
+    "TERM": "Supercoral ",
+    "TYPE": "noun",
+    "DEFINITION": "Breeding conditions temperature-tolerant colonies together to produce subsequent generations of improved tolerance. Coined by R. Gates circa 2005.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Perforate Corals",
+    "TYPE": "adjective",
+    "DEFINITION": "One of two types of stony corals, these are those where the tissue extends deeper into the skeleton and are characterized by slow-growing massive forms (Example: Porites).",
+    "REFERRALS": ["Imperforate Corals"]
+  },
+  {
+    "TERM": "Restoration Practitioner",
+    "TYPE": "noun",
+    "DEFINITION": "The individual, group or agency conducting the restoration activity. While an individual is often listed as the permittee, usually restoration is conducted by a group, company or agency, requiring other legal documents in addition to the various individual permits.",
+    "REFERRALS": ["Coral Restoration"]
+  },
+  {
+    "TERM": "Sensitive Area",
+    "TYPE": "noun",
+    "DEFINITION": "A site where due to its protected status or unique features is vulnerable to human impacts.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Source Coral",
+    "TYPE": "noun",
+    "DEFINITION": "A coral colony or portion thereof used for growing other corals for outplanting and restoration purposes.",
+    "REFERRALS": ["Colony"]
+  },
+  {
+    "TERM": "Source Site",
+    "TYPE": "noun",
+    "DEFINITION": "A specific location where a source coral is collected.",
+    "REFERRALS": ["Source Coral"]
+  }
+]

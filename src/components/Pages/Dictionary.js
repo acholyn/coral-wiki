@@ -2,7 +2,7 @@
 
 import { Container } from "react-bootstrap";
 import PageTitle from "../PageTitle";
-import definitions from "../../contents/definitions.json";
+import Definitions from "../Utilities/compileDefinitions";
 
 export default function Dictionary() {
   const handleAnchorClick = (event) => {
@@ -18,6 +18,7 @@ export default function Dictionary() {
       block: "start",
     });
     // animate the word so users know which one it is?
+    // use target of event?
     // anchorElem.animate([
     //   { transform: "scale(1.1)" },
     //   { duration: "1s" },
@@ -25,30 +26,44 @@ export default function Dictionary() {
     //   { delay: "0.6s" },
     // ]);
   };
+  const definitions = [...Definitions()];
+  console.log(definitions);
 
   return (
     <Container className="Page">
       <PageTitle title="Dictionary" />
       <Container className="dictionary">
-        {definitions.map((word, i) => (
-          <p key={i} id={word.TERM.trim()}>
-            <b className="term">{word.TERM}</b> (
-            <i className="type">{word.TYPE}</i>) <br></br>
-            {word.DEFINITION}
+        {definitions.map(({ TERM, TYPE, DEFINITION, REFERRALS }, i) => (
+          <p key={i} id={TERM.trim()}>
+            <b className="term">{TERM}</b> (<i className="type">{TYPE}</i>){" "}
+            <br></br>
+            {DEFINITION}
             {/* conditionally show referrals */}
-            {word.REFERRALS.length >= 2 && (
+            {/* needs to be updated to take list of referrals? */}
+            {REFERRALS.length >= 1 && (
               <span>
                 {" "}
                 See also{" "}
                 <a
                   className="ref-link"
-                  href={`#${word.REFERRALS}`}
+                  href={`#${REFERRALS[0]}`}
                   onClick={handleAnchorClick}>
-                  {word.REFERRALS}
+                  {REFERRALS[0]}
                 </a>
               </span>
-              // need to sort out 'coined by' and
             )}
+            {/* {REFERRALS.map((ref) => (
+              <span>
+                {" "}
+                See also{" "}
+                <a
+                  className="ref-link"
+                  href={`#${ref}`}
+                  onClick={handleAnchorClick}>
+                  {ref}
+                </a>
+              </span>
+            ))} */}
           </p>
         ))}
       </Container>

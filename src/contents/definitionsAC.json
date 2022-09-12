@@ -1,0 +1,176 @@
+[
+  {
+    "TERM": "A-Frame",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Ablative",
+    "TYPE": "adjective",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Anthozoculture",
+    "TYPE": "noun",
+    "DEFINITION": "A general term for culturing hard corals (primarily anthozoa) for planting and populating marine substrates, implying larger scales related to establishing/reestablishing ecosystem services. Coined by A. Ross circa 2012.",
+    "REFERRALS": ["Gardening"]
+  },
+  {
+    "TERM": "Antifoulant",
+    "TYPE": "adjective",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Artificial Reef",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "BDL Nursery",
+    "TYPE": "noun",
+    "DEFINITION": "Buoyant Drop-line Line nursery, a simplified nursery of horizontal coral-support lines held mid-water by paired tethered buoys at either end.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Bioerode",
+    "TYPE": "verb",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Biofouling",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Biorock ",
+    "TYPE": "proper noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Bleach ",
+    "TYPE": "verb",
+    "DEFINITION": "",
+    "REFERRALS": ["Bleached"]
+  },
+  {
+    "TERM": "Bleached ",
+    "TYPE": "adjective",
+    "DEFINITION": "",
+    "REFERRALS": ["Bleach"]
+  },
+  {
+    "TERM": "Boat ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Boring ",
+    "TYPE": "adjective",
+    "DEFINITION": "An organism that chemically or physically digs or erodes the substrate. Common examples are sponges (Cliona spp.) and various worms and clams.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Boulder ",
+    "TYPE": "adjective",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Branch ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ["Branching Forms"]
+  },
+  {
+    "TERM": "Branching Forms",
+    "TYPE": "noun",
+    "DEFINITION": "Colony forms that are bush-like or tree-like with colony extensions growing out as branches (e.g Pocillopora, Acropora). Usually imperforate corals.",
+    "REFERRALS": ["Branch"]
+  },
+  {
+    "TERM": "Buoy ",
+    "TYPE": "noun",
+    "DEFINITION": "A device that floats at the surface to carry a mooring line or signage, or a mid-water lifting device to a benthic tether/anchor.",
+    "REFERRALS": ["Buoyant"]
+  },
+  {
+    "TERM": "Buoyant ",
+    "TYPE": "adjective",
+    "DEFINITION": "To be lighter than (sea-water), therefore offering a lifting force (to a coral nursery).",
+    "REFERRALS": ["Floating"]
+  },
+  {
+    "TERM": "Clip ",
+    "TYPE": "proper noun",
+    "DEFINITION": "",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Clonal Age ",
+    "TYPE": "noun",
+    "DEFINITION": "The age of a given genetic lineage from gametic genesis and settlement.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Clone ",
+    "TYPE": "noun",
+    "DEFINITION": "a formally confirmed as discrete genetic lineage.",
+    "REFERRALS": ["Genet"]
+  },
+  {
+    "TERM": "Cookie ",
+    "TYPE": "noun",
+    "DEFINITION": "A small disk of cement to which a coral nubbin is affixed under in-situ nursery culture. The coral is often tied or wired to the cookie and the cookie secured to a table nursery, usually planted using cement. Coined by A. Bowden-Kerby circa 1998.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Coral ",
+    "TYPE": "noun",
+    "DEFINITION": "1. A sedentary coelenterate of warm and tropical seas, with a calcareous, horny, or soft skeleton. Most corals are colonial and many rely on the presence of green algae in their tissues to obtain energy from sunlight. Several orders in the class Anthozoa, including the ‘true’ or stony corals (order Scleractinia or Madreporaria), which form reefs, the soft corals (order Alcyonacea), which form leathery or fleshy colonies, and the horny corals (order Gorgonacea). 2. A discrete isolate of coral held or developed under nursery culture, including planting back to the seabed. Out-Plant. 3. A hard stony substance secreted by certain marine coelenterates as an external skeleton, typically forming large reefs in warm seas: [as modifier] : a coral reef | the nearby coral islands, lagoons, and atolls. ORIGIN Middle English: via Old French from Latin corallum, from Greek korallion, kouralion.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Corallivoire ",
+    "TYPE": "adjective",
+    "DEFINITION": "",
+    "REFERRALS": ["Corallivoire"]
+  },
+  {
+    "TERM": "Corallivoire ",
+    "TYPE": "noun",
+    "DEFINITION": "",
+    "REFERRALS": ["Corallivoire"]
+  },
+  {
+    "TERM": "Coral Mitigation",
+    "TYPE": "noun",
+    "DEFINITION": "Actions taken to directly modify or decrease a negative impact affecting coral colonies.",
+    "REFERRALS": []
+  },
+  {
+    "TERM": "Corals of Opportunity",
+    "TYPE": "proper noun",
+    "DEFINITION": " Loose corals resulting from both natural and anthropogenic disturbances that may be available for use for restoration. In practice, rarely do such corals provide good material for other restoration projects and are best used for on-site direct restoration. A ‘Corals of Opportunity Site’ is a location where temporally ‘Corals of Opportunity’ exist.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Coral Restoration",
+    "TYPE": "noun",
+    "DEFINITION": "The process of returning coral species diversity, colony size, form, and numbers, back to a pre-impact event state. Coral restoration may include growing colonies created asexually or sexually from source corals in either land-based (ex-situ) or in-water (in-situ) nurseries, directly translocating coral colonies or fragments from intact areas to impacted reefs, or to transplant corals to substrate stabilization structures or other forms of artificial reefs with or without grow-out in a nursery program.",
+    "REFERRALS": ""
+  },
+  {
+    "TERM": "Colony",
+    "TYPE": "noun",
+    "DEFINITION": "An intact, delineated, clonal, and genetically-identical assemblage of live, interconnected coral polyps within a connected skeletal matrix. (Single polyp corals such as Fungia, Diaseris, and Cycloseris are counted as a coral colony under this definition in so much as to allow for their regulation, data keeping purposes and to determine ecological services and functions.)",
+    "REFERRALS": ["Coral"]
+  }
+]

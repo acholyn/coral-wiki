@@ -22,7 +22,7 @@ export default function AboutUs() {
           </p>
         </Col>
         <Col xs={2}>
-          <img src="/public/images/sundivers.jpeg" alt="profile"></img>
+          <img src="public/images/sundivers.jpeg" alt="profile"></img>
         </Col>
       </Row>
     </Container>
