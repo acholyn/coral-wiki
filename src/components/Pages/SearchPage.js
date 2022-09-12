@@ -1,12 +1,10 @@
 import { Container, Form, FormControl } from "react-bootstrap";
 import PageTitle from "../PageTitle";
 import { useState } from "react";
-// import definitions from "../../contents/definitions.json";
 import { findResults } from "../Utilities/findResults";
 
 export default function SearchPage() {
   const [results, setResults] = useState();
-  // const defsArray = Array.from(definitions);
 
   const handleSearchInput = (event) => {
     let searchText = event.target.value;
