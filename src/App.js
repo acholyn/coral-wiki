@@ -10,20 +10,20 @@ import SearchPage from "./components/Pages/SearchPage";
 import Footer from "./components/Footer";
 
 function App() {
-  return (
-    <div className="App">
-      <SiteHeader />
-      <NavBar />
-      <Routes>
-        <Route exact path="/" element={<Dictionary />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/contributors" element={<Contributors />} />
-        <Route path="/search" element={<SearchPage />} />
-      </Routes>
-      <Footer />
-    </div>
-  );
+	return (
+		<div className="App">
+			<SiteHeader />
+			<NavBar />
+			<Routes>
+				<Route exact path="/coral-wiki/" element={<Dictionary />} />
+				<Route path="/coral-wiki/about" element={<AboutUs />} />
+				<Route path="/coral-wiki/contact" element={<ContactUs />} />
+				<Route path="/coral-wiki/contributors" element={<Contributors />} />
+				<Route path="/coral-wiki/search" element={<SearchPage />} />
+			</Routes>
+			<Footer />
+		</div>
+	);
 }
 
 export default App;
