@@ -15,7 +15,7 @@ function App() {
 			<SiteHeader />
 			<NavBar />
 			<Routes>
-				<Route exact path="/coral-wiki/" element={<Dictionary />} />
+				<Route path="/coral-wiki/" element={<Dictionary />} />
 				<Route path="/coral-wiki/about" element={<AboutUs />} />
 				<Route path="/coral-wiki/contact" element={<ContactUs />} />
 				<Route path="/coral-wiki/contributors" element={<Contributors />} />
